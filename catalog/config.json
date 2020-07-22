@@ -1,0 +1,17 @@
+{
+  "tagline": "[30 characters]",
+  "repository": "https://github.com/newrelic/{{ NERDPACK_NAME }}.git",
+  "details": "[]",
+  "support": {
+    "issues": {
+      "url": "https://github.com/newrelic/{{ NERDPACK_NAME }}/issues"
+    },
+    "email": {
+      "address": "opensource+{{ NERDPACK_NAME }}@newrelic.com"
+    },
+    "community": {
+      "url": "https://discuss.newrelic.com/t/[YOUR REPO SUPPORT TOPIC]"
+    }
+  },
+  "whatsNew": "\n-Fix: One change that was made\n-Fix: Another change that was made\n-Feat: One feature that was added"
+}

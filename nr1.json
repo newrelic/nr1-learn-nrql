@@ -1,6 +1,6 @@
 {
   "schemaType": "NERDPACK",
-  "id": "",
-  "displayName": "{{NERDPACK_NAME}}",
-  "description": "My new nerdpack"
+  "id": "4d91feca-fa47-465b-a3b1-eb013ce5bf28",
+  "displayName": "NRQL Tutorial",
+  "description": "A self-paced tutorial aimed to help New Relic customers improve their NRQL skills. Start from the very basics of NRQL and go through four levels of increasing complexity to become NRQL Ninjas!"
 }

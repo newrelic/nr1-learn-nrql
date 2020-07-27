@@ -1,0 +1,7 @@
+{
+    "schemaType": "LAUNCHER",
+    "id": "nrql-tutorial-launcher",
+    "displayName": "Learn NRQL",
+    "description": "NRQL Tutorial",
+    "rootNerdletId": "nrql-tutorial-nerdlet"
+}

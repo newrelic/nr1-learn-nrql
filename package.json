@@ -1,7 +1,7 @@
 {
     "private": true,
-    "name": "{{ NERDPACK_NAME }}",
-    "description": "Nerdpack template",
+    "name": "nrql-tutorial",
+    "description": "NRQL Tutorial App",
     "version": "0.1.0",
     "scripts": {
         "start": "nr1 nerdpack:serve",
@@ -10,10 +10,14 @@
         "eslint-fix": "eslint nerdlets/ --fix"
     },
     "bugs": {
-        "email": "opensource+{{ NERDPACK_NAME }}@newrelic.com"
+        "email": "opensource+learn_nrql@newrelic.com"
     },
     "dependencies": {
-        "@newrelic/nr1-community": "latest",
+        "@kunukn/react-collapse": "^1.2.7",
+        "copy-to-clipboard": "^3.3.1",
+        "react-json-pretty": "^2.2.0",
+        "react-markdown": "^4.3.1",
+        "remove-markdown": "^0.3.0",
         "prop-types": "^15.6.2",
         "react": "^16.6.3",
         "react-dom": "^16.6.3"

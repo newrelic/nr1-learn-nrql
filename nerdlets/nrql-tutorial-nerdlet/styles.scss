@@ -1,0 +1,167 @@
+
+html {
+  color:#222;
+}
+.lesson-picker {
+  background-color: white;
+  padding: 16px;
+
+  .level {
+    padding: 18px;
+    font-size: 16px;
+    background-color:#dddddd;
+  }
+
+  .lesson {
+    padding: 18px;
+    font-size: 1.2em;
+    border-bottom: 1px dotted #dddddd;
+    display: flex;
+    cursor: pointer;
+
+    .index {
+      width: 18px;
+      min-width: 18px;
+      text-align: right;  
+      color: #888888;
+      padding-right: 8px;
+    }
+
+    .title {
+      color: black;
+    }
+  }
+
+  .selected {
+    background-color: #f1fbfc;
+    font-weight: bold;
+  }
+
+}
+
+.collapse-css-transition {
+  transition: height 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.toggleLevel {
+  width: 100%;
+  margin: 1rem 0;
+  border: 1px solid transparent;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 2px;
+  box-shadow: 0 2px 4px #888;
+  background-color: #fff;
+  transition: background-color 300ms;
+  font-weight:bold;
+}
+
+
+h1 h2 h3 h4 h5 {
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+}
+
+h2 {
+  padding-top: 1em;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+
+.lesson-content {
+  padding: 16px;
+  background-color: white;  
+}
+
+p {
+  font-size: 18px;
+  padding-top: 0.5em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  line-height: 1.8;
+  padding-bottom: 1em;
+
+
+
+  ul {
+    margin-left:20px;
+  }
+}
+
+code {
+  color: green;
+  font-family: 'Courier New', Courier, monospace;;
+}
+
+ul {
+  margin-left:2em;
+  margin-top: 2em;
+
+  li {
+    line-height: 1;
+    padding-bottom: 1em;
+    font-size: 1.3em;
+  }
+}
+
+.sample-query {
+  padding: 1em;
+  margin: 1em 1em 2em 1em ;
+  border: 1px dotted #dddddd;
+  background-color: #00000002;
+}
+
+.nrql {
+  background-color: #d8e9ec;
+  color: #065b7b;
+  margin-top: 12px;
+  padding: 0 1em 1em 1em;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1em;
+  font-weight: bold;
+  strong {
+    color: #e93fe9;
+  }
+
+}
+
+
+.try-button {
+  display: flex;
+  flex-direction: row-reverse;
+  padding-top: 24px;
+}
+
+.chart {
+  padding: 4px;
+  margin-top: 1em;
+  border: 1px dotted #dddddd;
+}
+
+.AccountChooser {
+  margin-top:1em;
+}
+.MainLessonArea {
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
+
+.StartupMessage {
+  margin: 4em 4em;
+}
+
+.nextLessonBt {
+  float:right;
+  margin-top:2em;
+}
+
+p {
+  font-size: 1.3em;
+  margin: 0;
+  padding:0.8em 0 0 0;
+
+}

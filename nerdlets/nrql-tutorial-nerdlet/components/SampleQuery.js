@@ -21,7 +21,6 @@ import {
   NrqlQuery
 } from 'nr1';
 
-const removeMd = require('remove-markdown');
 const ReactMarkdown = require('react-markdown');
 const JSONPretty = require('react-json-pretty');
 
@@ -95,15 +94,8 @@ export default class SampleQuery extends React.Component {
 
   render() {
     const { nrql, span, markdown } = this.props;
-    let nrqlPlain = removeMd(
-      nrql
-        .replace(/\\\*/g, ' \\* ')
-        .replace(/\\_/g, ' \\_ ')
-        .replace(/\\\[/g, ' \\[ ')
-    ); // deal with weird asterix encoding issue
-    nrqlPlain = nrqlPlain.replace(/\s\\\*\s/g, '*');
-    nrqlPlain = nrqlPlain.replace(/\s\\_\s/g, '_');
-    nrqlPlain = nrqlPlain.replace(/\s\\\[\s/g, '[');
+    let nrqlPlain=nrql.replace(/\*\*/g,'').replace(/\\\*/g,'*').replace(/\\\_/g,'_').replace(/\\\[/g, '[')
+    
     if (markdown === 'no') {
       nrqlPlain = nrql;
     }

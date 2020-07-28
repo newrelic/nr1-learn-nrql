@@ -1,7 +1,7 @@
 {
     "schemaType": "LAUNCHER",
     "id": "nrql-tutorial-launcher",
-    "displayName": "Learn NRQL",
-    "description": "NRQL Tutorial",
+    "displayName": "NRQL Lessons",
+    "description": "Launches the NRQL Lessons nerdlet aimed to help New Relic customers improve their NRQL skills",
     "rootNerdletId": "nrql-tutorial-nerdlet"
 }

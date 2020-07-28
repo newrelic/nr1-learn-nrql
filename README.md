@@ -4,16 +4,18 @@
 
 ![CI](https://github.com/newrelic/nr1-learn-nrql/workflows/CI/badge.svg) ![GitHub release (latest SemVer including pre-releases)](https://img.shields.io/github/v/release/newrelic/nr1-learn-nrql?include_prereleases&sort=semver) [![Snyk](https://snyk.io/test/github/newrelic/nr1-learn-nrql/badge.svg)](https://snyk.io/test/github/newrelic/nr1-learn-nrql)
 
-The NRQL (New Relic Query Language) Lessons Nerdpack will help you quickly learn the value and power of our query language. We've developed this application for dashboard and alerts users, but anyone will get something out of it. We've broken this content into four levels, from simple to complex. Each level will expand your understanding of NRQL in a different way. You'll use New Relic One's Query Builder to write queries and see the results of those queries immediately. You'll use what you've learned right away. 
+The NRQL (New Relic Query Language) Lessons Nerdpack will help you quickly learn the value and power of our query language. We've developed this application for dashboard and alerts users, but everyone will get something out of it. We've broken this content into four levels, from simple to complex. Each level will expand your understanding of NRQL in a different way. 
+
+You'll use New Relic One's Query Builder to write queries and see the results of those queries immediately.
 
 1. Level One: Learn the Ropes
 2. Level Two: Control Your Data
 3. Level Three: Advance Your Dashboarding
 4. Level Four: NRQL Ninja
 
-Each level uses easily understanable examples and descriptions using living data from your account to improve your NRQL skill. 
+Each level uses easily understanable examples and descriptions with live data from your account to improve your NRQL skill. 
 
-We built these lessons with APM data in mind and if you're not using APM data, you may see some empty results. In most cases, the query logic should work with other event types. In future, we plan to include fallback queries so that lessons will work regardless of the data you're using.
+We built these lessons with APM data in mind. If you're not using APM data, you may see some empty results, even though the query logic will still work. In future, we plan to include fallback queries so that lessons will work regardless of the data you're using.
 
 ## Open source license
 
@@ -23,7 +25,7 @@ This project is distributed under the [Apache 2 license](LICENSE).
 
 The easiest way to install this application is with the New Relic Application Catalog. 
 
-Navigate to your Apps section and click the NRQL Lessons application. The application will give you clear details about the goals of each lesson. The Manage Access button in the top right will let you choose the account where you want to make this app visible. It will be visible to all users of that account.
+In [New Relic One](https://one.newrelic.com), navigate to your Apps section and click the NRQL Lessons application. The application will give you clear details about the goals of each lesson. The Manage Access button in the top right will let you choose the account where you want to make this app visible. It will be visible to all users of that account.
 
 ## Install using NR1 CLI
 

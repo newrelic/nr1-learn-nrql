@@ -4,14 +4,18 @@
 
 ![CI](https://github.com/newrelic/nr1-learn-nrql/workflows/CI/badge.svg) ![GitHub release (latest SemVer including pre-releases)](https://img.shields.io/github/v/release/newrelic/nr1-learn-nrql?include_prereleases&sort=semver) [![Snyk](https://snyk.io/test/github/newrelic/nr1-learn-nrql/badge.svg)](https://snyk.io/test/github/newrelic/nr1-learn-nrql)
 
-The NRQL Lessons Nerdpack is an application to help quicken users of NRQL for dashboarding and alerting to get faster understanding and value from the power of the query language. This application is developed to break down learning the query language into four levels. Each level extends your understanding of NRQL and helps you not only see what the queries would look like but to also use New Relic One's Query Builder to execute that query live, and even test and try what you've learned to validate your experience.
+The NRQL (New Relic Query Language) Lessons Nerdpack will help you quickly learn the value and power of our query language. We've developed this application for dashboard and alerts users, but everyone will get something out of it. We've broken this content into four levels, from simple to complex. Each level will expand your understanding of NRQL in a different way. 
 
-1. Level One: Learning the Ropes
-2. Level Two: Controlling Your Data
-3. Level Three: Advancing Your Dashboarding
+You'll use New Relic One's Query Builder to write queries and see the results of those queries immediately.
+
+1. Level One: Learn the Ropes
+2. Level Two: Control Your Data
+3. Level Three: Advance Your Dashboarding
 4. Level Four: NRQL Ninja
 
-Each level is designed to take your skill level up in hopefully easily understood examples and descriptions with live data from your account. We have primarily built this application to work with APM data. If you do not currently use New Relic APM data you may see some empty results but the logic should largely still persist to other event types. We hope to build in fallback queries in the future to ensure that this learning tool may work in multiple data set scenarios.
+Each level uses easily understanable examples and descriptions with live data from your account to improve your NRQL skill. 
+
+We built these lessons with APM data in mind. If you're not using APM data, you may see some empty results, even though the query logic will still work. In future, we plan to include fallback queries so that lessons will work regardless of the data you're using.
 
 ## Open source license
 
@@ -19,15 +23,15 @@ This project is distributed under the [Apache 2 license](LICENSE).
 
 ## Install using NR1 Application Catalog
 
-This application is primarily designed to be installed via the New Relic Application Catalog. 
+The easiest way to install this application is with the New Relic Application Catalog. 
 
-Navigate to your Apps section and look for the NRQL Lessons application. Once you have clicked into the application you will be offered clear details about the goals of the application and a Manage Access button top right. You simply click Manage Access and ensure to select an account where you wish to make this app visible for all users.
+In [New Relic One](https://one.newrelic.com), navigate to your Apps section and click the NRQL Lessons application. The application will give you clear details about the goals of each lesson. The Manage Access button in the top right will let you choose the account where you want to make this app visible. It will be visible to all users of that account.
 
 ## Install using NR1 CLI
 
-This is also an Open Source application so you can quickly and easily deploy it manually without the Application Catalog using NR1 CLI.
+NRQL Lessons is also an Open Source application. You can quickly and easily deploy it manually using the NR1 CLI.
 
-Ensure that you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [npm](https://www.npmjs.com/get-npm) installed. If you're unsure whether you have one or both of them installed, run the following commands (they will return version numbers):
+Ensure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [npm](https://www.npmjs.com/get-npm) installed. If you're unsure whether you have them installed, run the following commands (they'll return version numbers if they're installed):
 
 ```bash
 git --version
@@ -44,7 +48,7 @@ nr1 nerdpack:uuid -gf
 nr1 nerdpack:publish
 nr1 nerdpack:subscribe  -C STABLE
 ```
-This will subscribe the application to the account you have as your default profile. You can check this using `nr1 profiles:default`. If you are not ready to deploy it to your account or want to test out changes you've made locally you can simply
+This last command will subscribe the application to the account you've set as your default profile. You can check this using `nr1 profiles:default`. If you're not ready to deploy it to your account or want to test out changes you've made locally you can use:
 
 ```bash
 git clone https://github.com/newrelic/nr1-learn-nrql.git
@@ -55,7 +59,7 @@ nr1 nerdpack:uuid -gf
 nr1 nerdpack:serve
 ```
 
-Then visit [https://one.newrelic.com/?nerdpacks=local](https://one.newrelic.com/?nerdpacks=local), navigate to Apps, then NRQL Lessons, and :sparkles: enjoy!
+Once you've done that, visit [https://one.newrelic.com/?nerdpacks=local](https://one.newrelic.com/?nerdpacks=local), navigate to Apps, then NRQL Lessons, and :sparkles: enjoy!
 
 # Support
 

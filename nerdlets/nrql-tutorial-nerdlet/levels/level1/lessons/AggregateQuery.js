@@ -24,9 +24,9 @@ export default function AggregateQuery() {
       <p>
         NRQL has many functions you can use to aggregate event data. Some of the
         common functions you might use are <code>max()</code>,{' '}
-        <code>min()</code>, <code>count(*)</code> and <code>sum()</code>. In the following
-        example, we are going to ask NRDB to tell us what the duration of the
-        slowest transaction in the last 60 minutes was.
+        <code>min()</code>, <code>count(*)</code> and <code>sum()</code>. In the
+        following example, we are going to ask NRDB to tell us what the duration
+        of the slowest transaction in the last 60 minutes was.
       </p>
 
       <p>

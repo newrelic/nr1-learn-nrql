@@ -21,15 +21,15 @@ We built these lessons with APM data in mind. If you're not using APM data, you 
 
 This project is distributed under the [Apache 2 license](LICENSE).
 
-## Install using NR1 Application Catalog
+## Install using New Relic One Application Catalog
 
 The easiest way to install this application is with the New Relic Application Catalog. 
 
 In [New Relic One](https://one.newrelic.com), navigate to your Apps section and click the NRQL Lessons application. The application will give you clear details about the goals of each lesson. The Manage Access button in the top right will let you choose the account where you want to make this app visible. It will be visible to all users of that account.
 
-## Install using NR1 CLI
+## Install using New Relic One CLI
 
-NRQL Lessons is also an Open Source application. You can quickly and easily deploy it manually using the NR1 CLI.
+NRQL Lessons is also an Open Source application. You can quickly and easily deploy it manually using the New Relic One CLI.
 
 Ensure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [npm](https://www.npmjs.com/get-npm) installed. If you're unsure whether you have them installed, run the following commands (they'll return version numbers if they're installed):
 

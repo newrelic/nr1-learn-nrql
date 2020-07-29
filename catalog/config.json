@@ -1,17 +1,17 @@
 {
-  "tagline": "[30 characters]",
-  "repository": "https://github.com/newrelic/{{ NERDPACK_NAME }}.git",
-  "details": "[]",
+  "tagline": "Improve Your NRQL Skills",
+  "repository": "https://github.com/newrelic/nr1-learn-nrql.git",
+  "details": "NRQL Lessons is a self-paced learning tool aimed to help New Relic customers improve their NRQL skills. Master NRQL (New Relic's Query Language) through a series of training levels using your own data.  Start from the very basics of NRQL syntax through to advanced concepts and querying techniques to become NRQL Ninjas!",
   "support": {
     "issues": {
-      "url": "https://github.com/newrelic/{{ NERDPACK_NAME }}/issues"
+      "url": "https://github.com/newrelic/nr1-learn-nrql/issues"
     },
     "email": {
-      "address": "opensource+{{ NERDPACK_NAME }}@newrelic.com"
+      "address": "opensource+learn_nrql@newrelic.com"
     },
     "community": {
-      "url": "https://discuss.newrelic.com/t/[YOUR REPO SUPPORT TOPIC]"
+      "url": "https://discuss.newrelic.com/t/new-relic-nrql-lessons-nerdpack/109646"
     }
   },
-  "whatsNew": "\n-Fix: One change that was made\n-Fix: Another change that was made\n-Feat: One feature that was added"
+  "whatsNew": "- Advance your NRQL skills through a series of levels of learning \n - Control the data you see from your accounts with a simple Account Picker \n - Copy or open the sample query in Chart Builder \n - Resume from the last level/lesson the user was on"
 }

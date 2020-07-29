@@ -19,7 +19,6 @@ export default function LessonPicker({
 }) {
   return (
     <div className="lesson-picker">
-      <h1>Lessons</h1>
       {levels.map((l, index) => (
         <Level
           level={index}

@@ -15,7 +15,7 @@ We built these lessons with APM data in mind. If you're not using APM data, you 
 
 ## Open source license
 
-This project is distributed under the [Apache 2 license](LICENSE).
+This project is distributed under the [Apache 2 license](https://github.com/newrelic/nr1-learn-nrql/blob/main/LICENSE).
 
 ## Install using New Relic One Application Catalog
 
@@ -75,6 +75,6 @@ Issues and enhancement requests can be submitted in the [Issues tab of this repo
 
 # Contributing
 
-Contributions are encouraged! If you submit an enhancement request, we'll invite you to contribute the change yourself. Please review our [Contributors Guide](CONTRIBUTING.md).
+Contributions are encouraged! If you submit an enhancement request, we'll invite you to contribute the change yourself. Please review our [Contributors Guide](https://github.com/newrelic/nr1-learn-nrql/blob/main/CONTRIBUTING.md).
 
 Keep in mind that when you submit your pull request, you'll need to sign the CLA via the click-through using CLA-Assistant. If you'd like to execute our corporate CLA, or if you have any questions, please drop us an email at opensource+learn_nrql@newrelic.com

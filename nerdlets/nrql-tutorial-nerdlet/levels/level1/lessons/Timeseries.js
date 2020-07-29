@@ -40,7 +40,7 @@ export default function Timeseries() {
         points across a 1-day period being plotted. What if you want to see the
         maximum possible granularity? Well any timeseries query can have up to
         366 data buckets. So the maximum possible for 24 hours is to bucket our
-        data into 4 minutely windows. We could calculate it out and use{' '}
+        data into 4 minute windows. We could calculate it out and use{' '}
         <code>TIMESERIES 4 minutes</code>, but we can also just ask NRDB to
         figure that out for us with <code>TIMESERIES MAX</code>:
       </p>

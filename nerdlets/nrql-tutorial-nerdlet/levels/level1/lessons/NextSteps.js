@@ -5,12 +5,12 @@ export default function NextSteps() {
     <div>
       <p>
         <strong>
-          Congratulations on completing Level 1: Learning The Ropes
+          Congratulations on completing Level 1: Learning The Ropes!
         </strong>
       </p>
       <p>
         If you've made it this far, you now know the basics of querying event
-        data using NRQL. Now you can create dashboards, alerts or if you know
+        data using NRQL. You can create dashboards, and alerts; and, if you know
         some React, you can even create your own Apps to run natively inside New
         Relic One.
       </p>

@@ -6,20 +6,19 @@ export default function FirstQuery() {
     <div>
       <p>
         Let's start by looking at a single event in NRDB. In this case, let's
-        look at some data coming in from an application. If you’re using New
-        Relic APM, you will have an event type called <code>Transaction</code>.
+        look at some data coming from an application. If you’re using New Relic
+        APM, you will have an event type called <code>Transaction</code>.
       </p>
 
       <p>
-        Every NRQL query must have a <code>SELECT</code> and <code>FROM</code>{' '}
-        clause. You must <strong>SELECT</strong> some data and tell us{' '}
-        <strong>FROM</strong> where.
+        Every NRQL query must have <code>SELECT</code> and <code>FROM</code>{' '}
+        clauses. You must <strong>SELECT</strong> some data and tell us where it
+        is <strong>FROM</strong>.
       </p>
 
       <p>
         Start with this simple query that selects everything from the
-        Transaction event type. (If you know SQL, NRQL should feel familiar to
-        you.)
+        Transaction event type. (If you know SQL, NRQL should feel familiar.)
       </p>
 
       <SampleQuery
@@ -29,9 +28,9 @@ export default function FirstQuery() {
       />
 
       <p>
-        This returns a lot of results with a timestamp and a collection of{' '}
-        <em>attributes</em>. For now, we just want a single result so we will
-        limit the results to a single record with <code>LIMIT 1</code>.
+        This returns a lot of results. Each has a timestamp and a collection of{' '}
+        <em>attributes</em>. For now, we only want a single result, so we will
+        limit results to a single record using <code>LIMIT 1</code>.
       </p>
 
       <SampleQuery
@@ -40,15 +39,16 @@ export default function FirstQuery() {
         span="12"
       />
       <p>
-        OK, so now we're controlling the volume of results we get. What if we
-        don't want all the attributes, just specific data points? Fortunately,
-        like SQL, it's extremely simple. We replace <code>*</code> with the name
-        of some attributes of interest. In this case, we will ask for the name
-        of a transaction and the duration of time it took to respond.
+        We're now controlling the volume of results we get. But what if we don't
+        want <em>all</em> the attributes? What if we would prefer to see only
+        specific data points? Fortunately, like SQL, this is extremely simple.
+        We replace <code>*</code> with the name of the attribute(s) we want. In
+        this case, we will ask for the name of a transaction and the duration of
+        time it took.
       </p>
 
       <p>
-        Feel free to try the query in our Chart builder by clicking the link
+        Feel free to try this query in the Chart Builder by clicking the link
         below the query.
       </p>
 
@@ -59,10 +59,9 @@ export default function FirstQuery() {
       />
       <h2>Lesson Summary</h2>
       <p>
-        Fantastic start. You have written some basic queries to return some
-        simple data, either returning all attributes of an event each time or
-        narrowing to specific data you want to see. We also learned how to
-        control the number of results we get. Great work!
+        Fantastic start. You just wrote basic queries that can return either all
+        attributes of an event, or specific attributes. You also learned how to
+        control the number of results returned. Great work!
       </p>
     </div>
   );

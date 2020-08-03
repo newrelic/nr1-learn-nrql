@@ -5,41 +5,43 @@ export default function Extrapolate() {
   return (
     <div>
       <p>
-        NRDB receives and processes an enormous amount of data every day at
-        lightning speed! In circumstances where a large amount of event data is
-        recorded by APM, New Relic agents implement a sampling technique to
-        continue collecting meaningful data while reducing potential impact to
-        your applications. This only tends to happen on applications or services
-        where a single agent is handling extremely high volumes of requests. If
-        multiple agents are spread across multiple load balanced instances of a
-        service this limit might never be observed.
+        The New Relic Database (NRDB) receives and processes enormous amounts of
+        data, every day, at lightning speed! When APM records a large amount of
+        event data, New Relic agents implement a sampling technique to continue
+        collecting meaningful data while reducing potential impact to your
+        applications. This usually only happens when a single event in an
+        application or service handles extremely high volumes of requests. If
+        multiple agents are spread across multiple load-balanced instances of a
+        service, this limit might never be observed.
       </p>
       <p>
-        However, let's understand what we can do when this happens. The{' '}
-        <code>EXTRAPOLATE</code> operator is here to tell New Relic to
-        mathematically compensate for the effects of sampling, thereby returning
-        results that more closely represent the activity in your system. We
-        store an extra value to tell us how many similar events occured over the
-        liimit so we can deliver a statistically accurate result.
+        Let's discuss what we can do when this happens. The{' '}
+        <code>EXTRAPOLATE</code> operator tells New Relic to mathematically
+        compensate for the effects of sampling, thereby returning results that
+        more closely represent activity in your system. We store an extra value
+        to record how many similar events occured over the limit. This allows
+        New Relic to deliver statistically accurate results.
       </p>
+
       <SampleQuery
         nrql="SELECT count(\*) FROM Transaction SINCE 60 minutes ago FACET appName TIMESERIES 1 minute **EXTRAPOLATE**"
         span="12"
       />
 
       <p>
-        You might be thinking, are we hitting the limit? Well, try to edit the
-        query and remove <code>EXTRAPOLATE</code> and see if your count changes.
-        If it doesn't, you most likely haven't hit the limit at all.
+        You might be thinking "are we hitting the limit?" Well, try removing{' '}
+        <code>EXTRAPOLATE</code> from the query, and see if your count changes.
+        If it doesn't, you most likely haven't reached the limit.
       </p>
 
       <h2>Lesson Summary</h2>
       <p>
-        When <code>EXTRAPOLATE</code> is used in a NRQL query that supports its
-        use, the ratio between the reported events and the total events is used
-        to extrapolate a close approximation of the total unsampled data. When
-        it is used in a NRQL query that doesn’t support its use or that hasn’t
-        used sampled data, it has no effect.
+        When <code>EXTRAPOLATE</code> is included in a query, the ratio between
+        the reported events and the total events is calculated. This ratio is
+        then used to extrapolate an approximation of unsampled data. Keep in
+        mind that only some queries support its use. When included in a NRQL
+        query that doesn’t support it, or that doesn't use sampled data, it will
+        have no effect.
       </p>
       <p>
         Note that <code>EXTRAPOLATE</code> is most useful for homogenous data

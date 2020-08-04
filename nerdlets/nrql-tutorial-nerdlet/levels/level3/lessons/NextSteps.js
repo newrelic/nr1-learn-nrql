@@ -9,31 +9,31 @@ export default function NextSteps() {
         </strong>
       </p>
       <p>
-        We have explored the more specific elements of NRQL and learned how to
-        do powerful things that might be something you need when in the trenches
-        and diving into the nitty gritty of your data.
+        In this section we explored specific, powerful NRQL functionality. These
+        skills will undoubtedly serve you next time you're in the trenches,
+        diving into the nitty-gritty of your data.
       </p>
-      <p>We have shown you how to make use of:</p>
+      <p>Specifically, we learned how to use:</p>
       <ul>
         <li>
-          Further advanced aggregation functiions like <code>filter()</code>,{' '}
+          Advanced aggregation functions like <code>filter()</code>,{' '}
           <code>apdex()</code>, <code>rate()</code>
           <code>funnel()</code>, <code>histogram()</code>
         </li>
         <li>
-          <code>EXTRAPOLATE</code> and what it means and does
+          The <code>EXTRAPOLATE</code> clauses
         </li>
         <li>
-          <code>FACET CASES()</code> and how we can use an attribute and group
+          <code>FACET CASES()</code>, including how to use attribute and group
           matching values
         </li>
         <li>
-          Using <code>filter()</code> to combine Event Types{' '}
+          <code>filter()</code> to combine Event Types{' '}
         </li>
-        <li>Overriding values if necessary</li>
+        <li>Overriding values, when necessary</li>
       </ul>
       <p>
-        You're now a Level 3 NRQL Ninja! Believe it or not, there are more
+        You're now a Level 3 NRQL Ninja! Believe it or not, there are even more
         features and functions we want to showcase in the next section.
       </p>
     </div>

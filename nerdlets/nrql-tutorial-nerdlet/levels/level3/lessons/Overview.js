@@ -7,8 +7,8 @@ export default function Overview() {
         Welcome to Level 3. Thanks for sticking with us! We hope seeing example
         queries and explanations in the context of your own data helps you
         better understand how to transform data into powerful visuals. (Try
-        queries from this course on data with different event types to really
-        understand their power!)
+        queries from this course on different event types in your own account(s)
+        to really understand their power!)
       </p>
       <p>
         We are now moving on to even more advanced concepts. You may not use

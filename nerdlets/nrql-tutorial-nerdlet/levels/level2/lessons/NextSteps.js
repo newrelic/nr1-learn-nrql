@@ -37,7 +37,7 @@ export default function NextSteps() {
         </li>
         <li>Cast attribute names to something custom and more readable</li>
         <li>
-          Search to include/exclude using Wildcards with <code>LIKE</code>/
+          Search to include/exclude using wildcards with <code>LIKE</code>/
           <code>NOT LIKE</code>, or limit results to those <code>IN</code> a
           list or <code>NOT IN</code> that list
         </li>
@@ -45,7 +45,9 @@ export default function NextSteps() {
           Query within more advanced time windows using dates, epoch, and{' '}
           <code>WITH TIMEZONE</code>
         </li>
-        <li>Group data by interesting time windows</li>
+        <li>
+          Group data into interesting time windows using time-based cohorting
+        </li>
       </ul>
       <p>
         You are now a Level 2 NRQL hero. You've learned great techniques to

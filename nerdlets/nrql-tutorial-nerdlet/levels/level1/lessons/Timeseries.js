@@ -16,7 +16,7 @@ export default function Timeseries() {
         <code>count()</code>.
       </p>
       <p>
-        We can take any query made with aggregation functions and simply add the{' '}
+        We can take any query made with aggregation functions and add the{' '}
         <code>TIMESERIES</code> keyword to plot the values over time.
       </p>
       <SampleQuery

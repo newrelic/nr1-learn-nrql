@@ -34,9 +34,9 @@ export default function Wildcards() {
       />
 
       <p>
-        Easy, right? We used the wild card <code>%</code> at the beginning and
-        end, which means that we are checking the value of the attribute we
-        chose if it contains "Web" anywhere in the text. Equally, you could use{' '}
+        We used the wild card <code>%</code> at the beginning and end, which
+        means that we are checking the value of the attribute we chose if it
+        contains "Web" anywhere in the text. Equally, you could use{' '}
         <code>%Web</code> OR <code>Web%</code> to match something that ends in
         "Web" or starts with "Web", respectively.
       </p>

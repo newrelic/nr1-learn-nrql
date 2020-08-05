@@ -123,10 +123,10 @@ export default function AggregateQuery2() {
       </p>
 
       <p>
-        Finally, we saw how easy it is to observe percentiles. For example, you
-        can use <code>percentile()</code> as a Key Performance Indictator by
-        setting a goal to ensure 90% of all end user transactions are faster
-        than a provided duration.{' '}
+        Finally, we saw how to observe percentiles. For example, you can use{' '}
+        <code>percentile()</code> as a Key Performance Indictator by setting a
+        goal to ensure 90% of all end user transactions are faster than a
+        provided duration.{' '}
       </p>
 
       <p>

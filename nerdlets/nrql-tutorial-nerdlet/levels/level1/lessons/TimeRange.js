@@ -13,7 +13,7 @@ export default function TimeRange() {
         window of data we see?
       </p>
       <p>
-        Fortunately, it's very easy. Use <code>SINCE</code> and{' '}
+        Fortunately, it's very straightforward. Use <code>SINCE</code> and{' '}
         <code>UNTIL</code> keywords to provide a beginning and end to your
         query's time range.
       </p>

@@ -5,20 +5,19 @@ export default function DiscoverEventsAndAttributes() {
   return (
     <div>
       <p>
-        Discovering Events and Attributes is the kind of utility you may want to
-        use when you begin automation and need to use NRQL to answer questions
-        about the available data before you query it.
+        Discovering Events and Attributes can help both answer questions about
+        your available data before querying it, and assist with automation!
+        Let's take a moment to explore this powerful utility.
       </p>
 
-      <h2>Discovering event types</h2>
+      <h2>Discovering Event Types</h2>
       <p>
-        For example, what if you wanted to list all types of event reporting
-        into New Relic so you can know when new events begin reporting in? The
-        special <code>SHOW EVENT TYPES</code> syntax returns a list of all event
-        types reporting for the specified period. This is one of the few
-        exceptions in NRQL where <code>SELECT</code> and <code>FROM</code> are
-        not required. You could use this to check for the existence of custom
-        event data for example.
+        Let's say you want a list of all event types currently reporting to your
+        New Relic account. The <code>SHOW EVENT TYPES</code> syntax returns a
+        list of all reported event types in a given period. This is one of the
+        rare exceptions where <code>SELECT</code> and <code>FROM</code> are not
+        required in a NRQL query. You could use this functionality for things
+        like confirming the existence of custom event data, for example.
       </p>
       <SampleQuery
         nrql="**SHOW EVENT TYPES** SINCE 1 week ago"
@@ -26,14 +25,15 @@ export default function DiscoverEventsAndAttributes() {
         span="12"
       />
 
-      <h2>Discovering attributes</h2>
+      <h2>Discovering Attributes</h2>
       <p>
         You may need to know what attributes are available for a given event
-        type. The <code>keyset()</code> function provides a list of all the
-        attributes for the event type helpfully grouped by type. Note that the
-        attributes returned are only those that have values within the time
-        window you search. You can use this to explore your data or use it in
-        automation to ensure customer data is reporting correctly for example.
+        type. The <code>keyset()</code> function provides a list of all
+        attributes for an event type, grouped by attribute type. Note that only
+        attributes that contain values within the provided time window will be
+        returned. You can use this to explore your data. You can also use it in
+        automation, for things like ensuring customer data is reporting
+        correctly.
       </p>
       <SampleQuery
         nrql="SELECT **keyset()** FROM Transaction SINCE 1 week ago"
@@ -42,10 +42,9 @@ export default function DiscoverEventsAndAttributes() {
       />
       <h2>Lesson Summary</h2>
       <p>
-        Both these features help you do interesting discovery of changes in
-        event types or attributes. More and more DevOps engineers are using
-        these functionalities to wrap up jobs and automate them quickly and
-        easily.
+        These features help you discovery of changes in event types and/or
+        attributes. More DevOps engineers use these functionalities to wrap up
+        jobs, or even quickly automate them.
       </p>
     </div>
   );

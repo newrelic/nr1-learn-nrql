@@ -41,10 +41,10 @@ export default function FirstQuery() {
       <p>
         We're now controlling the volume of results we get. But what if we don't
         want <em>all</em> the attributes? What if we would prefer to see only
-        specific data points? Fortunately, like SQL, this is extremely simple.
-        We replace <code>*</code> with the name of the attribute(s) we want. In
-        this case, we will ask for the name of a transaction and the duration of
-        time it took.
+        specific data points? Fortunately, like SQL, this can be done in only a
+        few characters. We replace <code>*</code> with the name of the
+        attribute(s) we want. In this case, we will ask for the name of a
+        transaction and the duration of time it took.
       </p>
 
       <p>

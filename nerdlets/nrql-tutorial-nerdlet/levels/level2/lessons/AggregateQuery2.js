@@ -104,9 +104,9 @@ export default function AggregateQuery2() {
         used <code>uniqueCount()</code> to count the unique entries of a
         particular attribute. But you could also use this to identify a count of
         unique machines, reporting containers, or even how many custom data
-        points are sent to New Relic. Regardless, it is extremely simple. And,
-        if we want to know what unique values are available to query, we can
-        always ask for a list using <code>uniques()</code>.{' '}
+        points are sent to New Relic. And, if we want to know what unique values
+        are available to query, we can always ask for a list using{' '}
+        <code>uniques()</code>.{' '}
       </p>
 
       <p>

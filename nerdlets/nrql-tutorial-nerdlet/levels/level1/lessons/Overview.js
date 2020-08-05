@@ -5,8 +5,8 @@ export default function Overview() {
     <div>
       <p>
         Welcome to the NRQL tutorial! This brief tutorial will get you familiar
-        with NRQL in just a few minutes. Progress through the four levels to
-        improve your skills.
+        with NRQL right here in your New Relic account. Progress through the
+        four levels to improve your skills.
       </p>
       <p>
         NRQL stands for <strong>New Relic Query Language</strong>. It gives you

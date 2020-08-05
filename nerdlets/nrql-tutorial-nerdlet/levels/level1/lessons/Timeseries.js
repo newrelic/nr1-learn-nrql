@@ -40,8 +40,8 @@ export default function Timeseries() {
         maximum possible granularity? Well, any timeseries query can have up to
         366 data buckets. This means the maximum possible for 24 hours is to
         bucket our data into 4 minute windows. We could calculate it out and use{' '}
-        <code>TIMESERIES 4 minutes</code>, or we could just ask NRDB to
-        calculate this for us using <code>TIMESERIES MAX</code>:
+        <code>TIMESERIES 4 minutes</code>, or we could ask NRDB to calculate
+        this for us using <code>TIMESERIES MAX</code>:
       </p>
       <SampleQuery
         nrql="SELECT average(duration) FROM Transaction SINCE 1 day ago **TIMESERIES MAX**"

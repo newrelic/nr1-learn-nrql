@@ -22,7 +22,7 @@ export default function AdvancedMath() {
         non-negative n values it returns n, and for negative n values it returns
         the positive number n. For example, <code>abs(2) = 2</code>, and{' '}
         <code>abs(-4) = 4</code>. Fortunately, duration is always positive, but
-        we want to demonstrate just how straightforward this is to use.
+        we want to demonstrate how straightforward this can be.
       </p>
       <p>
         We can also round decimal numbers to integers using <code>floor()</code>

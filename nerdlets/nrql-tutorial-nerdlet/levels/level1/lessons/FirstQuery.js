@@ -5,9 +5,8 @@ export default function FirstQuery() {
   return (
     <div>
       <p>
-        Let's start by looking at a single event in NRDB. In this case, let's
-        look at some data coming from an application. If you’re using New Relic
-        APM, you will have an event type called <code>Transaction</code>.
+        Let's start by looking at a single event type in NRDB called{' '}
+        <code>Transaction</code>, gathered by New Relic APM.
       </p>
 
       <p>

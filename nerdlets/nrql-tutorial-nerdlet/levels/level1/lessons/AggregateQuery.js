@@ -25,7 +25,7 @@ export default function AggregateQuery() {
       <p>
         NRQL has many built-in functions you can use to aggregate event data.
         Common functions you might use include <code>max()</code>,{' '}
-        <code>min()</code> and <code>percentile()</code>.
+        <code>min()</code>, and <code>percentile()</code>.
       </p>
       <p>
         {' '}
@@ -47,7 +47,7 @@ export default function AggregateQuery() {
       <p>
         We now know how long the slowest customer experience in the last 60
         minutes took. Next, let's invert the logic: How long was the fastest
-        experience? If we ask NRDB for <code>min(duration)</code>, we can find
+        experience? If we ask NRDB for <code>min(duration)</code> we can find
         out.
       </p>
       <SampleQuery nrql="SELECT **min(duration)** FROM Transaction " span="6" />
@@ -83,7 +83,7 @@ export default function AggregateQuery() {
 
       <p>
         We've chosen <code>duration</code> and calculated the{' '}
-        <code>average</code>, <code>max</code> and <code>min</code>. We learned
+        <code>average</code>, <code>max</code>, and <code>min</code>. We learned
         how to <code>sum</code> up numeric attributes and <code>count</code> all
         the events for a time period.
       </p>

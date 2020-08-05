@@ -26,7 +26,7 @@ export default function AdvancedMath() {
       </p>
       <p>
         We can also round decimal numbers to integers using <code>floor()</code>
-        , <code>ceil()</code> and <code>round()</code>. <code>floor()</code>{' '}
+        , <code>ceil()</code>, and <code>round()</code>. <code>floor()</code>{' '}
         returns the closest full integer rounding down, and <code>ceil()</code>{' '}
         does the opposite by rounding up. <code>round()</code> is bi-directional
         and will round up <em>or</em> down to the closest full integer.

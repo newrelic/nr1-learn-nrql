@@ -6,13 +6,13 @@ export default function Timeseries() {
     <div>
       <p>
         A common NRQL use case is querying how a value changes over time. This
-        type of query provides data for line charts, area charts and other
+        type of query provides data for line charts, area charts, and other
         visualizations.
       </p>
       <p>
         "Timeseries" queries in NRDB are a piece of cake. We've already run some
         to explore aggregation functions <code>average()</code>,{' '}
-        <code>max()</code>/<code>min()</code>, <code>sum()</code> and{' '}
+        <code>max()</code>/<code>min()</code>, <code>sum()</code>, and{' '}
         <code>count()</code>.
       </p>
       <p>

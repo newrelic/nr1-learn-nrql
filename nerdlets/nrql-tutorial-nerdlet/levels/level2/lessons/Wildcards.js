@@ -77,9 +77,8 @@ export default function Wildcards() {
 
       <h2>Lesson Summary</h2>
       <p>
-        You can now control your data and manipulate it to do what you need.
-        This is how the best and most powerful dashboards and alerts are
-        constructed.
+        You can now control your data and manipulate it to do what you need,
+        allowing you to construct powerful, meaningful dashboards and alerts.
       </p>
     </div>
   );

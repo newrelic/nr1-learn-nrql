@@ -10,7 +10,7 @@ export default function Overview() {
       </p>
       <p>
         NRQL stands for <strong>New Relic Query Language</strong>. It gives you
-        realtime access to petabytes of Metric, Event, Log and Trace data in
+        realtime access to petabytes of Metric, Event, Log, and Trace data in
         NRDB.
       </p>
       <p>

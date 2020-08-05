@@ -7,8 +7,8 @@ export default function AggregateQuery3() {
       <p>
         New Relic offers many different aggregation abilities. Each function
         serves a different, useful purpose. In this lesson, we will explore how
-        to use Rate, Funnels, Filter, Histograms and Apdex aggregation to answer
-        more advanced questions.
+        to use Rate, Funnels, Filter, Histograms, and Apdex aggregation to
+        answer more advanced questions.
       </p>
 
       <h2>Calculating Rate</h2>

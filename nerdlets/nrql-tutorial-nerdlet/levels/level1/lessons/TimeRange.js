@@ -60,7 +60,7 @@ export default function TimeRange() {
         These controls let us zero in on the data of interest by defining where
         the data should start and end. In our examples, we saw that we can
         easily choose the window and use common terms like <code>week</code>,{' '}
-        <code>day</code>, <code>hour</code>, <code>minute</code> and their
+        <code>day</code>, <code>hour</code>, <code>minute</code>, and their
         plurals. You can even use <code>month</code> and <code>year</code> if
         you're storing that much data in New Relic.
       </p>

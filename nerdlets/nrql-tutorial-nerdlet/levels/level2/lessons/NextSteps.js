@@ -42,7 +42,7 @@ export default function NextSteps() {
           list or <code>NOT IN</code> that list
         </li>
         <li>
-          Query within more advanced time windows using dates, epoch and{' '}
+          Query within more advanced time windows using dates, epoch, and{' '}
           <code>WITH TIMEZONE</code>
         </li>
         <li>Group data by interesting time windows</li>
@@ -52,7 +52,7 @@ export default function NextSteps() {
         control your data and produce much more interesting visualizations. Get
         ready to advance to level three, where you'll learn more interesting
         NRQL skills including filters, facet cases, histogram, apdex, filtering
-        to eventTypes, overriding values and extrapolation.
+        to eventTypes, overriding values, and extrapolation.
       </p>
       <p>
         Revel in your newly attained knowledge. You are now equipped to build

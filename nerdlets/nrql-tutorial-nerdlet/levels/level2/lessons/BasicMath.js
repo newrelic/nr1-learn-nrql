@@ -7,7 +7,7 @@ export default function BasicMath() {
       <p>
         NRQL supports basic math operators. You can perform addition (
         <code>+</code>), subtraction (<code>-</code>), multiplication (
-        <code>*</code>) and division (<code>/</code>) on both numeric attribute
+        <code>*</code>), and division (<code>/</code>) on both numeric attribute
         values, and results of aggregator functions.
       </p>
       <p>

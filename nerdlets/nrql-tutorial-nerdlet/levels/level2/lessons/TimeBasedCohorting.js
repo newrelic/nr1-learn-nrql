@@ -8,7 +8,7 @@ export default function TimeBasedCohorting() {
         Time-based cohorting...what a complicated but fun term! While it sounds
         complex, "time-based cohorting" is simply a way to organize data into
         time-based groups like <code>minuteOf</code>, <code>hourOf</code>,{' '}
-        <code>weekOf</code> and more.
+        <code>weekOf</code>, and more.
       </p>
       <p>
         When we use the <code>SINCE</code> clause for durations, we retrieve the

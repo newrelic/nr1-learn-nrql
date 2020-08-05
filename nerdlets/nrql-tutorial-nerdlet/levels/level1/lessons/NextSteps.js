@@ -10,7 +10,7 @@ export default function NextSteps() {
       </p>
       <p>
         If you've made it this far, you now know the basics of querying event
-        data using NRQL. You can create dashboards, and alerts; and, if you know
+        data using NRQL. You can create dashboards and alerts; and, if you know
         some React, you can even create your own Apps to run natively inside New
         Relic One.
       </p>
@@ -25,7 +25,7 @@ export default function NextSteps() {
         <li>Specifying attributes</li>
         <li>
           Aggregating using <code>average()</code>, <code>max()</code>,{' '}
-          <code>min()</code>, <code>sum()</code> and <code>count()</code>
+          <code>min()</code>, <code>sum()</code>, and <code>count()</code>
         </li>
         <li>
           Using <code>SINCE</code> and <code>UNTIL</code>

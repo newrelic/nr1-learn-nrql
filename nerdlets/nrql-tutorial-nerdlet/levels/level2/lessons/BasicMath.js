@@ -26,7 +26,7 @@ export default function BasicMath() {
       <p>
         Great! We just performed some basic math. This is useful if we are
         listing individual events. But what if we want to know the average
-        duration of transactions without the database time? Well, we can simply
+        duration of transactions without the database time? Conveniently, we can
         do the arithmetic within the function:
       </p>
       <SampleQuery
@@ -35,11 +35,10 @@ export default function BasicMath() {
       />
 
       <p>
-        Simple, right? Now, what if we wanted to get even more complicated and
-        subtract, divide, <em>and</em> multiply in the same query to figure out
-        the duration without database time, as a percentage of overall time? We
-        can simply build out the math. It reads pretty much exactly how you
-        would expect.
+        Now, what if we wanted to get even more complicated and subtract,
+        divide, <em>and</em> multiply in the same query to figure out the
+        duration without database time, as a percentage of overall time? Well,
+        we can add the math:
       </p>
       <SampleQuery
         nrql="SELECT **(average(duration) - average(databaseDuration)) / average(duration) \* 100** FROM Transaction WHERE databaseDuration IS NOT NULL"

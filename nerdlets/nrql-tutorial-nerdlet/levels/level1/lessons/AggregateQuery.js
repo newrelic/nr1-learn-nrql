@@ -68,7 +68,7 @@ export default function AggregateQuery() {
       />
 
       <p>
-        Finally, you can also simply count all recorded <code>Transaction</code>{' '}
+        Finally, you can also count all recorded <code>Transaction</code>{' '}
         events. We do this with <code>count(*)</code>. In this example, we count
         all recorded events for all applications reporting to New Relic APM:
       </p>

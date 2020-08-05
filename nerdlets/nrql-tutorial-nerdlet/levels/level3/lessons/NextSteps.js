@@ -33,7 +33,7 @@ export default function NextSteps() {
         <li>Overriding values, when necessary</li>
       </ul>
       <p>
-        You're now a Level 3 NRQL Ninja! Believe it or not, there are even more
+        You're now a Level 3 NRQL expert! Believe it or not, there are even more
         features and functions we want to showcase in the next section.
       </p>
     </div>

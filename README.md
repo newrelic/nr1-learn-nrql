@@ -9,7 +9,7 @@ The NRQL Lessons Nerdpack is an application to help quicken users of NRQL for da
 1. Level One: Learning the Ropes
 2. Level Two: Controlling Your Data
 3. Level Three: Advancing Your Dashboarding
-4. Level Four: NRQL Ninja
+4. Level Four: NRQL Power User
 
 Each level is designed to take your skill level up in hopefully easily understood examples and descriptions with live data from your account. We have primarily built this application to work with APM data. If you do not currently use New Relic APM data you may see some empty results but the logic should largely still persist to other event types. We hope to build in fallback queries in the future to ensure that this learning tool may work in multiple data set scenarios.
 
@@ -19,7 +19,7 @@ This project is distributed under the [Apache 2 license](LICENSE).
 
 ## Install using NR1 Application Catalog
 
-This application is primarily designed to be installed via the New Relic Application Catalog. 
+This application is primarily designed to be installed via the New Relic Application Catalog.
 
 Navigate to your Apps section and look for the NRQL Lessons application. Once you have clicked into the application you will be offered clear details about the goals of the application and a Manage Access button top right. You simply click Manage Access and ensure to select an account where you wish to make this app visible for all users.
 

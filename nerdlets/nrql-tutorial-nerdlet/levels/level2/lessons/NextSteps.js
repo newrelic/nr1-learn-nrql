@@ -48,7 +48,7 @@ export default function NextSteps() {
         <li>Group data by interesting time windows</li>
       </ul>
       <p>
-        You are now a Level 2 NRQL Ninja. You've learned great techniques to
+        You are now a Level 2 NRQL hero. You've learned great techniques to
         control your data and produce much more interesting visualizations. Get
         ready to advance to level three, where you'll learn more interesting
         NRQL skills including filters, facet cases, histogram, apdex, filtering

@@ -20,7 +20,7 @@ export default [
     lessons: Level3
   },
   {
-    title: 'NRQL Ninja',
+    title: 'NRQL Power User',
     level: 'Level Four',
     lessons: Level4
   }

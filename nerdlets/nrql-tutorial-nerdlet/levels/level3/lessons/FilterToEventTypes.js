@@ -5,7 +5,7 @@ export default function FilterToEventTypes() {
   return (
     <div>
       <p>
-        We're truly becoming NRQL ninjas! Next we'll explore something few New
+        We're truly becoming NRQL wizards! Next we'll explore something few New
         Relic customers are even aware of: filtering to event types.
       </p>
 

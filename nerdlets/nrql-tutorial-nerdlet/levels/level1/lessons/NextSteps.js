@@ -41,7 +41,7 @@ export default function NextSteps() {
         </li>
       </ul>
       <p>
-        You're now a Level 1 NRQL Ninja. We've got more to show you but pat
+        You're now a Level 1 NRQL whiz. We've got more to show you but pat
         yourself on the back, you've learned enough NRQL to begin visualizing
         your data in meaningful ways.
       </p>

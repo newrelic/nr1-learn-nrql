@@ -5,31 +5,31 @@ export default function AdvancedMath() {
   return (
     <div>
       <p>
-        We have some nifty math functions available to you if you really want to
-        massage your data and extrapolate values to power of X, find square
-        roots, apply clamping to impose upper and lower bounds or just keep
-        things postive on the Y axis.
+        NRQL also supports some nifty, more advanced mathetmatical functions for
+        those who need to get nitty-gritty with their data. These functions can
+        extrapolate values to power of X, find square roots, apply clamping to
+        impose upper and lower bounds, or even just keep values postive on the Y
+        axis.
       </p>
 
-      <h2>Absolute and integer rounding</h2>
+      <h2>Absolute and Integer Rounding</h2>
       <p>
-        NRQL has a number of math functions that let you manipulate the value in
-        some way. In this example, we will demonstrate a few all at once.
+        NRQL has many math functions that manipulate values in some way. In this
+        example, we will demonstrate a few simultaneously.
       </p>
       <p>
         The <code>abs(n)</code> function returns the absolute value for n: for
-        non-negative n values it returns n, and for negative n it returns the
-        positive number n. For example, <code>abs(2) = 2</code>, and{' '}
-        <code>abs(-4) = 4</code>. Fortunately, duration is always positive but
-        we want to ensure it’s obvious how easy to use this is.
+        non-negative n values it returns n, and for negative n values it returns
+        the positive number n. For example, <code>abs(2) = 2</code>, and{' '}
+        <code>abs(-4) = 4</code>. Fortunately, duration is always positive, but
+        we want to demonstrate how straightforward this can be.
       </p>
       <p>
-        We can round decimal numbers to integers using <code>floor()</code>,{' '}
-        <code>ceil()</code> and <code>round()</code>. <code>floor()</code> will
-        return the closest full integer rounding down, with <code>ceil()</code>{' '}
-        doing the opposite by rounding up. <code>round()</code> is
-        bi-directional and will round up <em>or</em> down to the closest full
-        integer.
+        We can also round decimal numbers to integers using <code>floor()</code>
+        , <code>ceil()</code>, and <code>round()</code>. <code>floor()</code>{' '}
+        returns the closest full integer rounding down, and <code>ceil()</code>{' '}
+        does the opposite by rounding up. <code>round()</code> is bi-directional
+        and will round up <em>or</em> down to the closest full integer.
       </p>
       <SampleQuery
         nrql="SELECT **abs(duration)**, **round(duration)**, **ceil(duration)**, **floor(duration)** FROM Transaction SINCE 1 day ago"
@@ -37,37 +37,37 @@ export default function AdvancedMath() {
         span="12"
       />
 
-      <h2>Data clamping</h2>
+      <h2>Data Clamping</h2>
       <p>
-        We can use clamping on an attribute when we want to impose an upper or
-        lower limit on its value. This is useful, for example, for ensuring
-        extreme outliers don't skew the scale of a timeseries graph.{' '}
-        <code>clamp_max(duration, 10)</code> will return the duration, unless it
+        We can use clamping on an attribute to impose an upper or lower limit on
+        its value. This is useful for things like ensuring extreme outliers
+        don't skew the scale of a timeseries graph.{' '}
+        <code>clamp_max(duration, 10)</code> returns the duration, unless it
         exceeds 10, in which case 10 is returned. Quite simply, anything greater
         than 10 is forced to equal 10. <code>clamp_min(duration,1)</code> does
-        the inverse. If any duration is below 1, it is forced to be 1.
+        the inverse; if any duration is below 1, it is forced to equal 1.
       </p>
       <SampleQuery
         nrql="SELECT **clamp\_max(average(duration), 10)**, **clamp\_min(average(duration), 1)** FROM Transaction SINCE 1 day ago TIMESERIES"
         span="12"
       />
 
-      <h2>Powers, roots, exponential and logs</h2>
+      <h2>Powers, Roots, Exponential, and Logs</h2>
       <p>
-        Now we are onto the maths I struggled with at school! NRQL allows you to
-        easily calculate these values for your data. As before, we can show all
-        of these functions in a single example query.
+        Now we are onto the advanced maths some of us found challenging in
+        school! As before, we can demonstrate all these functions in a single
+        example query.
       </p>
       <p>
         The <code>pow()</code> function raises the first argument to the power
-        of the second argument. In our example, we have raised duration to the
-        power of 2. If you need to know the square root of a value, then the{' '}
-        <code>sqrt()</code> function is straight forward. The <code>exp()</code>{' '}
-        function computes the natural exponential function of the argument.
+        of the second argument. In our example, we raise duration to the power
+        of 2. If you need the square root of a value, the <code>sqrt()</code>{' '}
+        function can quickly provide this. And the <code>exp()</code> function
+        computes the natural exponential function of its argument.
       </p>
       <p>
-        Finally, we have logarithms which are catered for with a number of
-        similar functions:
+        Finally, NRQL also offers logarithms catered to a number of similar
+        functions:
       </p>
       <ul>
         <li>
@@ -94,13 +94,12 @@ export default function AdvancedMath() {
 
       <h2>Lesson Summary</h2>
       <p>
-        In this lesson, we learned a lot about smoothing the event data we're
-        working with. <code>round()</code>/<code>ceil()</code>/
-        <code>floor()</code> let us round in the way that suits us the most.
-        Clamping lets us put bounds around the data. And then, our advanced
-        mathematic tools for logarithm, square root, power and exponential all
-        give us further control to manipulate our data to plot in the ways we
-        need.
+        In this lesson, we learned about smoothing event data.{' '}
+        <code>round()</code>/<code>ceil()</code>/<code>floor()</code> let us
+        round in whichever manner suits us. Clamping lets us put bounds on the
+        data. And our advanced mathematic tools for logarithm, square root,
+        power and exponential all offer further control to manipulate and plot
+        data however we need.
       </p>
     </div>
   );

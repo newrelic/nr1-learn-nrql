@@ -34,9 +34,9 @@ export default function Wildcards() {
       />
 
       <p>
-        Easy, right? We used the wild card <code>%</code> at the beginning and
-        end, which means that we are checking the value of the attribute we
-        chose if it contains "Web" anywhere in the text. Equally, you could use{' '}
+        We used the wild card <code>%</code> at the beginning and end, which
+        means that we are checking the value of the attribute we chose if it
+        contains "Web" anywhere in the text. Equally, you could use{' '}
         <code>%Web</code> OR <code>Web%</code> to match something that ends in
         "Web" or starts with "Web", respectively.
       </p>
@@ -77,9 +77,8 @@ export default function Wildcards() {
 
       <h2>Lesson Summary</h2>
       <p>
-        You can now control your data and manipulate it to do what you need.
-        This is how the best and most powerful dashboards and alerts are
-        constructed.
+        You can now control your data and manipulate it to do what you need,
+        allowing you to construct powerful, meaningful dashboards and alerts.
       </p>
     </div>
   );

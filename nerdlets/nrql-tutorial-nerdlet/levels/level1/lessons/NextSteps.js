@@ -5,12 +5,12 @@ export default function NextSteps() {
     <div>
       <p>
         <strong>
-          Congratulations on completing Level 1: Learning The Ropes
+          Congratulations on completing Level 1: Learning The Ropes!
         </strong>
       </p>
       <p>
         If you've made it this far, you now know the basics of querying event
-        data using NRQL. Now you can create dashboards, alerts or if you know
+        data using NRQL. You can create dashboards and alerts; and, if you know
         some React, you can even create your own Apps to run natively inside New
         Relic One.
       </p>
@@ -25,7 +25,7 @@ export default function NextSteps() {
         <li>Specifying attributes</li>
         <li>
           Aggregating using <code>average()</code>, <code>max()</code>,{' '}
-          <code>min()</code>, <code>sum()</code> and <code>count()</code>
+          <code>min()</code>, <code>sum()</code>, and <code>count()</code>
         </li>
         <li>
           Using <code>SINCE</code> and <code>UNTIL</code>
@@ -41,7 +41,7 @@ export default function NextSteps() {
         </li>
       </ul>
       <p>
-        You're now a Level 1 NRQL Ninja. We've got more to show you but pat
+        You're now a Level 1 NRQL whiz. We've got more to show you but pat
         yourself on the back, you've learned enough NRQL to begin visualizing
         your data in meaningful ways.
       </p>

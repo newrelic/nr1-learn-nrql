@@ -5,17 +5,17 @@ export default function UsingRegex() {
   return (
     <div>
       <p>
-        Customers often want to filter data with more complex pattern matching
-        than that provided by <code>LIKE</code>. Using a regular expression as a
-        filter helps with more complicated matching and the <code>RLIKE</code>{' '}
-        operator lets us do just that.
+        You may occasionally want to filter data with more complex pattern
+        matching than is provided by <code>LIKE</code>. With the{' '}
+        <code>RLIKE</code> clause, we can filter with regular expression for
+        more complicated matching.
       </p>
 
       <p>
-        In any scenario where you may have used LIKE, you can now use RLIKE and
-        within the quotations provide common regex to match the string of
-        interest. In this example, we list all the host names that end in an
-        even number or consonant.{' '}
+        In any scenario you could use <code>LIKE</code>, you now have the option
+        to use <code>RLIKE</code>, and provide corresponding Regex in
+        quotations. In this example, we list all host names ending in even
+        numbers or consonants.{' '}
       </p>
       <SampleQuery
         nrql="SELECT uniques(host) FROM Transaction WHERE host **RLIKE '^.\*\[02468bcdfghjklmnpqrstvwxyz]'**"
@@ -24,8 +24,8 @@ export default function UsingRegex() {
       />
 
       <p>
-        You can also just do simple matching, maybe you want to match a value
-        that starts with a letter or word.
+        You can also do simple matching. For instance, maybe you want to match a
+        value that starts with a given letter or word.
       </p>
       <SampleQuery
         nrql="SELECT count(\*) FROM Transaction WHERE name **RLIKE 'W.\*|O.\*'** FACET name"
@@ -40,23 +40,24 @@ export default function UsingRegex() {
         >
           RE2 syntax
         </a>
-        . If you need to escape characters, please be aware that you might
-        require double backslashing escape sequences. e.g. <code>\\*</code>
+        . If you need to escape characters, you may need to use double
+        backslashing escape sequences. e.g. <code>\\*</code>
       </p>
 
       <p>
         <strong>
-          Please be aware that <code>RLIKE</code> is inherently more complex and
-          less performant than <code>LIKE</code>. Only use it if{' '}
-          <code>LIKE</code> or other filtering does not cater to your needs.
+          Know that <code>RLIKE</code> is inherently more complex and less
+          performant than <code>LIKE</code>. Only use it when <code>LIKE</code>{' '}
+          and other filtering functionality does not fit your needs.
         </strong>
       </p>
 
       <h2>Lesson Summary</h2>
       <p>
-        Regular expression support is definitely a super powerful addition to
-        NRQL. If you are already a regex guru, then you already know the power
-        this adds to the New Relic Query Language.
+        Regular expression support allows for near-infinite pattern matching
+        possibilities. If you are already a Regex guru, you know the power this
+        adds to NRQL. But if you're not, don't worry! There are tons of Regex
+        resources available to reference online.
       </p>
     </div>
   );

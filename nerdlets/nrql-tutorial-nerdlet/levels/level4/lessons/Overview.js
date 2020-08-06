@@ -4,15 +4,15 @@ export default function Overview() {
   return (
     <div>
       <p>
-        Thanks for continuing on this journey with us. We have already learned
-        so much and achieved a lot of incredible things using the power of NRQL,
-        and hopefully, you are now a dashboarding and alerting hero!
+        Welcome to level 4! Thanks for continuing on this journey with us. We
+        have already learned so much, and witnessed the incredible power of NRQL
+        together. You're already a dashboarding and alerting hero!
       </p>
       <p>
-        In this part of the course, we will discuss some final aggregation
-        techniques, look at some advanced math functions that are available to
-        you and also talk about more advanced features, like regex filtering and
-        nested aggregation, that you will find invaluable. Let's get started.
+        This next section will discuss additional aggregation techniques,
+        higher-level math functions, and advanced features like Regex filtering,
+        and nested aggregation. We think you'll find these features downright
+        invaluable. Let's get started!
       </p>
     </div>
   );

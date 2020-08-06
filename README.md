@@ -6,12 +6,10 @@
 
 The NRQL (New Relic Query Language) Lessons Nerdpack will help you quickly learn the value and power of our query language. We've developed this application for dashboard and alerts users, but everyone will get something out of it. We've broken this content into four levels, from simple to complex. Each level will expand your understanding of NRQL in a different way. 
 
-You'll use New Relic One's Query Builder to write queries and see the results of those queries immediately.
-
-1. Level One: Learn the Ropes
-2. Level Two: Control Your Data
-3. Level Three: Advance Your Dashboarding
-4. Level Four: NRQL Ninja
+1. Level One: Learning the Ropes
+2. Level Two: Controlling Your Data
+3. Level Three: Advancing Your Dashboarding
+4. Level Four: NRQL Power User
 
 Each level uses easily understanable examples and descriptions with live data from your account to improve your NRQL skill. 
 
@@ -23,7 +21,7 @@ This project is distributed under the [Apache 2 license](LICENSE).
 
 ## Install using New Relic One Application Catalog
 
-The easiest way to install this application is with the New Relic Application Catalog. 
+This application is primarily designed to be installed via the New Relic Application Catalog.
 
 In [New Relic One](https://one.newrelic.com), navigate to your Apps section and click the NRQL Lessons application. The application will give you clear details about the goals of each lesson. The Manage Access button in the top right will let you choose the account where you want to make this app visible. It will be visible to all users of that account.
 

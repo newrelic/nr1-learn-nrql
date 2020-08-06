@@ -55,7 +55,7 @@ export default function Timeseries() {
       </p>
 
       <p>
-        As you can see, using Timeseries offers full control over
+        As you can see, using <code>TIMESERIES</code> offers full control over
         visualizations, granularity and averaging data over specified windows.
       </p>
     </div>

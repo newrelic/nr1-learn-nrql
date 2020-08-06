@@ -9,7 +9,7 @@ export default function Where() {
         example, let's query for our backend application's average response
         time. This data includes an attribute called{' '}
         <code>transactionType</code>, which specifies whether the transaction we
-        timed was a "Web", or "Non-Web" (such as a chron-job or queued task)
+        timed was a "Web", or "Non-Web" (such as a cron job or queued task)
         transaction.
       </p>
       <p>

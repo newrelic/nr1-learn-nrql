@@ -24,7 +24,7 @@ export default function AggregateQuery3() {
         In the example below, we display the average frequency of requests per 5
         minutes for the last hour. We compare this to the previous hour’s
         5-minute average frequency. Notice the query uses{' '}
-        <code>since 1 hour ago</code>, this is the overall time window in which
+        <code>SINCE 1 hour ago</code>, this is the overall time window in which
         we are calculating the rate.
       </p>
 

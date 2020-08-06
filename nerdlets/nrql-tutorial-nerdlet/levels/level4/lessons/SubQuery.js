@@ -37,7 +37,7 @@ export default function SubQuery() {
       />
       <p>
         Now, in order to find the maximum value reported across that period, we
-        wrap the query in parentheses, and use "select from" like this:{' '}
+        wrap the query in parentheses, and use <code>SELECT ... FROM</code> like this:{' '}
         <code>SELECT z FROM (SELECT x FROM y)</code>
       </p>
       <SampleQuery

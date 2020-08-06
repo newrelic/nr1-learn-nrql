@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/newrelic/nr1-learn-nrql/compare/v1.0.0...v1.1.0) (2020-08-06)
+
+
+### Features
+
+* Instructional design review changes ([e62d858](https://github.com/newrelic/nr1-learn-nrql/commit/e62d85851b27f1b74c98af5826e7943216baa852))
+
 # 1.0.0 (2020-07-29)
 
 

@@ -37,8 +37,8 @@ export default function SubQuery() {
       />
       <p>
         Now, in order to find the maximum value reported across that period, we
-        wrap the query in parentheses, and use <code>SELECT ... FROM</code> like this:{' '}
-        <code>SELECT z FROM (SELECT x FROM y)</code>
+        wrap the query in parentheses, and use <code>SELECT ... FROM</code> like
+        this: <code>SELECT z FROM (SELECT x FROM y)</code>
       </p>
       <SampleQuery
         nrql="**SELECT max(rpm) FROM (**SELECT count(\*) **AS rpm** FROM Transaction TIMESERIES 1 MINUTE**)**"

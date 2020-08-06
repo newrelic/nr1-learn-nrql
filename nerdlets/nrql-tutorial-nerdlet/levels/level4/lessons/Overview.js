@@ -6,7 +6,7 @@ export default function Overview() {
       <p>
         Welcome to level 4! Thanks for continuing on this journey with us. We
         have already learned so much, and witnessed the incredible power of NRQL
-        together You're already a dashboarding and alerting hero!
+        together. You're already a dashboarding and alerting hero!
       </p>
       <p>
         This next section will discuss additional aggregation techniques,

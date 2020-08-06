@@ -2,5 +2,5 @@
     "schemaType": "NERDLET",
     "id": "nrql-tutorial-nerdlet",
     "displayName": "NRQL Lessons",
-    "description": ""
+    "description": "A self-paced learning tool that contains NRQL lessons in various levels"
 }

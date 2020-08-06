@@ -11,7 +11,8 @@ import {
   UserStorageQuery,
   Button,
   Icon,
-  Spinner
+  Spinner,
+  nerdlet
 } from 'nr1';
 import LEVELS from './levels';
 import LessonPicker from './components/LessonPicker';
@@ -34,6 +35,9 @@ export default class NrqlTutorialNerdlet extends React.Component {
 
   componentDidMount() {
     this.loadAccounts();
+    nerdlet.setConfig({
+      timePicker: false
+    });
   }
 
   async loadAccounts() {

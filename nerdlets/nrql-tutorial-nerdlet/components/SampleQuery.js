@@ -97,7 +97,7 @@ export default class SampleQuery extends React.Component {
     let nrqlPlain = nrql
       .replace(/\*\*/g, '')
       .replace(/\\\*/g, '*')
-      .replace(/\\\_/g, '_')
+      .replace(/\\_/g, '_')
       .replace(/\\\[/g, '[');
 
     if (markdown === 'no') {

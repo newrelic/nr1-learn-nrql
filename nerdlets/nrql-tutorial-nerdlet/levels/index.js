@@ -25,7 +25,6 @@ export default [
     level: 'Level Four',
     lessons: Level4
   },
-  ,
   {
     title: 'Useful Resources and Links',
     level: 'Resources',

@@ -15,7 +15,7 @@ export class LessonContextProvider extends React.Component {
       <LessonContext.Provider
         value={{
           accountId: this.props.accountId,
-          chooseLesson: this.props.chooseLesson 
+          chooseLesson: this.props.chooseLesson
         }}
       >
         {this.props.children}

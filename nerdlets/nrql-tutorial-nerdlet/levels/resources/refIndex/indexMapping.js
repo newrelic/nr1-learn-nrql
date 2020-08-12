@@ -159,10 +159,6 @@ export const indexMapping = [
             {
                 "level": 3,
                 "lesson": 3
-            },
-            {
-                "level": 3,
-                "lesson": 3
             }
         ]
     },
@@ -555,18 +551,6 @@ export const indexMapping = [
             {
                 "level": 1,
                 "lesson": 4
-            },
-            {
-                "level": 2,
-                "lesson": 2
-            },
-            {
-                "level": 2,
-                "lesson": 2
-            },
-            {
-                "level": 2,
-                "lesson": 2
             }
         ]
     },
@@ -623,10 +607,6 @@ export const indexMapping = [
             {
                 "level": 3,
                 "lesson": 3
-            },
-            {
-                "level": 3,
-                "lesson": 3
             }
         ]
     },
@@ -671,10 +651,6 @@ export const indexMapping = [
             {
                 "level": 1,
                 "lesson": 4
-            },
-            {
-                "level": 2,
-                "lesson": 2
             },
             {
                 "level": 2,

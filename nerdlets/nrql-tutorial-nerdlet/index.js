@@ -206,7 +206,7 @@ export default class NrqlTutorialNerdlet extends React.Component {
               </GridItem>
 
               <GridItem columnSpan={9}>
-                <LessonContextProvider accountId={Number(selectedAccount)} chooseLesson={(level,lesson)=>{this.chooseLesson(level,lesson)}}>
+                <LessonContextProvider accountId={Number(selectedAccount)} chooseLesson={(level,lesson)=>{this.chooseLesson(level,lesson); this.topRef.current.scrollIntoView();}}>
                   <Lesson levelTitle={levelTitlePrefix} {...lesson} />
                   {showNextButton && <NextLessonBt />}
                 </LessonContextProvider>

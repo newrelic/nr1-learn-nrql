@@ -2,7 +2,7 @@ import RefIndex from './refIndex';
 
 export default [
   {
-    title: 'Index',
+    title: 'Function and Operator Index',
     component: RefIndex
   }
 ];

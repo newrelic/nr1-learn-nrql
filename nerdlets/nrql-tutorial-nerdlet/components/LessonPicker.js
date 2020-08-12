@@ -66,7 +66,7 @@ function Level({
         }}
         type="button"
       >
-        {titlePrefix.toUpperCase()}: {title}
+        {titlePrefix=="Resources" ? "" : titlePrefix.toUpperCase()+": "}{title}
       </button>
       <Collapse
         isOpen={level === selectedLevel}

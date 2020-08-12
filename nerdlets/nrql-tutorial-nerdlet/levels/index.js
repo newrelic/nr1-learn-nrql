@@ -27,7 +27,7 @@ export default [
   },
   ,
   {
-    title: 'Resources',
+    title: 'Useful Resources and Links',
     level: 'Resources',
     lessons: Resources
   }

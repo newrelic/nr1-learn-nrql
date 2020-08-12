@@ -6,14 +6,16 @@ const LessonContext = React.createContext();
 export class LessonContextProvider extends React.Component {
   static propTypes = {
     children: PropTypes.node,
-    accountId: PropTypes.number
+    accountId: PropTypes.number,
+    chooseLesson: PropTypes.func
   };
 
   render() {
     return (
       <LessonContext.Provider
         value={{
-          accountId: this.props.accountId
+          accountId: this.props.accountId,
+          chooseLesson: this.props.chooseLesson 
         }}
       >
         {this.props.children}

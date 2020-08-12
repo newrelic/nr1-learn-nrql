@@ -10,8 +10,6 @@ export default function RefIndex() {
   return (
     <LessonContextConsumer>
     {context => {
-
-      console.log("LEVELS",LEVELS)
       indexMapping.sort((a, b) => (a.op > b.op) ? 1 : -1) //sort the ops first
       let items = indexMapping.map((item)=>{
 

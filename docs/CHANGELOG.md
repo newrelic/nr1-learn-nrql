@@ -1,3 +1,16 @@
+# [1.2.0](https://github.com/newrelic/nr1-learn-nrql/compare/v1.1.0...v1.2.0) (2020-08-18)
+
+
+### Bug Fixes
+
+* Update explanation for sample facet query ([ab8b8f1](https://github.com/newrelic/nr1-learn-nrql/commit/ab8b8f1a499ea50035d38c6f55947590ee19bcf2))
+
+
+### Features
+
+* Add clarification for uniques, uniqueCount, LIMIT ([8952cdc](https://github.com/newrelic/nr1-learn-nrql/commit/8952cdc36641408e77aa3e53b57d4ea7baac9da3))
+* Add mention of median, stdvar ([c9fdae4](https://github.com/newrelic/nr1-learn-nrql/commit/c9fdae4d54d99eef2c520664c03c7c4d31487336))
+
 # [1.1.0](https://github.com/newrelic/nr1-learn-nrql/compare/v1.0.0...v1.1.0) (2020-08-06)
 
 

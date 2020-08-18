@@ -41,8 +41,8 @@ export default function Facet() {
         span="6"
       />
       <p>
-        This query compares the response times of Web Transactions, broken down
-        by individual applications that report to New Relic:
+        This query compares the quantity of Web transactions, broken down by
+        individual applications that report to New Relic:
       </p>
       <SampleQuery
         nrql="SELECT count(\*) FROM Transaction WHERE transactionType='Web' **FACET appName** LIMIT 5 SINCE 6 hours ago TIMESERIES"

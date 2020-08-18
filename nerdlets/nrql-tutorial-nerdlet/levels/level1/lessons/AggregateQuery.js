@@ -25,7 +25,8 @@ export default function AggregateQuery() {
       <p>
         NRQL has many built-in functions you can use to aggregate event data.
         Common functions you might use include <code>max()</code>,{' '}
-        <code>min()</code>, and <code>percentile()</code>.
+        <code>min()</code>, <code>median()</code>, and <code>percentile()</code>
+        .
       </p>
       <p>
         {' '}

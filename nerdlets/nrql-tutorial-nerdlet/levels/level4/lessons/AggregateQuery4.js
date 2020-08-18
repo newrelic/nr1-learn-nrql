@@ -9,7 +9,7 @@ export default function AggregateQuery4() {
         deviation and bucketing.
       </p>
 
-      <h2>Standard Deviation</h2>
+      <h2>Standard Deviation and Variance</h2>
       <p>
         Standard deviation mesaures the amount of variation or dispersion within
         a set of values. It uses a scale from low (values close to the average)
@@ -23,6 +23,12 @@ export default function AggregateQuery4() {
         nrql="SELECT **stddev(duration)** from Transaction since 24 hours ago COMPARE WITH 24 hours ago TIMESERIES "
         span="12"
       />
+
+      <p className="notice">
+        The <code>stdvar()</code> function works in a similar way to{' '}
+        <code>stddev()</code> but returns the standard variance for numeric
+        attributes.
+      </p>
 
       <h2>Facet Bucketing</h2>
       <p>

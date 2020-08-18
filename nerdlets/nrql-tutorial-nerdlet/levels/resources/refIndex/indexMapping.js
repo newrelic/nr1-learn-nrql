@@ -107,6 +107,17 @@ export const indexMapping = [
     ]
   },
   {
+    op: 'median()',
+    docs:
+      'https://docs.newrelic.com/docs/query-your-data/nrql-new-relic-query-language/get-started/nrql-syntax-clauses-functions#func-median',
+    refs: [
+      {
+        level: 1,
+        lesson: 3
+      }
+    ]
+  },
+  {
     op: 'average()',
     docs:
       'https://docs.newrelic.com/docs/query-your-data/nrql-new-relic-query-language/get-started/nrql-syntax-clauses-functions#func-average',
@@ -730,6 +741,17 @@ export const indexMapping = [
     op: 'stddev()',
     docs:
       'https://docs.newrelic.com/docs/query-your-data/nrql-new-relic-query-language/get-started/nrql-syntax-clauses-functions#stddev',
+    refs: [
+      {
+        level: 4,
+        lesson: 2
+      }
+    ]
+  },
+  {
+    op: 'stdvar()',
+    docs:
+      'https://docs.newrelic.com/docs/query-your-data/nrql-new-relic-query-language/get-started/nrql-syntax-clauses-functions#stdvar',
     refs: [
       {
         level: 4,

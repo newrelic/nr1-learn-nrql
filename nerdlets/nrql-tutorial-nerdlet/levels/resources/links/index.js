@@ -24,7 +24,7 @@ export default function Links() {
           New Relic NRQL Documentation
         </Link>
       </h3>
-      <p>The offical documentation for NRQL from the New Relic docs site.</p>
+      <p>The official documentation for NRQL from the New Relic docs site.</p>
 
       <h3>
         <Link to="https://docs.newrelic.com/docs/query-your-data/nrql-new-relic-query-language/nrql-query-tutorials">

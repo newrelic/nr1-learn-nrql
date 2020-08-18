@@ -30,7 +30,7 @@ export default function RefIndex() {
           const docslink = !item.docs ? null : (
             <div>
               <Link className="externalLink" to={item.docs}>
-                Offical documentation
+                Official documentation
               </Link>
             </div>
           );
@@ -46,7 +46,7 @@ export default function RefIndex() {
                 </td>
               </tr>
               <tr>
-                <td className="seperator" colSpan="2">
+                <td className="separator" colSpan="2">
                   &nbsp;
                 </td>
               </tr>
@@ -57,7 +57,7 @@ export default function RefIndex() {
         return (
           <div>
             <p>
-              Quickly find lessons refering to NRQL functions, operators and
+              Quickly find lessons referring to NRQL functions, operators and
               keywords. You can also view the{' '}
               <Link
                 className="externalLink"

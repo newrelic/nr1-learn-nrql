@@ -26,8 +26,8 @@ export default function AggregateQuery2() {
         span="6"
       />
       <p className="notice">
-      To optimize query performance, this function returns approximate results 
-      for queries that inspect more than 256 unique values.
+        To optimize query performance, this function returns approximate results
+        for queries that inspect more than 256 unique values.
       </p>
 
       <p>
@@ -41,10 +41,10 @@ export default function AggregateQuery2() {
       />
 
       <p className="notice">
-      A second limit paramter may be provided: <code>uniques(attribute[,limit])</code>. 
-      When it is not provided, the default limit of 1,000 unique attribute 
-      values per facet is applied. You may specify a different limit value, up to 
-      a maximum of 10,000. 
+        A second limit paramter may be provided:{' '}
+        <code>uniques(attribute[,limit])</code>. When it is not provided, the
+        default limit of 1,000 unique attribute values per facet is applied. You
+        may specify a different limit value, up to a maximum of 10,000.
       </p>
 
       <p>

@@ -40,9 +40,11 @@ export default function FirstQuery() {
 
       <p className="notice">
         When a <code>LIMIT</code> is not supplied the default will be used,
-        which is 100 table rows or 10 aggregated values. You can specify any
-        limit up to the maximum. Use <code>LIMIT MAX</code> to return the
-        maximum number of results possible.
+        which is 100 table rows for <code>SELECT *</code> queries or 10
+        aggregated values for <code>FACET</code> queries and{' '}
+        <code>SELECT (attributes)</code> queries. You can specify any limit up
+        to the maximum. Use <code>LIMIT MAX</code> to return the maximum number
+        of results possible.
       </p>
 
       <p>

@@ -1,7 +1,7 @@
 {
   "tagline": "Improve Your NRQL Skills",
   "repository": "https://github.com/newrelic/nr1-learn-nrql.git",
-  "details": "NRQL Lessons is a self-paced learning tool aimed to help New Relic customers improve their NRQL skills. Master NRQL (New Relic's Query Language) through a series of training levels using your own data.  Start from the very basics of NRQL syntax through to advanced concepts and querying techniques to become NRQL Ninjas!",
+  "details": "NRQL Lessons is a self-paced learning tool aimed to help New Relic customers improve their NRQL skills. Master NRQL (New Relic's Query Language) through a series of training levels using your own data.  Start from the very basics of NRQL syntax through to advanced concepts and querying techniques to become NRQL Power Users!",
   "support": {
     "issues": {
       "url": "https://github.com/newrelic/nr1-learn-nrql/issues"
@@ -13,5 +13,5 @@
       "url": "https://discuss.newrelic.com/t/new-relic-nrql-lessons-nerdpack/109646"
     }
   },
-  "whatsNew": "- Advance your NRQL skills through a series of levels of learning \n - Control the data you see from your accounts with a simple Account Picker \n - Copy or open the sample query in Chart Builder \n - Resume from the last level/lesson the user was on"
+  "whatsNew": "- Index page of functions and operators \n - Links and Resources page \n - Updated content for uniques, uniqueCount, LIMIT, FACET \n - Added mention of median, stdvar"
 }

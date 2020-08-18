@@ -75,6 +75,9 @@ New Relic hosts and moderates an online forum where customers can interact with 
 
 Issues and enhancement requests can be submitted in the [Issues tab of this repository](https://github.com/newrelic/nr1-learn-nrql/issues). Please search for and review the existing open issues before submitting a new issue.
 
+## Security
+This project adheres to the New Relic [security policy](https://nerdlife.datanerd.us/new-relic/security-guidelines-for-publishing-source-code).
+
 # Contributing
 
 Contributions are encouraged! If you submit an enhancement request, we'll invite you to contribute the change yourself. Please review our [Contributors Guide](CONTRIBUTING.md).

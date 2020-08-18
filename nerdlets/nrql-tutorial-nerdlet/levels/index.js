@@ -2,6 +2,7 @@ import Level1 from './level1';
 import Level2 from './level2';
 import Level3 from './level3';
 import Level4 from './level4';
+import Resources from './resources';
 
 export default [
   {
@@ -23,5 +24,10 @@ export default [
     title: 'NRQL Power User',
     level: 'Level Four',
     lessons: Level4
+  },
+  {
+    title: 'Index and Useful Resources',
+    level: 'Resources',
+    lessons: Resources
   }
 ];

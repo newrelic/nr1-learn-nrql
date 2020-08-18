@@ -440,6 +440,17 @@ export const indexMapping = [
     ]
   },
   {
+    op: 'LIMIT MAX',
+    docs:
+      'https://docs.newrelic.com/docs/query-your-data/nrql-new-relic-query-language/get-started/nrql-syntax-clauses-functions#sel-limit',
+    refs: [
+      {
+        level: 1,
+        lesson: 2
+      }
+    ]
+  },
+  {
     op: 'ln()',
     docs:
       'https://docs.newrelic.com/docs/query-your-data/nrql-new-relic-query-language/get-started/nrql-math-using-select#h3-ln-log2-log10-log',

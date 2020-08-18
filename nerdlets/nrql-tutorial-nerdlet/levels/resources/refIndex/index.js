@@ -26,13 +26,19 @@ export default function RefIndex() {
               </div>
             );
           });
+
+          let docslink=!item.docs ? null : <div><Link className="externalLink" to={item.docs}>Offical documentation</Link></div>
           return (
+            <>
+           
             <tr key={idx} className="unstyledTr">
               <td className="hdrCol">
                 <code>{item.op}</code>
               </td>
-              <td>{refs}</td>
+          <td>{refs}{docslink}</td>
             </tr>
+            <tr><td className="seperator" colSpan="2">&nbsp;</td></tr>
+            </>
           );
         });
 
@@ -40,7 +46,7 @@ export default function RefIndex() {
           <div>
             <p>
               Quickly find lessons refering to NRQL functions, operators and
-              keywords.
+              keywords. You can also view the <Link className="externalLink" to="https://docs.newrelic.com/docs/query-your-data/nrql-new-relic-query-language/get-started/introduction-nrql-new-relics-query-language">official New Relic documentation</Link> for each.
             </p>
             <table className="indexTable u-unstyledTable">
               <tbody>{items}</tbody>

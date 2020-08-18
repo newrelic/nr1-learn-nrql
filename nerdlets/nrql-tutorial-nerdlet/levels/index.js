@@ -2,7 +2,7 @@ import Level1 from './level1';
 import Level2 from './level2';
 import Level3 from './level3';
 import Level4 from './level4';
-import Resources from './Resources';
+import Resources from './resources';
 
 export default [
   {

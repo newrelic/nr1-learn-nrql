@@ -39,7 +39,7 @@ export default function RefIndex() {
         return (
           <div>
             <p>
-              Quicly find lessons refering to NRQL functions, operators and
+              Quickly find lessons refering to NRQL functions, operators and
               keywords.
             </p>
             <table className="indexTable u-unstyledTable">

@@ -26,7 +26,7 @@ export default [
     lessons: Level4
   },
   {
-    title: 'Useful Resources and Links',
+    title: 'Index and Useful Resources',
     level: 'Resources',
     lessons: Resources
   }

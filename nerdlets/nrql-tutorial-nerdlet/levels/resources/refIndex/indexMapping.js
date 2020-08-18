@@ -5,10 +5,15 @@ export const indexMapping = [
       {
         level: 2,
         lesson: 3
-      },
+      }
+    ]
+  },
+  {
+    op: '+',
+    refs: [
       {
         level: 2,
-        lesson: 2
+        lesson: 3
       }
     ]
   },
@@ -42,6 +47,10 @@ export const indexMapping = [
   {
     op: 'AGO',
     refs: [
+      {
+        level: 1,
+        lesson: 4
+      },
       {
         level: 2,
         lesson: 5
@@ -82,6 +91,10 @@ export const indexMapping = [
   {
     op: 'average()',
     refs: [
+      {
+        level: 1,
+        lesson: 3
+      },
       {
         level: 1,
         lesson: 5
@@ -194,10 +207,6 @@ export const indexMapping = [
     refs: [
       {
         level: 3,
-        lesson: 2
-      },
-      {
-        level: 3,
         lesson: 3
       }
     ]
@@ -216,6 +225,15 @@ export const indexMapping = [
     ]
   },
   {
+    op: 'buckets()',
+    refs: [
+      {
+        level: 4,
+        lesson: 2
+      }
+    ]
+  },
+  {
     op: 'FACET buckets()',
     refs: [
       {
@@ -225,14 +243,19 @@ export const indexMapping = [
     ]
   },
   {
-    op: 'FACET cases()',
+    op: 'cases()',
     refs: [
       {
         level: 3,
         lesson: 4
-      },
+      }
+    ]
+  },
+  {
+    op: 'FACET cases()',
+    refs: [
       {
-        level: 4,
+        level: 3,
         lesson: 4
       }
     ]
@@ -340,7 +363,7 @@ export const indexMapping = [
       },
       {
         level: 1,
-        lesson: 1
+        lesson: 7
       }
     ]
   },
@@ -448,6 +471,10 @@ export const indexMapping = [
       {
         level: 2,
         lesson: 2
+      },
+      {
+        level: 3,
+        lesson: 6
       }
     ]
   },
@@ -481,10 +508,6 @@ export const indexMapping = [
   {
     op: 'percentile()',
     refs: [
-      {
-        level: 1,
-        lesson: 3
-      },
       {
         level: 2,
         lesson: 2
@@ -528,11 +551,20 @@ export const indexMapping = [
     ]
   },
   {
-    op: 'SELECT ... FROM',
+    op: 'SELECT  FROM (SELECT ...)',
     refs: [
       {
         level: 4,
         lesson: 6
+      }
+    ]
+  },
+  {
+    op: 'SELECT',
+    refs: [
+      {
+        level: 1,
+        lesson: 2
       }
     ]
   },
@@ -551,6 +583,10 @@ export const indexMapping = [
       {
         level: 1,
         lesson: 4
+      },
+      {
+        level: 2,
+        lesson: 7
       }
     ]
   },
@@ -625,10 +661,6 @@ export const indexMapping = [
       {
         level: 2,
         lesson: 2
-      },
-      {
-        level: 3,
-        lesson: 3
       }
     ]
   },
@@ -638,10 +670,6 @@ export const indexMapping = [
       {
         level: 2,
         lesson: 2
-      },
-      {
-        level: 3,
-        lesson: 3
       }
     ]
   },
@@ -655,11 +683,33 @@ export const indexMapping = [
       {
         level: 2,
         lesson: 2
+      },
+      {
+        level: 2,
+        lesson: 7
       }
     ]
   },
   {
     op: 'weekOf()',
+    refs: [
+      {
+        level: 2,
+        lesson: 8
+      }
+    ]
+  },
+  {
+    op: 'weekdayOf()',
+    refs: [
+      {
+        level: 2,
+        lesson: 8
+      }
+    ]
+  },
+  {
+    op: 'dateOf()',
     refs: [
       {
         level: 2,
@@ -675,12 +725,17 @@ export const indexMapping = [
         lesson: 6
       },
       {
-        level: 1,
-        lesson: 1
-      },
-      {
         level: 2,
         lesson: 2
+      }
+    ]
+  },
+  {
+    op: 'TIMEZONE',
+    refs: [
+      {
+        level: 2,
+        lesson: 7
       }
     ]
   },

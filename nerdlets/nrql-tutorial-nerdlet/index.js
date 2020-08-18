@@ -105,7 +105,6 @@ export default class NrqlTutorialNerdlet extends React.Component {
   chooseLesson(level, lesson) {
     let nextLevel = level;
     let nextLesson = lesson;
-
     if (!LEVELS[nextLevel].lessons[nextLesson]) {
       // no more lessons at this level
       nextLevel = nextLevel + 1;
@@ -205,7 +204,13 @@ export default class NrqlTutorialNerdlet extends React.Component {
               </GridItem>
 
               <GridItem columnSpan={9}>
-                <LessonContextProvider accountId={Number(selectedAccount)}>
+                <LessonContextProvider
+                  accountId={Number(selectedAccount)}
+                  chooseLesson={(level, lesson) => {
+                    this.chooseLesson(level, lesson);
+                    this.topRef.current.scrollIntoView();
+                  }}
+                >
                   <Lesson levelTitle={levelTitlePrefix} {...lesson} />
                   {showNextButton && <NextLessonBt />}
                 </LessonContextProvider>

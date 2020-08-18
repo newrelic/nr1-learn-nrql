@@ -37,6 +37,12 @@ export default function FirstQuery() {
         chartType="table"
         span="12"
       />
+
+      <p className="notice">
+        When a <code>LIMIT</code> is not supplied the default will be used, which is 100 table rows or 10 aggregated values. 
+        You can specify any limit up to the maximum. Use <code>LIMIT MAX</code> to return the maximum number of results possible.
+      </p>
+      
       <p>
         We're now controlling the volume of results we get. But what if we don't
         want <em>all</em> the attributes? What if we would prefer to see only

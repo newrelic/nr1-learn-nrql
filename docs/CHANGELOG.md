@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/newrelic/nr1-learn-nrql/compare/v1.2.0...v1.2.1) (2020-08-19)
+
+
+### Bug Fixes
+
+* App name change to align properly in app catalog ([5db9a64](https://github.com/newrelic/nr1-learn-nrql/commit/5db9a64a08f673540e086a18c3946b846a872835))
+
 # [1.2.0](https://github.com/newrelic/nr1-learn-nrql/compare/v1.1.0...v1.2.0) (2020-08-18)
 
 

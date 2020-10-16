@@ -18,14 +18,17 @@ import LEVELS from './levels';
 import LessonPicker from './components/LessonPicker';
 import Lesson from './components/Lesson';
 import { LessonContextProvider } from './contexts/LessonContext';
-
+import i18n from './i18n/i18n';
+import {I18nextProvider} from 'react-i18next'
+import locales from './i18n/locales';
 export default class NrqlTutorialNerdlet extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       // lesson: LESSONS[LESSONS.length-1]  // for debugging the currently lesson I'm coding
       currentLevel: 0,
-      currentLesson: 0
+      currentLesson: 0,
+      selectedLanguage: 'en'
     };
     this.collectionId = 'NRQLesson';
     this.documentId = 'progress';
@@ -35,6 +38,7 @@ export default class NrqlTutorialNerdlet extends React.Component {
 
   componentDidMount() {
     this.loadAccounts();
+    this.loadLanguages();
     nerdlet.setConfig({
       timePicker: false
     });
@@ -94,12 +98,25 @@ export default class NrqlTutorialNerdlet extends React.Component {
             intendedState.currentLesson = 0;
           }
         }
+
       })
       // eslint-disable-next-line no-console
       .catch(err => console.log(err))
       .finally(() => {
+        if (!!intendedState.selectedLanguage) {
+          i18n.changeLanguage(intendedState.selectedLanguage);
+        }
         this.setState(intendedState);
       });
+  }
+
+  async loadLanguages() {
+    const languages = locales.map(language => (
+      <SelectItem value={language.lng} key={language.lng}>
+        {language.label}
+      </SelectItem>
+    ));
+    this.setState({ languages })
   }
 
   chooseLesson(level, lesson) {
@@ -117,7 +134,7 @@ export default class NrqlTutorialNerdlet extends React.Component {
       }
     }
 
-    const { selectedAccount } = this.state;
+    const { selectedAccount, selectedLanguage } = this.state;
     this.setState({ currentLevel: nextLevel, currentLesson: nextLesson });
     UserStorageMutation.mutate({
       actionType: UserStorageMutation.ACTION_TYPE.WRITE_DOCUMENT,
@@ -126,7 +143,8 @@ export default class NrqlTutorialNerdlet extends React.Component {
       document: {
         currentLevel: nextLevel,
         currentLesson: nextLesson,
-        selectedAccount: selectedAccount
+        selectedAccount: selectedAccount,
+        selectedLanguage: selectedLanguage
       }
       // eslint-disable-next-line no-unused-vars
     }).then(res => {
@@ -146,7 +164,9 @@ export default class NrqlTutorialNerdlet extends React.Component {
       currentLesson,
       accounts,
       selectedAccount,
-      noAccounts
+      noAccounts,
+      languages,
+      selectedLanguage
     } = this.state;
     const lesson = LEVELS[currentLevel].lessons[currentLesson];
     const levelTitlePrefix = LEVELS[currentLevel].level;
@@ -170,25 +190,45 @@ export default class NrqlTutorialNerdlet extends React.Component {
       currentLesson + 1 === LEVELS[currentLevel].lessons.length
     );
     return (
+      <I18nextProvider i18n={ i18n }>
       <div ref={this.topRef}>
         {selectedAccount && accounts ? (
           <>
-            {accounts.length > 1 ? (
-              <Grid className="AccountChooser">
-                <GridItem columnSpan={1}>Use data from account:</GridItem>
-                <GridItem columnSpan={11}>
-                  <Select
-                    onChange={(event, value) => {
-                      this.setState({ selectedAccount: value });
-                    }}
-                    value={selectedAccount}
-                  >
-                    {accounts}
-                  </Select>
+            <Grid className="AccountChooser">
+              {accounts.length > 1 ? (
+                  <>
+                    <GridItem columnSpan={1}>Use data from account:</GridItem>
+                    <GridItem columnSpan={5}>
+                      <Select
+                        onChange={(event, value) => {
+                          this.setState({ selectedAccount: value });
+                        }}
+                        value={selectedAccount}
+                      >
+                        {accounts}
+                      </Select>
+                    </GridItem>
+                  </>
+                ) : <></> // ONly one account no need to show picker
+              }
+              {languages && languages.length > 1 ? (
+                  <>
+                <GridItem columnSpan={1}>Select Language:</GridItem>
+                <GridItem columnSpan={5}>
+                <Select
+                onChange={(event, selectedLanguage) => {
+                  i18n.changeLanguage(selectedLanguage);
+                this.setState({ selectedLanguage });
+              }}
+                value={selectedLanguage}
+                >
+                {languages}
+                </Select>
                 </GridItem>
-              </Grid>
-            ) : null // ONly one account no need to show picker
-            }
+                </>
+                ) :<></> // ONly one account no need to show picker
+              }
+            </Grid>
             <Grid className="MainLessonArea">
               <GridItem columnSpan={3}>
                 <LessonPicker
@@ -200,6 +240,7 @@ export default class NrqlTutorialNerdlet extends React.Component {
                   selectLevel={level => this.chooseLesson(level, 0)}
                   selectedLevel={currentLevel}
                   selectedLesson={currentLesson}
+                  selectedLanguage={selectedLanguage}
                 />
               </GridItem>
 
@@ -211,7 +252,9 @@ export default class NrqlTutorialNerdlet extends React.Component {
                     this.topRef.current.scrollIntoView();
                   }}
                 >
-                  <Lesson levelTitle={levelTitlePrefix} {...lesson} />
+                  <Lesson
+                    language={selectedLanguage}
+                    levelTitle={levelTitlePrefix} {...lesson} />
                   {showNextButton && <NextLessonBt />}
                 </LessonContextProvider>
               </GridItem>
@@ -228,6 +271,7 @@ export default class NrqlTutorialNerdlet extends React.Component {
           </div>
         )}
       </div>
+      </I18nextProvider>
     );
   }
 }

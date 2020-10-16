@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Collapse from '@kunukn/react-collapse';
+import {Trans, NamespacesConsumer, withNamespaces} from "react-i18next";
 
 LessonPicker.propTypes = {
   levels: PropTypes.array,
@@ -10,7 +11,7 @@ LessonPicker.propTypes = {
   selectedLesson: PropTypes.number
 };
 
-export default function LessonPicker({
+function LessonPicker({
   levels,
   selectLesson,
   selectLevel,
@@ -103,9 +104,15 @@ Lesson.propTypes = {
 function Lesson({ title, index, selectLesson, selected }) {
   const className = selected ? 'lesson selected' : 'lesson';
   return (
+    <NamespacesConsumer>
+      {(t, {i18n})=>(
     <div className={className} onClick={() => selectLesson()}>
       <div className="index">{index + 1}.</div>
-      <div className="title">{title}</div>
+      <div className="title"><Trans i18n={i18n} i18nKey={`${title}:Title`}>{title}</Trans></div>
     </div>
+      )}
+    </NamespacesConsumer>
   );
 }
+
+export default withNamespaces()(LessonPicker);

@@ -59,6 +59,8 @@ function Level({
   selectedLesson
 }) {
   return (
+    <NamespacesConsumer>
+      {(t, {i18n})=>(
     <div>
       <button
         className="toggleLevel"
@@ -67,8 +69,8 @@ function Level({
         }}
         type="button"
       >
-        {titlePrefix === 'Resources' ? '' : `${titlePrefix.toUpperCase()}: `}
-        {title}
+        <Trans i18n={i18n} i18nKey={`${titlePrefix}:Level`}>{titlePrefix === 'Resources' ? '' : `${titlePrefix.toUpperCase()}: `}</Trans>
+        <Trans i18n={i18n} i18nKey={`${titlePrefix}:Title`}>{title}</Trans>
       </button>
       <Collapse
         isOpen={level === selectedLevel}
@@ -91,6 +93,8 @@ function Level({
         ))}
       </Collapse>
     </div>
+      )}
+    </NamespacesConsumer>
   );
 }
 

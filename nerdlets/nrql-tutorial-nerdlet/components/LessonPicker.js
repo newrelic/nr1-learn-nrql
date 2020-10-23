@@ -71,7 +71,7 @@ function Level({
         type="button"
       >
         <Trans i18n={i18n} i18nKey={`${titlePrefix}:Level`}>{titlePrefix === 'Resources' ? '' : `${titlePrefix.toUpperCase()}: `}</Trans>
-        <Trans i18n={i18n} i18nKey={`${namespace}:Title`}>{title}</Trans>
+        <Trans i18n={i18n} i18nKey={`${titlePrefix}:Title`}>{title}</Trans>
       </button>
       <Collapse
         isOpen={level === selectedLevel}

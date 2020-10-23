@@ -254,6 +254,7 @@ export default class NrqlTutorialNerdlet extends React.Component {
                 >
                   <Lesson
                     language={selectedLanguage}
+                    level={currentLevel}
                     levelTitle={levelTitlePrefix} {...lesson} />
                   {showNextButton && <NextLessonBt />}
                 </LessonContextProvider>

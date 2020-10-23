@@ -58,6 +58,7 @@ function Level({
   selectedLevel,
   selectedLesson
 }) {
+  const namespace = ["Summary","Introduction"].indexOf(title)>-1?`${title}_L${selectedLevel+1}`:title;
   return (
     <NamespacesConsumer>
       {(t, {i18n})=>(
@@ -70,7 +71,7 @@ function Level({
         type="button"
       >
         <Trans i18n={i18n} i18nKey={`${titlePrefix}:Level`}>{titlePrefix === 'Resources' ? '' : `${titlePrefix.toUpperCase()}: `}</Trans>
-        <Trans i18n={i18n} i18nKey={`${titlePrefix}:Title`}>{title}</Trans>
+        <Trans i18n={i18n} i18nKey={`${namespace}:Title`}>{title}</Trans>
       </button>
       <Collapse
         isOpen={level === selectedLevel}
@@ -89,6 +90,7 @@ function Level({
             }}
             index={index}
             title={l.title}
+            level={selectedLevel}
           />
         ))}
       </Collapse>
@@ -102,17 +104,20 @@ Lesson.propTypes = {
   title: PropTypes.string,
   selectLesson: PropTypes.func,
   index: PropTypes.number,
-  selected: PropTypes.bool
+  selected: PropTypes.bool,
+  level: PropTypes.number
 };
 
-function Lesson({ title, index, selectLesson, selected }) {
+function Lesson({ title, index, selectLesson, selected, level }) {
   const className = selected ? 'lesson selected' : 'lesson';
+  const namespace = ["Summary","Introduction"].indexOf(title)>-1?`${title}_L${level+1}`:title;
+
   return (
     <NamespacesConsumer>
       {(t, {i18n})=>(
     <div className={className} onClick={() => selectLesson()}>
       <div className="index">{index + 1}.</div>
-      <div className="title"><Trans i18n={i18n} i18nKey={`${title}:Title`}>{title}</Trans></div>
+      <div className="title"><Trans i18n={i18n} i18nKey={`${namespace}:Title`}>{title}</Trans></div>
     </div>
       )}
     </NamespacesConsumer>

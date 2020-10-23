@@ -6,16 +6,16 @@ import i18n from "../i18n/i18n";
 Lesson.propTypes = {
   title: PropTypes.string,
   component: PropTypes.func,
-  language: PropTypes.string
+  level: PropTypes.number
 };
 
-function Lesson({ title, component, language, i18n }) {
-
-  const Translated = withNamespaces(title)(component);
+function Lesson({ title, component, level }) {
+  const namespace = ["Summary","Introduction"].indexOf(title)>-1?`${title}_L${level+1}`:title;
+  const Translated = withNamespaces(namespace)(component);
   return (
     <div className="lesson-content">
       <div className="title">
-        <h1><Trans i18nKey={`${title}:Title`}>{title}</Trans></h1>
+        <h1><Trans i18nKey={`${namespace}:Title`}>{title}</Trans></h1>
       </div>
       <div><Translated /></div>
     </div>

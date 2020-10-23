@@ -9,7 +9,7 @@ import Wildcards from '../lessons/Wildcards';
 import NextSteps from '../lessons/NextSteps';
 
 const translate = {
-  "Introduction": {
+  "Introduction_L2": {
     Title: "はじめに",
     Contents: {
       P1: `
@@ -393,7 +393,7 @@ const translate = {
       `
     }
   },
-  "Summary": {
+  "Summary_L2": {
     Title: "まとめ",
     Contents: {
       P1: `

@@ -289,7 +289,7 @@ const translate = {
     `
     }
   },
-  "Summary": {
+  "Summary_L1": {
     Title: "まとめ",
     Contents: {
       P1: `以上で”レベル 1 ：コツを掴む”　は終了です！`,

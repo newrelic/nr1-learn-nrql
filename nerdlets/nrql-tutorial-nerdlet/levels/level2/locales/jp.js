@@ -9,6 +9,10 @@ import Wildcards from '../lessons/Wildcards';
 import NextSteps from '../lessons/NextSteps';
 
 const translate = {
+  "Level Two": {
+    Title: "データをコントロールする",
+    Level: "レベル2 : "
+  },
   "Introduction_L2": {
     Title: "はじめに",
     Contents: {

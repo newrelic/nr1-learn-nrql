@@ -1,4 +1,8 @@
 const translate = {
+  "Level Four": {
+    Title: "NRQLを極める",
+    Level: "レベル４ : "
+  },
   "Introduction_L4": {
     Title: "はじめに",
     Contents: {

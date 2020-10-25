@@ -78,16 +78,57 @@ const translate = {
         次に、他のページに遷移したユーザーの数を求めています。
         <em>ご利用のデータで妥当そうな結果が得られるか、試してみてください。</em>
       `,
+      H2_3: '集計フィルタ',
       P8: `
-              <code>filter()</code> is a powerful tool that allows you to aggregate
-        multiple data points in a single query, offering more control over which
-        events are included in function results. In this example, we use{' '}
-        <code>filter()</code> to return the separate values for total
-        transactions, total web transactions, and total non-web transactions:
+        <code>filter()</code> は集計の結果に含まれるイベントをより制御できるようするもので、
+        1つのクエリで複数のデータポイントを集計するときに威力を発揮します。
+        この例では、 <code>filter()</code> を使ってTransactionイベントから
+        ウェブトランザクションおよび非ウェブトランザクションそれぞれの値を返すようにしています。
       `,
       P9: `
+        この結果は数値を返しており、結果をさらに演算させることもできます。
+        例えば、全てのトランザクションに占めるウェブトランザクションの割合を求めるには、
+        次のようなクエリになります：
       `,
+      H2_4: 'ヒストグラム',
       P10: `
+        ヒストグラムを使うと、データの分布をわかりやすく可視化できるようになります。
+        単なる平均だけではなく、データポイントがどのような頻度で出現するかを理解するときに役立ちます。
+        <code>histogram()</code> 関数は3つの引数を取ります：
+        <ol type="1">
+          <li>プロットしたい属性（durationなど）</li>
+          <li>分析したい範囲の最大値（"1"の場合、1秒以下を分析する）</li>
+          <li>グループ化するときのバケット数</li>
+        </ol>
+        次の例では、 <code>histogram()</code>を使って、
+        0〜1秒のduration値に対して、50msずつに分割したバケットでグループ化したチャートを作っています。
+        バケット数には20を指定しています。
+        1秒を超えるdurationのものは、最後のバケットにまとめられます。
+      `,
+      H2_5: 'Apdex',
+      P11: `
+        <code>apdex()</code>関数を使うと、あらゆる数値（durationなど）のApdexスコアが計算できます。
+        特定のトランザクションやカスタムアトリビュートの値に対するApdex値を計算することができるようになり、
+        また、APMの設定を変えることなく、独自のApdex-T値を与えることもできます。
+        次の例では、"duration"値に対して、Apdex−Tを0.08にしたときのApdex値を求めています：
+      `,
+      P12: `
+        もちろん、<code>TIMESERIES</code> 句を指定して、範囲時間に渡るデータの変化をチャートにすることもできます。
+        チャートには、「満足」「不満」「イライラ」の範囲も描画されます。
+      `,
+      H2_6: 'レッスンのまとめ',
+      P13: `
+        新たな可視化ツールである、<code>funnel()</code> と <code>histogram()</code> をご紹介しました。
+        また、 <code>filter()</code> を使ってWHERE句でクエリを絞り込む方法と、
+        <code>rate()</code> で属性の頻度を可視化する方法をご紹介しました。
+      `,
+      P14: `
+        これらのクエリで、よりNRQLを使いこなすことができるようになります。
+        Apdexは業界標準のスコアであり、多くの状況に適用できます。
+        ファネル図は指定した経路の進捗状況を追跡できます。
+        ヒストグラムはデータの分布を明確に可視化できます。
+        フィルタは返却値を自在に絞り込むことができるようになります。
+        次は、 <code>extrapolate</code> をご紹介しましょう。
       `
     }
   },

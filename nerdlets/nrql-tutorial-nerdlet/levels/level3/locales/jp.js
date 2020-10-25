@@ -9,10 +9,6 @@ import OverridingValues from '../lessons/OverridingValues';
 const translate = {
   Introduction: {
     Title: 'はじめに',
-    Contents: {}
-  },
-  'Advanced aggregators': {
-    Title: '高度な集計機能',
     Contents: {
       P1: `
         レベル3へようこそ。ここまでよく付いてきてくれました！
@@ -32,6 +28,12 @@ const translate = {
         EXTRAPOLATEキーワードを使った値の取得、フィルタを使った集計関数、
         そして値のオーバーライドをご紹介します。
       `
+    }
+  },
+  'Advanced aggregators': {
+    Title: '高度な集計機能',
+    Contents: {
+
     }
   },
   'Using extrapolate': {

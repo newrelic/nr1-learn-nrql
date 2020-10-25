@@ -1,44 +1,40 @@
-import AggregateQuery from "../lessons/AggregateQuery";
-import TimeRange from "../lessons/TimeRange";
-import Timeseries from "../lessons/Timeseries";
-import Where from "../lessons/Where";
-import Facet from "../lessons/Facet";
-import NextSteps from "../lessons/NextSteps";
-import Overview from "../lessons/Overview";
-import AggregateQuery3 from "../lessons/AggregateQuery3";
-import Extrapolate from "../lessons/Extrapolate";
-import FacetCases from "../lessons/FacetCases";
-import FilterToEventTypes from "../lessons/FilterToEventTypes";
-import OverridingValues from "../lessons/OverridingValues";
+import NextSteps from '../lessons/NextSteps';
+import Overview from '../lessons/Overview';
+import AggregateQuery3 from '../lessons/AggregateQuery3';
+import Extrapolate from '../lessons/Extrapolate';
+import FacetCases from '../lessons/FacetCases';
+import FilterToEventTypes from '../lessons/FilterToEventTypes';
+import OverridingValues from '../lessons/OverridingValues';
 
 const translate = {
-  "Introduction":{
-    Title:"",
+  Introduction: {
+    Title: 'はじめに',
     Contents: {}
   },
-  "Advanced aggregators":{
-    Title:"",
+  'Advanced aggregators': {
+    Title: '高度な集計機能',
     Contents: {}
   },
-  "Using extrapolate":{
-    Title:"",
+  'Using extrapolate': {
+    Title: 'extrapolateを使用する',
     Contents: {}
   },
-  "Facet cases":{
-    Title:"",
+  'Facet cases': {
+    Title: 'FACET CASES',
     Contents: {}
   },
-  "Filter by event type":{
-    Title:"",
+  'Filter by event type': {
+    Title: 'イベントタイプでフィルタする',
     Contents: {}
   },
-  "Overriding values":{
-    Title:"",
+  'Overriding values': {
+    Title: '値をオーバーライドする',
     Contents: {}
   },
-  "Summary":{
-    Title:"",
+  Summary: {
+    Title: 'まとめ',
     Contents: {}
-  },
-}
+  }
+};
+
 export default translate;

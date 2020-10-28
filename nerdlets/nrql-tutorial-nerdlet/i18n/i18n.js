@@ -3,6 +3,7 @@ import { reactI18nextModule } from "react-i18next";
 
 import Level1T from '../levels/level1/locales/index.js';
 import Level2T from '../levels/level2/locales/index.js';
+import Level3T from '../levels/level3/locales/index.js';
 import Level4T from '../levels/level4/locales/index.js';
 
 // the translations
@@ -11,6 +12,7 @@ const resources = {
   jp:{
     ...Level1T.jp,
     ...Level2T.jp,
+    ...Level3T.jp,
     ...Level4T.jp
   }
 };

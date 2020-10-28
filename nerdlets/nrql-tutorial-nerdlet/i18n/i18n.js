@@ -5,6 +5,7 @@ import Level1T from '../levels/level1/locales/index.js';
 import Level2T from '../levels/level2/locales/index.js';
 import Level3T from '../levels/level3/locales/index.js';
 import Level4T from '../levels/level4/locales/index.js';
+import Resources from '../levels/resources/locales/index.js';
 
 // the translations
 const resources = {
@@ -13,7 +14,8 @@ const resources = {
     ...Level1T.jp,
     ...Level2T.jp,
     ...Level3T.jp,
-    ...Level4T.jp
+    ...Level4T.jp,
+    ...Resources.jp
   }
 };
 

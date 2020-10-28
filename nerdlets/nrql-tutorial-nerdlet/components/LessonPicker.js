@@ -70,7 +70,7 @@ function Level({
         }}
         type="button"
       >
-        <Trans i18n={i18n} i18nKey={`${titlePrefix}:Level`}>{titlePrefix === 'Resources' ? '' : `${titlePrefix.toUpperCase()}: `}</Trans>
+        <Trans i18n={i18n} i18nKey={`${titlePrefix}:Level`} values={{ emp: ''}}>{titlePrefix === 'Resources' ? '{{emp}}' : `${titlePrefix.toUpperCase()}: `}</Trans>
         <Trans i18n={i18n} i18nKey={`${titlePrefix}:Title`}>{title}</Trans>
       </button>
       <Collapse

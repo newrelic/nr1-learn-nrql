@@ -81,9 +81,9 @@ export default function FirstQuery() {
         chartType="table"
         span="12"
       />
-      <h2><Trans i18nKey={"Contents.P8"}>Lesson Summary</Trans></h2>
+      <h2><Trans i18nKey={"Contents.H1"}>Lesson Summary</Trans></h2>
       <p>
-        <Trans i18nKey={"Contents.P9"}>
+        <Trans i18nKey={"Contents.P8"}>
         Fantastic start. You just wrote basic queries that can return either all
         attributes of an event, or specific attributes. You also learned how to
         control the number of results returned. Great work!

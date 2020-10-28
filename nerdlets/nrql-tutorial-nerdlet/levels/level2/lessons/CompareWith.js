@@ -61,12 +61,12 @@ export default function CompareWith() {
       />
 
       <h2>
-      <Trans i18nKey={"Contents.P6"}>
+      <Trans i18nKey={"Contents.H1"}>
         Lesson Summary
       </Trans>
       </h2>
       <p>
-      <Trans i18nKey={"Contents.P7"}>
+      <Trans i18nKey={"Contents.P6"}>
         Comparisons can quickly answer questions about what's happening in your
         applications. Are different sales, performance, MTTR, or error values up
         or down compared to last week? And, if you are investigating an issue,

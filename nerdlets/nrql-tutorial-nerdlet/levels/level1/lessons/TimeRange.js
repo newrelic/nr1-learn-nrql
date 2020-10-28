@@ -59,16 +59,16 @@ export default function TimeRange() {
         span="6"
       />
 
-      <h2><Trans i18nKey={"Contents.P5"}>Lesson Summary</Trans></h2>
+      <h2><Trans i18nKey={"Contents.H1"}>Lesson Summary</Trans></h2>
       <p>
-        <Trans i18nKey={"Contents.P6"}>
+        <Trans i18nKey={"Contents.P5"}>
         We're getting further control of our data now. Adding a time frame to a
         query lets us define exactly which window of data we want to see.
         </Trans>
       </p>
 
       <p>
-        <Trans i18nKey={"Contents.P7"}>
+        <Trans i18nKey={"Contents.P6"}>
         These controls let us zero in on the data of interest by defining where
         the data should start and end. In our examples, we saw that we can
         easily choose the window and use common terms like <code>week</code>,{' '}

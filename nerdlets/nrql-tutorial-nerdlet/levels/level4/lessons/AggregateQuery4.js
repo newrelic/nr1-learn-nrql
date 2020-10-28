@@ -12,9 +12,9 @@ export default function AggregateQuery4() {
         </Trans>
       </p>
 
-      <h2><Trans i18nKey={"Contents.P2"}>Standard Deviation and Variance</Trans></h2>
+      <h2><Trans i18nKey={"Contents.H1"}>Standard Deviation and Variance</Trans></h2>
       <p>
-        <Trans i18nKey={"Contents.P3"}>
+        <Trans i18nKey={"Contents.P2"}>
         Standard deviation mesaures the amount of variation or dispersion within
         a set of values. It uses a scale from low (values close to the average)
         to high (values far from the average). The <code>stddev()</code>
@@ -30,16 +30,16 @@ export default function AggregateQuery4() {
       />
 
       <p className="notice">
-        <Trans i18nKey={"Contents.P4"}>
+        <Trans i18nKey={"Contents.P3"}>
         The <code>stdvar()</code> function works in a similar way to{' '}
         <code>stddev()</code> but returns the standard variance for numeric
         attributes.
         </Trans>
       </p>
 
-      <h2><Trans i18nKey={"Contents.P5"}>Facet Bucketing</Trans></h2>
+      <h2><Trans i18nKey={"Contents.H2"}>Facet Bucketing</Trans></h2>
       <p>
-        <Trans i18nKey={"Contents.P6"}>
+        <Trans i18nKey={"Contents.P4"}>
         In a previous lesson, we learned how to group data into a specific
         configuration of buckets using <code>FACET cases()</code>. We can also
         bucket data by a specific attribute automatically using{' '}
@@ -51,7 +51,7 @@ export default function AggregateQuery4() {
         <code>buckets(attribute, ceiling, number-of-buckets)</code>.
       </p>
       <ul>
-        <Trans i18nKey={"Contents.P7"}>
+        <Trans i18nKey={"Contents.P5"}>
         <li>The attribute we want to bucket by. </li>
         <li>
           Maximum value of the sample range. (Any outliers will appear in the
@@ -62,7 +62,7 @@ export default function AggregateQuery4() {
       </ul>
 
       <p>
-        <Trans i18nKey={"Contents.P8"}>
+        <Trans i18nKey={"Contents.P6"}>
         In the example query, we ask for the average duration of an entire
         transaction; but we want to group that performance into transactions
         that make specific volumes of database calls. So, we specify the bucket
@@ -77,9 +77,9 @@ export default function AggregateQuery4() {
         nrql="SELECT average(duration) FROM Transaction SINCE 12 hours ago FACET **buckets(databaseCallCount, 400, 10)**"
         span="12"
       />
-      <h2><Trans i18nKey={"Contents.P9"}>Lesson Summary</Trans></h2>
+      <h2><Trans i18nKey={"Contents.H3"}>Lesson Summary</Trans></h2>
       <p>
-        <Trans i18nKey={"Contents.P10"}>
+        <Trans i18nKey={"Contents.P7"}>
         You have now learned all aggregation functions that curently exist in
         NRQL! You can slice and dice your data like a pro. If you think an
         aggregation ability is missing from NRQL, let your account team know. We

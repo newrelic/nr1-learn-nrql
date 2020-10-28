@@ -59,16 +59,16 @@ export default function Timeseries() {
         span="12"
       />
 
-      <h2><Trans i18nKey={"Contents.P6"}>Lesson Summary</Trans></h2>
+      <h2><Trans i18nKey={"Contents.H1"}>Lesson Summary</Trans></h2>
       <p>
-        <Trans i18nKey={"Contents.P7"}>
+        <Trans i18nKey={"Contents.P6"}>
         We're moving into new worlds of visualization, breaking out from
         summarized numbers to line charts of data trends over time.
         </Trans>
       </p>
 
       <p>
-        <Trans i18nKey={"Contents.P8"}>
+        <Trans i18nKey={"Contents.P7"}>
         As you can see, using <code>TIMESERIES</code> offers full control over
         visualizations, granularity and averaging data over specified windows.
         </Trans>

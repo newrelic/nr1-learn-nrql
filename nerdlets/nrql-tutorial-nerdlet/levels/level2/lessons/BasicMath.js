@@ -58,18 +58,18 @@ export default function BasicMath() {
       />
 
       <h2>
-        <Trans i18nKey={"Contents.P5"}>
+        <Trans i18nKey={"Contents.H1"}>
         Lesson Summary
         </Trans>
         </h2>
       <p>
-        <Trans i18nKey={"Contents.P6"}>
+        <Trans i18nKey={"Contents.P5"}>
         New Relic reports timings as part of your events, so you can use them to
         calculate interesting data points, or even generate percentage results.{' '}
-        </Trans> 
+        </Trans>
       </p>
       <p>
-        <Trans i18nKey={"Contents.P7"}>
+        <Trans i18nKey={"Contents.P6"}>
         You can further maximize the power of basic mathematics by doing things
         like timing custom actions or events, or sending custom data. For
         instance, an e-commerce platform that reports data about order sizes,

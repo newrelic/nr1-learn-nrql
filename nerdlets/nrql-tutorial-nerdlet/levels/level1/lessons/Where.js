@@ -45,9 +45,9 @@ export default function Where() {
         span="12"
       />
 
-      <h2><Trans i18nKey={"Contents.P5"}>Lesson Summary</Trans></h2>
+      <h2><Trans i18nKey={"Contents.H1"}>Lesson Summary</Trans></h2>
       <p>
-        <Trans i18nKey={"Contents.P6"}>
+        <Trans i18nKey={"Contents.P5"}>
         So far, every query we've made has performed actions on all available
         data in the given time window. But filtering out undesired data is also
         important. The examples above are useful when we want to filter to a

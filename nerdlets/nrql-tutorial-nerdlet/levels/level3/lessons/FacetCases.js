@@ -43,7 +43,7 @@ export default function FacetCases() {
         span="12"
       />
 
-      <h2><Trans i18nKey={"Contents.H2_1"}>Lesson Summary</Trans></h2>
+      <h2><Trans i18nKey={"Contents.H1"}>Lesson Summary</Trans></h2>
       <p>
         <Trans i18nKey={"Contents.P4"}>
         <code>FACET CASES()</code> allows us to match and group attributes with

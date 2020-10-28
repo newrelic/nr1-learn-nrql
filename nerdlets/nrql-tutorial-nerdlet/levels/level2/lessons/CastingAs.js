@@ -33,12 +33,12 @@ export default function CastingAs() {
       />
 
       <h2>
-      <Trans i18nKey={"Contents.P3"}>
+      <Trans i18nKey={"Contents.H1"}>
         Lesson Summary
       </Trans>
       </h2>
       <p>
-      <Trans i18nKey={"Contents.P4"}>
+      <Trans i18nKey={"Contents.P3"}>
         This may seem purely aesthetic, but when you're building detailed
         dashboards, it's important to clearly label your data. This ensures zero
         ambiguity for anyone viewing your widgets, billboards, line charts or
@@ -46,7 +46,7 @@ export default function CastingAs() {
       </Trans>
       </p>
       <p>
-      <Trans i18nKey={"Contents.P5"}>
+      <Trans i18nKey={"Contents.P4"}>
         We'll refer back to this in upcoming examples about grouping, to explore
         how <code>AS</code> can create clean result sets in more advanced
         scenarios too.

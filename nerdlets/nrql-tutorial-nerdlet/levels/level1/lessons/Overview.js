@@ -30,9 +30,9 @@ export default function Overview() {
       <p>&nbsp;</p>
 
 
-      <h2><Trans i18nKey={"Contents.P4"}>About the data in these lessons</Trans></h2>
+      <h2><Trans i18nKey={"Contents.H1"}>About the data in these lessons</Trans></h2>
       <p>
-        <Trans i18nKey={"Contents.P5"}>
+        <Trans i18nKey={"Contents.P4"}>
         New Relic One's Telemetry Data Platform allows you to query many sets of
         data quickly and easily. For the sake of convenience, examples in this
         tutorial use APM transaction data, because most New Relic customers will
@@ -44,7 +44,7 @@ export default function Overview() {
         </Trans>
       </p>
       <p>
-        <Trans i18nKey={"Contents.P6"}>
+        <Trans i18nKey={"Contents.P5"}>
         You can try every query in this tutorial for yourself, on your own data,
         using the Chart Builder. This allows you to test what you learn against
         real live data reporting to your account. Just click the 'Try this

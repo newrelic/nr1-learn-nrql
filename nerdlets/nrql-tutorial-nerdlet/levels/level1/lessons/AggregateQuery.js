@@ -93,9 +93,9 @@ export default function AggregateQuery() {
       </p>
       <SampleQuery nrql="SELECT **count(*)** FROM Transaction " span="6" />
 
-      <h2><Trans i18nKey={"Contents.P10"}>Lesson Summary</Trans></h2>
+      <h2><Trans i18nKey={"Contents.H1"}>Lesson Summary</Trans></h2>
       <p>
-        <Trans i18nKey={"Contents.P11"}>
+        <Trans i18nKey={"Contents.P10"}>
         Now we're doing some really interesting things. We're measuring the
         boundaries of our performance, grouping event data together, and even
         calculating information about our chosen attribute.
@@ -103,7 +103,7 @@ export default function AggregateQuery() {
       </p>
 
       <p>
-        <Trans i18nKey={"Contents.P12"}>
+        <Trans i18nKey={"Contents.P11"}>
         We've chosen <code>duration</code> and calculated the{' '}
         <code>average</code>, <code>max</code>, and <code>min</code>. We learned
         how to <code>sum</code> up numeric attributes and <code>count</code> all
@@ -112,7 +112,7 @@ export default function AggregateQuery() {
       </p>
 
       <p>
-        <Trans i18nKey={"Contents.P13"}>
+        <Trans i18nKey={"Contents.P12"}>
         Manipulating data like this will help us when we want to present data in
         visualizations, which can assist us in spotting performance issues.
         </Trans>

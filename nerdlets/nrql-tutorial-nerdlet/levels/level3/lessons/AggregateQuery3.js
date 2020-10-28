@@ -14,7 +14,7 @@ export default function AggregateQuery3() {
         </Trans>
       </p>
 
-      <h2><Trans i18nKey={"Contents.H2_1"}>Calculating Rate</Trans></h2>
+      <h2><Trans i18nKey={"Contents.H1"}>Calculating Rate</Trans></h2>
       <p>
         <Trans i18nKey={"Contents.P2"}>
         Let's start with the <code>rate()</code> function. It allows you to
@@ -47,7 +47,7 @@ export default function AggregateQuery3() {
         span="6"
       />
 
-      <h2><Trans i18nKey={"Contents.H2_2"}>Funnel Charts</Trans></h2>
+      <h2><Trans i18nKey={"Contents.H2"}>Funnel Charts</Trans></h2>
       <p>
         <Trans i18nKey={"Contents.P5"}>
         Many New Relic customers use funnel charts to understand end-user
@@ -84,7 +84,7 @@ export default function AggregateQuery3() {
         span="6"
       />
 
-      <h2><Trans i18nKey={"Contents.H2_3"}>Aggregator Filters</Trans></h2>
+      <h2><Trans i18nKey={"Contents.H3"}>Aggregator Filters</Trans></h2>
       <p>
         <Trans i18nKey={"Contents.P8"}>
         <code>filter()</code> is a powerful tool that allows you to aggregate
@@ -111,7 +111,7 @@ export default function AggregateQuery3() {
         span="6"
       />
 
-      <h2><Trans i18nKey={"Contents.H2_4"}>Histograms</Trans></h2>
+      <h2><Trans i18nKey={"Contents.H4"}>Histograms</Trans></h2>
       <p>
         <Trans i18nKey={"Contents.P10"}>
         Histograms allow you to better visualize the distribution of your data.
@@ -139,7 +139,7 @@ export default function AggregateQuery3() {
         span="12"
       />
 
-      <h2><Trans i18nKey={"Contents.H2_5"}>Apdex</Trans></h2>
+      <h2><Trans i18nKey={"Contents.H5"}>Apdex</Trans></h2>
       <p>
         <Trans i18nKey={"Contents.P11"}>
         The <code>apdex()</code> function calculates an Apdex score on any
@@ -167,7 +167,7 @@ export default function AggregateQuery3() {
         span="6"
       />
 
-      <h2><Trans i18nKey={"Contents.H2_6"}>Lesson Summary</Trans></h2>
+      <h2><Trans i18nKey={"Contents.H6"}>Lesson Summary</Trans></h2>
       <p>
         <Trans i18nKey={"Contents.P13"}>
         We just explored a whole new set of visualizations with{' '}

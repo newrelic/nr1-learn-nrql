@@ -5,7 +5,7 @@ import {Trans} from "react-i18next";
 export default function OverridingValues() {
   return (
     <div>
-      <h2><Trans i18nKey={"Contents.H2_1"}>Counting NULL Values</Trans></h2>
+      <h2><Trans i18nKey={"Contents.H1"}>Counting NULL Values</Trans></h2>
       <p>
         <Trans i18nKey={"Contents.P1"}>
         Sometimes data simply doesn't report in the format you need. For
@@ -42,7 +42,7 @@ export default function OverridingValues() {
         span="12"
       />
 
-      <h2><Trans i18nKey={"Contents.H2_2"}>Coercion</Trans></h2>
+      <h2><Trans i18nKey={"Contents.H2"}>Coercion</Trans></h2>
       <p>
         <Trans i18nKey={"Contents.P4"}>
         NRQL does not automatically apply coercion. This means a float stored as
@@ -77,7 +77,7 @@ export default function OverridingValues() {
         nrql="SELECT count(boolean(error)), count(error)  from Transaction since 24 hours ago"
         span="12"
       />
-      <h2><Trans i18nKey={"Contents.H2_3"}>Lesson Summary</Trans></h2>
+      <h2><Trans i18nKey={"Contents.H3"}>Lesson Summary</Trans></h2>
       <p>
         <Trans i18nKey={"Contents.P6"}>
         Sometimes the devil is in the details. Here we've given you the power to

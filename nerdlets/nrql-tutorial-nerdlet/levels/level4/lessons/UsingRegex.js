@@ -63,9 +63,9 @@ export default function UsingRegex() {
         </strong>
       </p>
 
-      <h2><Trans i18nKey={"Contents.P6"}>Lesson Summary</Trans></h2>
+      <h2><Trans i18nKey={"Contents.H1"}>Lesson Summary</Trans></h2>
       <p>
-        <Trans i18nKey={"Contents.P7"}>
+        <Trans i18nKey={"Contents.P6"}>
         Regular expression support allows for near-infinite pattern matching
         possibilities. If you are already a Regex guru, you know the power this
         adds to NRQL. But if you're not, don't worry! There are tons of Regex

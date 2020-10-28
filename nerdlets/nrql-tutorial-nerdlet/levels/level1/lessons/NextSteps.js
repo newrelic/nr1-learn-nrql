@@ -21,44 +21,34 @@ export default function NextSteps() {
       </p>
       <p><Trans i18nKey={"Contents.P3"}>We've shown you the basics of:</Trans></p>
       <ul>
+        <Trans i18nKey={"Contents.P4"}>
         <li>
-          <Trans i18nKey={"Contents.P4"}>
           <code>SELECT</code> and <code>FROM</code>
-          </Trans>
         </li>
         <li>
           <code>LIMIT</code>
         </li>
-        <li><Trans i18nKey={"Contents.P5"}>Specifying attributes</Trans></li>
+        <li>Specifying attributes</li>
         <li>
-          <Trans i18nKey={"Contents.P6"}>
           Aggregating using <code>average()</code>, <code>max()</code>,{' '}
           <code>min()</code>, <code>sum()</code>, and <code>count()</code>
-          </Trans>
         </li>
         <li>
-          <Trans i18nKey={"Contents.P7"}>
           Using <code>SINCE</code> and <code>UNTIL</code>
-          </Trans>
         </li>
         <li>
-          <Trans i18nKey={"Contents.P8"}>
           Plotting line graphs with <code>TIMESERIES</code>
-          </Trans>
         </li>
         <li>
-          <Trans i18nKey={"Contents.P9"}>
           Filtering using <code>WHERE</code>
-          </Trans>
         </li>
         <li>
-          <Trans i18nKey={"Contents.P10"}>
           Grouping attributes using <code>FACET</code>
-          </Trans>
         </li>
+        </Trans>
       </ul>
       <p>
-        <Trans i18nKey={"Contents.P11"}>
+        <Trans i18nKey={"Contents.P5"}>
         You're now a Level 1 NRQL whiz. We've got more to show you but pat
         yourself on the back, you've learned enough NRQL to begin visualizing
         your data in meaningful ways.

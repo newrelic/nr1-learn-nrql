@@ -94,9 +94,9 @@ export default function Wildcards() {
         span="6"
       />
 
-      <h2><Trans i18nKey={"Contents.P8"}>Lesson Summary</Trans></h2>
+      <h2><Trans i18nKey={"Contents.H1"}>Lesson Summary</Trans></h2>
       <p>
-      <Trans i18nKey={"Contents.P9"}>
+      <Trans i18nKey={"Contents.P8"}>
         You can now control your data and manipulate it to do what you need,
         allowing you to construct powerful, meaningful dashboards and alerts.
       </Trans>

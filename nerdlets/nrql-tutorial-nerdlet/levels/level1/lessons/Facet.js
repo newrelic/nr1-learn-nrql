@@ -58,9 +58,9 @@ export default function Facet() {
         span="12"
       />
 
-      <h2><Trans i18nKey={"Contents.P5"}>Lesson Summary</Trans></h2>
+      <h2><Trans i18nKey={"Contents.H1"}>Lesson Summary</Trans></h2>
       <p>
-        <Trans i18nKey={"Contents.P6"}>
+        <Trans i18nKey={"Contents.P5"}>
         Grouping or "faceting" is important. It allows us to get dimensional
         with our data. Using the <code>FACET</code> keyword is the simplest way
         to do this.
@@ -68,7 +68,7 @@ export default function Facet() {
       </p>
 
       <p>
-        <Trans i18nKey={"Contents.P7"}>
+        <Trans i18nKey={"Contents.P6"}>
         When applying an aggregation function, we can use <code>FACET</code> to
         group by an attribute. You can use <em>any</em> attribute, default or
         custom, that reports to event data (just like the <code>WHERE</code>{' '}

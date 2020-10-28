@@ -70,14 +70,14 @@ export default function TimeBasedCohorting() {
         period.
       </Trans>
       </p>
-      
+
       <SampleQuery
         nrql="SELECT average(duration) FROM Transaction **FACET dateOf(timestamp)** SINCE 1 week ago"
         span="12"
       />
-      <h2><Trans i18nKey={"Contents.P8"}>Lesson Summary</Trans></h2>
+      <h2><Trans i18nKey={"Contents.H1"}>Lesson Summary</Trans></h2>
       <p>
-      <Trans i18nKey={"Contents.P9"}>
+      <Trans i18nKey={"Contents.P8"}>
         Digging into your data is always fun! Time-based cohorting is an easy
         way to expose problems that occur on specific minutes, hours, days, or
         weeks. No matter what data you send to New Relic, NRQL allows you to
@@ -85,7 +85,7 @@ export default function TimeBasedCohorting() {
       </Trans>
       </p>
       <p>
-      <Trans i18nKey={"Contents.P10"}>
+      <Trans i18nKey={"Contents.P9"}>
         There’s also many other options available to group by, including week,
         month, and year depending on your data retention. To see the full list,
         head to our{' '}

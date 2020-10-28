@@ -15,15 +15,15 @@ export default function AdvancedMath() {
         </Trans>
       </p>
 
-      <h2><Trans i18nKey={"Contents.P2"}>Absolute and Integer Rounding</Trans></h2>
+      <h2><Trans i18nKey={"Contents.H1"}>Absolute and Integer Rounding</Trans></h2>
       <p>
-        <Trans i18nKey={"Contents.P3"}>
+        <Trans i18nKey={"Contents.P2"}>
         NRQL has many math functions that manipulate values in some way. In this
         example, we will demonstrate a few simultaneously.
         </Trans>
       </p>
       <p>
-        <Trans i18nKey={"Contents.P4"}>
+        <Trans i18nKey={"Contents.P3"}>
         The <code>abs(n)</code> function returns the absolute value for n: for
         non-negative n values it returns n, and for negative n values it returns
         the positive number n. For example, <code>abs(2) = 2</code>, and{' '}
@@ -32,7 +32,7 @@ export default function AdvancedMath() {
         </Trans>
       </p>
       <p>
-        <Trans i18nKey={"Contents.P5"}>
+        <Trans i18nKey={"Contents.P4"}>
         We can also round decimal numbers to integers using <code>floor()</code>
         , <code>ceil()</code>, and <code>round()</code>. <code>floor()</code>{' '}
         returns the closest full integer rounding down, and <code>ceil()</code>{' '}
@@ -46,9 +46,9 @@ export default function AdvancedMath() {
         span="12"
       />
 
-      <h2><Trans i18nKey={"Contents.P6"}>Data Clamping</Trans></h2>
+      <h2><Trans i18nKey={"Contents.H2"}>Data Clamping</Trans></h2>
       <p>
-        <Trans i18nKey={"Contents.P7"}>
+        <Trans i18nKey={"Contents.P5"}>
         We can use clamping on an attribute to impose an upper or lower limit on
         its value. This is useful for things like ensuring extreme outliers
         don't skew the scale of a timeseries graph.{' '}
@@ -63,16 +63,16 @@ export default function AdvancedMath() {
         span="12"
       />
 
-      <h2><Trans i18nKey={"Contents.P8"}>Powers, Roots, Exponential, and Logs</Trans></h2>
+      <h2><Trans i18nKey={"Contents.H3"}>Powers, Roots, Exponential, and Logs</Trans></h2>
       <p>
-        <Trans i18nKey={"Contents.P9"}>
+        <Trans i18nKey={"Contents.P6"}>
         Now we are onto the advanced maths some of us found challenging in
         school! As before, we can demonstrate all these functions in a single
         example query.
         </Trans>
       </p>
       <p>
-        <Trans i18nKey={"Contents.P10"}>
+        <Trans i18nKey={"Contents.P7"}>
         The <code>pow()</code> function raises the first argument to the power
         of the second argument. In our example, we raise duration to the power
         of 2. If you need the square root of a value, the <code>sqrt()</code>{' '}
@@ -81,13 +81,13 @@ export default function AdvancedMath() {
         </Trans>
       </p>
       <p>
-        <Trans i18nKey={"Contents.P11"}>
+        <Trans i18nKey={"Contents.P8"}>
         Finally, NRQL also offers logarithms catered to a number of similar
         functions:
         </Trans>
       </p>
       <ul>
-        <Trans i18nKey={"Contents.P12"}>
+        <Trans i18nKey={"Contents.P9"}>
         <li>
           <code>ln(n)</code> computes the natural logarithm: the logarithm base
           e.
@@ -111,9 +111,9 @@ export default function AdvancedMath() {
         span="12"
       />
 
-      <h2><Trans i18nKey={"Contents.P13"}>Lesson Summary</Trans></h2>
+      <h2><Trans i18nKey={"Contents.H4"}>Lesson Summary</Trans></h2>
       <p>
-        <Trans i18nKey={"Contents.P14"}>
+        <Trans i18nKey={"Contents.P10"}>
         In this lesson, we learned about smoothing event data.{' '}
         <code>round()</code>/<code>ceil()</code>/<code>floor()</code> let us
         round in whichever manner suits us. Clamping lets us put bounds on the

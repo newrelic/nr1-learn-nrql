@@ -41,7 +41,7 @@ export default function Extrapolate() {
         </Trans>
       </p>
 
-      <h2><Trans i18nKey={"Contents.H2_1"}>Lesson Summary</Trans></h2>
+      <h2><Trans i18nKey={"Contents.H1"}>Lesson Summary</Trans></h2>
       <p>
         <Trans i18nKey={"Contents.P4"}>
         When <code>EXTRAPOLATE</code> is included in a query, the ratio between

@@ -13,9 +13,9 @@ export default function DiscoverEventsAndAttributes() {
         </Trans>
       </p>
 
-      <h2><Trans i18nKey={"Contents.P2"}>Discovering Event Types</Trans></h2>
+      <h2><Trans i18nKey={"Contents.H1"}>Discovering Event Types</Trans></h2>
       <p>
-        <Trans i18nKey={"Contents.P3"}>
+        <Trans i18nKey={"Contents.P2"}>
         Let's say you want a list of all event types currently reporting to your
         New Relic account. The <code>SHOW EVENT TYPES</code> syntax returns a
         list of all reported event types in a given period. This is one of the
@@ -30,9 +30,9 @@ export default function DiscoverEventsAndAttributes() {
         span="12"
       />
 
-      <h2><Trans i18nKey={"Contents.P4"}>Discovering Attributes</Trans></h2>
+      <h2><Trans i18nKey={"Contents.H2"}>Discovering Attributes</Trans></h2>
       <p>
-        <Trans i18nKey={"Contents.P5"}>
+        <Trans i18nKey={"Contents.P3"}>
         You may need to know what attributes are available for a given event
         type. The <code>keyset()</code> function provides a list of all
         attributes for an event type, grouped by attribute type. Note that only
@@ -47,9 +47,9 @@ export default function DiscoverEventsAndAttributes() {
         chartType="json"
         span="12"
       />
-      <h2><Trans i18nKey={"Contents.P6"}>Lesson Summary</Trans></h2>
+      <h2><Trans i18nKey={"Contents.H3"}>Lesson Summary</Trans></h2>
       <p>
-        <Trans i18nKey={"Contents.P7"}>
+        <Trans i18nKey={"Contents.P4"}>
         These features help you discovery of changes in event types and/or
         attributes. More DevOps engineers use these functionalities to wrap up
         jobs, or even quickly automate them.

@@ -29,9 +29,9 @@ export default function AggregateQuery2() {
       </p>
 
       <SampleQuery nrql="SELECT **uniqueCount(host)** FROM Transaction SINCE 1 day ago" span="6" />
-      
+
       <p className="notice">
-      
+
       <Trans i18nKey={"Contents.P3"}>
         To optimize query performance, this function returns approximate results
         for queries that inspect more than 256 unique values.
@@ -139,12 +139,12 @@ export default function AggregateQuery2() {
       />
 
       <h2>
-      <Trans i18nKey={"Contents.P12"}>
+      <Trans i18nKey={"Contents.H1"}>
         Lesson Summary
       </Trans>
       </h2>
       <p>
-      <Trans i18nKey={"Contents.P13"}>
+      <Trans i18nKey={"Contents.P12"}>
         As you can see, aggregation can manipulate data in powerful ways. We
         used <code>uniqueCount()</code> to count the unique entries of a
         particular attribute. But you could also use this to identify a count of
@@ -156,7 +156,7 @@ export default function AggregateQuery2() {
       </p>
 
       <p>
-      <Trans i18nKey={"Contents.P14"}>
+      <Trans i18nKey={"Contents.P13"}>
         The <code>latest()</code>/<code>earliest()</code> functions are
         particularly useful when dealing with sparse data, or investigating when
         something began or stopped reporting (assuming the data is still stored
@@ -165,7 +165,7 @@ export default function AggregateQuery2() {
       </p>
 
       <p>
-      <Trans i18nKey={"Contents.P15"}>        
+      <Trans i18nKey={"Contents.P15"}>
         We also learned that <code>percentage()</code> can determine what
         percentage of events matched a qualifier compared with the overall
         result set.

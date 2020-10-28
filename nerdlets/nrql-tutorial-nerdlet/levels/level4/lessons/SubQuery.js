@@ -31,9 +31,9 @@ export default function SubQuery() {
 
       <p><Trans i18nKey={"Contents.P3"}>Let's explore each of these use cases in more detail.</Trans></p>
 
-      <h2><Trans i18nKey={"Contents.P4"}>Example 1 - Max RPM for Last Hour</Trans></h2>
+      <h2><Trans i18nKey={"Contents.H1"}>Example 1 - Max RPM for Last Hour</Trans></h2>
       <p>
-        <Trans i18nKey={"Contents.P5"}>
+        <Trans i18nKey={"Contents.P4"}>
         First we count the number of transactions per minute over the last hour.
         There is nothing new here. This returns 60 data points on a graph:
         </Trans>
@@ -43,7 +43,7 @@ export default function SubQuery() {
         span="12"
       />
       <p>
-        <Trans i18nKey={"Contents.P6"}>
+        <Trans i18nKey={"Contents.P5"}>
         Now, in order to find the maximum value reported across that period, we
         wrap the query in parentheses, and use <code>SELECT ... FROM</code> like
         this: <code>SELECT z FROM (SELECT x FROM y)</code>
@@ -55,9 +55,9 @@ export default function SubQuery() {
         chartType="table"
       />
 
-      <h2><Trans i18nKey={"Contents.P7"}>Example 2 - Servers with High CPU Load</Trans></h2>
+      <h2><Trans i18nKey={"Contents.H2"}>Example 2 - Servers with High CPU Load</Trans></h2>
       <p>
-        <Trans i18nKey={"Contents.P8"}>
+        <Trans i18nKey={"Contents.P6"}>
         This example uses data from New Relic Infrastructure. Sometimes you only
         want to see hosts whose CPU has, on average, exceeded a certain
         percentage. If you ask NRQL for the <code>average(cpuPercent)</code> you
@@ -68,7 +68,7 @@ export default function SubQuery() {
         </Trans>
       </p>
       <p>
-        <Trans i18nKey={"Contents.P9"}>
+        <Trans i18nKey={"Contents.P7"}>
         But this can be solved with nested aggregation! By asking for{' '}
         <code>average(cpuPercent)</code> in the sub query, we get the list of
         hosts and their average CPU. Now, in the outer query we can filter to
@@ -85,9 +85,9 @@ export default function SubQuery() {
         chartType="table"
       />
 
-      <h2><Trans i18nKey={"Contents.P10"}>Example 3 - Session Bounces</Trans></h2>
+      <h2><Trans i18nKey={"Contents.H3"}>Example 3 - Session Bounces</Trans></h2>
       <p>
-        <Trans i18nKey={"Contents.P11"}>
+        <Trans i18nKey={"Contents.P8"}>
         We are often asked how to calculate bounce rate on front-end monitoring.
         This refers to sessions that view a single page, and "bounce" away
         before visiting more pages. With nested aggregation, we can achieve
@@ -103,22 +103,22 @@ export default function SubQuery() {
         span="12"
       />
 
-      <h2><Trans i18nKey={"Contents.P12"}>Lesson Summary</Trans></h2>
+      <h2><Trans i18nKey={"Contents.H4"}>Lesson Summary</Trans></h2>
       <p>
-        <Trans i18nKey={"Contents.P13"}>
+        <Trans i18nKey={"Contents.P9"}>
         Well done! You have now learned all the amazing functionality of NRQL
         covered in this course. You truly are a NRQL wizard!
         </Trans>
       </p>
       <p>
-        <Trans i18nKey={"Contents.P14"}>
+        <Trans i18nKey={"Contents.P10"}>
         If you have further questions or encounter problems, feel free to
         contact New Relic support via{' '}
         </Trans>
         <a href="https://support.newrelic.com" target="_blank" rel="noreferrer">
           support.newrelic.com
         </a>{' '}
-        <Trans i18nKey={"Contents.P15"}>
+        <Trans i18nKey={"Contents.P11"}>
         You're also welcome to share your experience with our online community
         at{' '}
         </Trans>

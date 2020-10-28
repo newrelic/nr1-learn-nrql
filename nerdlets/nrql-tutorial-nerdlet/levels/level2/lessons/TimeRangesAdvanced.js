@@ -84,9 +84,9 @@ export default function TimeRangesAdvanced() {
         span="12"
       />
 
-      <h2><Trans i18nKey={"Contents.P7"}>Lesson Summary</Trans></h2>
+      <h2><Trans i18nKey={"Contents.H1"}>Lesson Summary</Trans></h2>
       <p>
-      <Trans i18nKey={"Contents.P8"}>
+      <Trans i18nKey={"Contents.P7"}>
         Before this lesson, all our time control mechanisms were based on
         relative times from now. With the lessons today, we have learned how to
         adjust the view depending where someone is in the world. Maybe a
@@ -98,7 +98,7 @@ export default function TimeRangesAdvanced() {
       </Trans>
       </p>
       <p>
-      <Trans i18nKey={"Contents.P9"}>
+      <Trans i18nKey={"Contents.P8"}>
         Epoch and standard date stamps make sense. So when you need to focus
         your data to specific dates of an incident for example, and you want to
         investigate the data without a moving time window being relative to the

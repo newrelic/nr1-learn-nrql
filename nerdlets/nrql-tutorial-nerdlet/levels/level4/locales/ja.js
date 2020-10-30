@@ -1,10 +1,10 @@
 const translate = {
-  "Level Four": {
-    Title: "NRQLを極める",
-    Level: "レベル４ : "
+  'Level Four': {
+    Title: 'NRQLを極める',
+    Level: 'レベル４ : '
   },
-  "Introduction_L4": {
-    Title: "はじめに",
+  Introduction_L4: {
+    Title: 'はじめに',
     Contents: {
       P1: `
         レベル4へようこそ！私たちとNRQLの学習を続けてくれてありがとうございます。
@@ -18,8 +18,8 @@ const translate = {
         `
     }
   },
-  "Aggregation and bucketing": {
-    Title: "集約と分割の利用",
+  'Aggregation and bucketing': {
+    Title: '集約と分割の利用',
     Contents: {
       P1: `
         これは最後の集約についての学習です。標準偏差と分割方法について学んでいきましょう。
@@ -65,8 +65,8 @@ const translate = {
       `
     }
   },
-  "Advanced maths": {
-    Title: "高度な算術",
+  'Advanced maths': {
+    Title: '高度な算術',
     Contents: {
       P1: `
         NRQLは、データを細かく処理する必要がある場合に、以下のような高度な数学関数もサポートしています。
@@ -119,8 +119,8 @@ const translate = {
         `
     }
   },
-  "Discover events and attributes": {
-    Title: "イベントと属性の検索",
+  'Discover events and attributes': {
+    Title: 'イベントと属性の検索',
     Contents: {
       P1: `
         イベントと属性を検索できるようになると、クエリを自動生成できるようになります。
@@ -148,8 +148,8 @@ const translate = {
         `
     }
   },
-  "Filter with regex": {
-    Title: "正規表現によるフィルタ",
+  'Filter with regex': {
+    Title: '正規表現によるフィルタ',
     Contents: {
       P1: `
         <1>LIKE</1>よりも複雑なパターンでデータをフィルタリングしたい場合もあると思います。
@@ -178,8 +178,8 @@ const translate = {
         `
     }
   },
-  "Nested aggregation": {
-    Title: "クエリでのネストの利用",
+  'Nested aggregation': {
+    Title: 'クエリでのネストの利用',
     Contents: {
       P1: `
         NRQLは、一般的なSQLで利用できる結合をサポートしていません。

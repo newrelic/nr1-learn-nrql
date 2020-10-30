@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Trans, withNamespaces} from "react-i18next";
-import i18n from "../i18n/i18n";
+import { Trans, withNamespaces } from 'react-i18next';
 
 Lesson.propTypes = {
   title: PropTypes.string,
@@ -10,14 +9,21 @@ Lesson.propTypes = {
 };
 
 function Lesson({ title, component, level }) {
-  const namespace = ["Summary","Introduction"].indexOf(title)>-1?`${title}_L${level+1}`:title;
+  const namespace =
+    ['Summary', 'Introduction'].indexOf(title) > -1
+      ? `${title}_L${level + 1}`
+      : title;
   const Translated = withNamespaces(namespace)(component);
   return (
     <div className="lesson-content">
       <div className="title">
-        <h1><Trans i18nKey={`${namespace}:Title`}>{title}</Trans></h1>
+        <h1>
+          <Trans i18nKey={`${namespace}:Title`}>{title}</Trans>
+        </h1>
       </div>
-      <div><Translated /></div>
+      <div>
+        <Translated />
+      </div>
     </div>
   );
 }

@@ -1,25 +1,17 @@
-import AggregateQuery from "../lessons/AggregateQuery";
-import TimeRange from "../lessons/TimeRange";
-import Timeseries from "../lessons/Timeseries";
-import Where from "../lessons/Where";
-import Facet from "../lessons/Facet";
-import NextSteps from "../lessons/NextSteps";
-
 const translate = {
-  "Level One": {
-    Title: "コツを掴む",
-    Level: "レベル1 : "
+  'Level One': {
+    Title: 'コツを掴む',
+    Level: 'レベル1 : '
   },
   Welcome: {
-    Title: "ようこそ",
+    Title: 'ようこそ',
     Contents: {
       P1: `
         NRQLチュートリアルにようこそ! 簡単なチュートリアルを通して、皆様ご利用中のアカウントを実際に利用し、
         NRQLの使い方に慣れていきましょう。もうすでにNRQLのベテランですか？
         このチュートリアルではNRQLを利用していくためのコツや技をご紹介していますので、ぜひこの機会に振り返っていただければと
         思います。4段階のレベルを通過していくことで、NRQLのスキルを身に付けていってください。
-  `
-      ,
+  `,
       P2: `
         NRQL は <1>New Relic Query Language</1>の略記です。（ヌルクル、ナーコゥ、エヌアールキューエルなどと発音しています。）
         Metric、Event、Log、そしてTraceのデータがペタバイト級に保存されているNRDBから、リアルタイムにアクセス可能です。
@@ -42,13 +34,12 @@ const translate = {
       `
     }
   },
-  "Your first query": {
+  'Your first query': {
     Title: `初めてのクエリ`,
     Contents: {
       P1: `
         まず、New Relic APMで収集される、<2>Transaction</2>イベントをみていきましょう。
-        `
-      ,
+        `,
       P2: `
         すべてのNRQLクエリは、<1>SELECT</1>と<3>FROM</3> を持たなければなりません。
         <6>FROM</6>でデータがどこにあるのかを指定し、データを<8>SELECT</8>します。
@@ -85,8 +76,8 @@ const translate = {
   `
     }
   },
-  "Aggregating data": {
-    Title: "データの集約",
+  'Aggregating data': {
+    Title: 'データの集約',
     Contents: {
       P1: `
         一つ一つのイベントの情報を見るのではなく、イベントを集約し概要を把握するのが一般的です。
@@ -145,8 +136,8 @@ const translate = {
           `
     }
   },
-  "Time ranges": {
-    Title: "時間範囲",
+  'Time ranges': {
+    Title: '時間範囲',
     Contents: {
       P1: `
           NRDB内のすべてのデータは、<1>timestamp</1>を持っています。また、すべての
@@ -180,8 +171,8 @@ const translate = {
     `
     }
   },
-  "Time series queries": {
-    Title: "時系列クエリ",
+  'Time series queries': {
+    Title: '時系列クエリ',
     Contents: {
       P1: `
         一般的なNRQLのユースケースは、時間の経過とともに値がどのように変化するかを問い合わせることです。
@@ -218,8 +209,8 @@ const translate = {
         `
     }
   },
-  "Where clauses": {
-    Title: "WHERE句",
+  'Where clauses': {
+    Title: 'WHERE句',
     Contents: {
       P1: `
         通常は、NRDBに入っているデータの一部を指定してクエリすることが多いと思います。
@@ -252,8 +243,8 @@ const translate = {
         `
     }
   },
-  "Faceted queries": {
-    Title: "ファセットクエリ",
+  'Faceted queries': {
+    Title: 'ファセットクエリ',
     Contents: {
       P1: `
         一般的に、「トップN」がどうなっているか確認したい場合がよくあります。
@@ -289,10 +280,10 @@ const translate = {
     `
     }
   },
-  "Summary_L1": {
-    Title: "まとめ",
+  Summary_L1: {
+    Title: 'まとめ',
     Contents: {
-      P1: `以上で”レベル 1 ：コツを掴む”　は終了です！`,
+      P1: `以上で”レベル 1 ：コツを掴む” は終了です！`,
       P2: `
         ここまで来れば、NRQLを使用したイベントデータのクエリの基本が分かりましたね。
         NRQLを使うとダッシュボードやアラートを作成することができます。
@@ -316,5 +307,5 @@ const translate = {
       `
     }
   }
-}
+};
 export default translate;

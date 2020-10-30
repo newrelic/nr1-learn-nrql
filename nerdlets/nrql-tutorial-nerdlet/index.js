@@ -19,8 +19,9 @@ import LessonPicker from './components/LessonPicker';
 import Lesson from './components/Lesson';
 import { LessonContextProvider } from './contexts/LessonContext';
 import i18n from './i18n/i18n';
-import {I18nextProvider} from 'react-i18next'
+import { I18nextProvider } from 'react-i18next';
 import locales from './i18n/locales';
+
 export default class NrqlTutorialNerdlet extends React.Component {
   constructor(props) {
     super(props);
@@ -98,12 +99,11 @@ export default class NrqlTutorialNerdlet extends React.Component {
             intendedState.currentLesson = 0;
           }
         }
-
       })
       // eslint-disable-next-line no-console
       .catch(err => console.log(err))
       .finally(() => {
-        if (!!intendedState.selectedLanguage) {
+        if (intendedState.selectedLanguage) {
           i18n.changeLanguage(intendedState.selectedLanguage);
         }
         this.setState(intendedState);
@@ -116,7 +116,7 @@ export default class NrqlTutorialNerdlet extends React.Component {
         {language.label}
       </SelectItem>
     ));
-    this.setState({ languages })
+    this.setState({ languages });
   }
 
   chooseLesson(level, lesson) {
@@ -190,12 +190,12 @@ export default class NrqlTutorialNerdlet extends React.Component {
       currentLesson + 1 === LEVELS[currentLevel].lessons.length
     );
     return (
-      <I18nextProvider i18n={ i18n }>
-      <div ref={this.topRef}>
-        {selectedAccount && accounts ? (
-          <>
-            <Grid className="AccountChooser">
-              {accounts.length > 1 ? (
+      <I18nextProvider i18n={i18n}>
+        <div ref={this.topRef}>
+          {selectedAccount && accounts ? (
+            <>
+              <Grid className="AccountChooser">
+                {accounts.length > 1 ? (
                   <>
                     <GridItem columnSpan={1}>Use data from account:</GridItem>
                     <GridItem columnSpan={5}>
@@ -209,69 +209,75 @@ export default class NrqlTutorialNerdlet extends React.Component {
                       </Select>
                     </GridItem>
                   </>
-                ) : <></> // ONly one account no need to show picker
-              }
-              {languages && languages.length > 1 ? (
+                ) : (
+                  <></>
+                ) // ONly one account no need to show picker
+                }
+                {languages && languages.length > 1 ? (
                   <>
-                <GridItem columnSpan={1}>Select Language:</GridItem>
-                <GridItem columnSpan={5}>
-                <Select
-                onChange={(event, selectedLanguage) => {
-                  i18n.changeLanguage(selectedLanguage);
-                this.setState({ selectedLanguage });
-              }}
-                value={selectedLanguage}
-                >
-                {languages}
-                </Select>
+                    <GridItem columnSpan={1}>Select Language:</GridItem>
+                    <GridItem columnSpan={5}>
+                      <Select
+                        onChange={(event, selectedLanguage) => {
+                          i18n.changeLanguage(selectedLanguage);
+                          this.setState({ selectedLanguage });
+                        }}
+                        value={selectedLanguage}
+                      >
+                        {languages}
+                      </Select>
+                    </GridItem>
+                  </>
+                ) : (
+                  <></>
+                ) // ONly one account no need to show picker
+                }
+              </Grid>
+              <Grid className="MainLessonArea">
+                <GridItem columnSpan={3}>
+                  <LessonPicker
+                    levels={LEVELS}
+                    lesson={lesson}
+                    selectLesson={(level, lesson) =>
+                      this.chooseLesson(level, lesson)
+                    }
+                    selectLevel={level => this.chooseLesson(level, 0)}
+                    selectedLevel={currentLevel}
+                    selectedLesson={currentLesson}
+                    selectedLanguage={selectedLanguage}
+                  />
                 </GridItem>
-                </>
-                ) :<></> // ONly one account no need to show picker
-              }
-            </Grid>
-            <Grid className="MainLessonArea">
-              <GridItem columnSpan={3}>
-                <LessonPicker
-                  levels={LEVELS}
-                  lesson={lesson}
-                  selectLesson={(level, lesson) =>
-                    this.chooseLesson(level, lesson)
-                  }
-                  selectLevel={level => this.chooseLesson(level, 0)}
-                  selectedLevel={currentLevel}
-                  selectedLesson={currentLesson}
-                  selectedLanguage={selectedLanguage}
-                />
-              </GridItem>
 
-              <GridItem columnSpan={9}>
-                <LessonContextProvider
-                  accountId={Number(selectedAccount)}
-                  chooseLesson={(level, lesson) => {
-                    this.chooseLesson(level, lesson);
-                    this.topRef.current.scrollIntoView();
-                  }}
-                >
-                  <Lesson
-                    language={selectedLanguage}
-                    level={currentLevel}
-                    levelTitle={levelTitlePrefix} {...lesson} />
-                  {showNextButton && <NextLessonBt />}
-                </LessonContextProvider>
-              </GridItem>
-            </Grid>
-          </>
-        ) : noAccounts === true ? (
-          <div className="StartupMessage">
-            Sorry, we could not find an account with recent transaction data.
-          </div>
-        ) : (
-          <div className="StartupMessage">
-            One moment while we set things up for you...{' '}
-            <Spinner type={Spinner.TYPE.DOT} />{' '}
-          </div>
-        )}
-      </div>
+                <GridItem columnSpan={9}>
+                  <LessonContextProvider
+                    accountId={Number(selectedAccount)}
+                    chooseLesson={(level, lesson) => {
+                      this.chooseLesson(level, lesson);
+                      this.topRef.current.scrollIntoView();
+                    }}
+                  >
+                    <Lesson
+                      language={selectedLanguage}
+                      level={currentLevel}
+                      levelTitle={levelTitlePrefix}
+                      {...lesson}
+                    />
+                    {showNextButton && <NextLessonBt />}
+                  </LessonContextProvider>
+                </GridItem>
+              </Grid>
+            </>
+          ) : noAccounts === true ? (
+            <div className="StartupMessage">
+              Sorry, we could not find an account with recent transaction data.
+            </div>
+          ) : (
+            <div className="StartupMessage">
+              One moment while we set things up for you...{' '}
+              <Spinner type={Spinner.TYPE.DOT} />{' '}
+            </div>
+          )}
+        </div>
       </I18nextProvider>
     );
   }

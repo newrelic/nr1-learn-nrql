@@ -1,11 +1,3 @@
-import NextSteps from '../lessons/NextSteps';
-import Overview from '../lessons/Overview';
-import AggregateQuery3 from '../lessons/AggregateQuery3';
-import Extrapolate from '../lessons/Extrapolate';
-import FacetCases from '../lessons/FacetCases';
-import FilterToEventTypes from '../lessons/FilterToEventTypes';
-import OverridingValues from '../lessons/OverridingValues';
-
 const translate = {
   'Level Three': {
     Title: `ダッシュボード作成を極める`,
@@ -240,7 +232,7 @@ const translate = {
         2つの異なるイベントを指定し、それぞれのデータをフィルタする、そしてグラフとしてプロットすることが
         できるようになりました。NRQLでは、複雑な結合や結合クエリを書く必要なく、
         必要なデータを迅速かつ簡潔に取得できることをご確認いただけたと思います。
-      `,
+      `
     }
   },
   'Overriding values': {

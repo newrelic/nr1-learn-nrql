@@ -1,20 +1,20 @@
 const translate = {
-  "Resources": {
-    Level: "",
-    Title: "索引とリソース"
+  Resources: {
+    Level: '',
+    Title: '索引とリソース'
   },
-  "Function and Operator Index": {
-    Title: "関数とオペレーターの索引",
+  'Function and Operator Index': {
+    Title: '関数とオペレーターの索引',
     Contents: {
       L1: `公式ドキュメント`,
       P1: `
         NRQLで利用できる関数やオペレーターについて知るための一覧です。
         また、<2>公式ドキュメント</2>もあるのでご利用ください。
   `
-    },
+    }
   },
-  "Links and Resources": {
-    Title: "外部リンク",
+  'Links and Resources': {
+    Title: '外部リンク',
     Contents: {
       P1: `
         NRQLをより活用していくために、以下のリンクもご参照ください。
@@ -38,5 +38,5 @@ const translate = {
         `
     }
   }
-}
+};
 export default translate;

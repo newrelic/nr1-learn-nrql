@@ -10,12 +10,12 @@ import Resources from '../levels/resources/locales/index.js';
 // the translations
 const resources = {
   en:{},//default
-  jp:{
-    ...Level1T.jp,
-    ...Level2T.jp,
-    ...Level3T.jp,
-    ...Level4T.jp,
-    ...Resources.jp
+  ja:{
+    ...Level1T.ja,
+    ...Level2T.ja,
+    ...Level3T.ja,
+    ...Level4T.ja,
+    ...Resources.ja
   }
 };
 

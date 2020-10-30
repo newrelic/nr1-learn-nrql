@@ -1,4 +1,4 @@
-import jp from './jp';
+import ja from './ja';
 export default {
-  jp
+  ja
 }

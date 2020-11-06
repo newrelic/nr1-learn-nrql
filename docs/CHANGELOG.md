@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/newrelic/nr1-learn-nrql/compare/v1.2.1...v1.3.0) (2020-11-06)
+
+
+### Features
+
+* Japanese translation ([be5062d](https://github.com/newrelic/nr1-learn-nrql/commit/be5062dcb10a363e1ad89e0f9bd27d8c60acded7))
+
 ## [1.2.1](https://github.com/newrelic/nr1-learn-nrql/compare/v1.2.0...v1.2.1) (2020-08-19)
 
 

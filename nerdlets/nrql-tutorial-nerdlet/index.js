@@ -18,6 +18,9 @@ import LEVELS from './levels';
 import LessonPicker from './components/LessonPicker';
 import Lesson from './components/Lesson';
 import { LessonContextProvider } from './contexts/LessonContext';
+import i18n from './i18n/i18n';
+import { I18nextProvider } from 'react-i18next';
+import locales from './i18n/locales';
 
 export default class NrqlTutorialNerdlet extends React.Component {
   constructor(props) {
@@ -25,7 +28,8 @@ export default class NrqlTutorialNerdlet extends React.Component {
     this.state = {
       // lesson: LESSONS[LESSONS.length-1]  // for debugging the currently lesson I'm coding
       currentLevel: 0,
-      currentLesson: 0
+      currentLesson: 0,
+      selectedLanguage: 'en'
     };
     this.collectionId = 'NRQLesson';
     this.documentId = 'progress';
@@ -35,6 +39,7 @@ export default class NrqlTutorialNerdlet extends React.Component {
 
   componentDidMount() {
     this.loadAccounts();
+    this.loadLanguages();
     nerdlet.setConfig({
       timePicker: false
     });
@@ -98,8 +103,20 @@ export default class NrqlTutorialNerdlet extends React.Component {
       // eslint-disable-next-line no-console
       .catch(err => console.log(err))
       .finally(() => {
+        if (intendedState.selectedLanguage) {
+          i18n.changeLanguage(intendedState.selectedLanguage);
+        }
         this.setState(intendedState);
       });
+  }
+
+  async loadLanguages() {
+    const languages = locales.map(language => (
+      <SelectItem value={language.lng} key={language.lng}>
+        {language.label}
+      </SelectItem>
+    ));
+    this.setState({ languages });
   }
 
   chooseLesson(level, lesson) {
@@ -117,7 +134,7 @@ export default class NrqlTutorialNerdlet extends React.Component {
       }
     }
 
-    const { selectedAccount } = this.state;
+    const { selectedAccount, selectedLanguage } = this.state;
     this.setState({ currentLevel: nextLevel, currentLesson: nextLesson });
     UserStorageMutation.mutate({
       actionType: UserStorageMutation.ACTION_TYPE.WRITE_DOCUMENT,
@@ -126,7 +143,8 @@ export default class NrqlTutorialNerdlet extends React.Component {
       document: {
         currentLevel: nextLevel,
         currentLesson: nextLesson,
-        selectedAccount: selectedAccount
+        selectedAccount: selectedAccount,
+        selectedLanguage: selectedLanguage
       }
       // eslint-disable-next-line no-unused-vars
     }).then(res => {
@@ -146,7 +164,9 @@ export default class NrqlTutorialNerdlet extends React.Component {
       currentLesson,
       accounts,
       selectedAccount,
-      noAccounts
+      noAccounts,
+      languages,
+      selectedLanguage
     } = this.state;
     const lesson = LEVELS[currentLevel].lessons[currentLesson];
     const levelTitlePrefix = LEVELS[currentLevel].level;
@@ -170,64 +190,95 @@ export default class NrqlTutorialNerdlet extends React.Component {
       currentLesson + 1 === LEVELS[currentLevel].lessons.length
     );
     return (
-      <div ref={this.topRef}>
-        {selectedAccount && accounts ? (
-          <>
-            {accounts.length > 1 ? (
+      <I18nextProvider i18n={i18n}>
+        <div ref={this.topRef}>
+          {selectedAccount && accounts ? (
+            <>
               <Grid className="AccountChooser">
-                <GridItem columnSpan={1}>Use data from account:</GridItem>
-                <GridItem columnSpan={11}>
-                  <Select
-                    onChange={(event, value) => {
-                      this.setState({ selectedAccount: value });
+                {accounts.length > 1 ? (
+                  <>
+                    <GridItem columnSpan={1}>Use data from account:</GridItem>
+                    <GridItem columnSpan={5}>
+                      <Select
+                        onChange={(event, value) => {
+                          this.setState({ selectedAccount: value });
+                        }}
+                        value={selectedAccount}
+                      >
+                        {accounts}
+                      </Select>
+                    </GridItem>
+                  </>
+                ) : (
+                  <></>
+                ) // ONly one account no need to show picker
+                }
+                {languages && languages.length > 1 ? (
+                  <>
+                    <GridItem columnSpan={1}>Select Language:</GridItem>
+                    <GridItem columnSpan={5}>
+                      <Select
+                        onChange={(event, selectedLanguage) => {
+                          i18n.changeLanguage(selectedLanguage);
+                          this.setState({ selectedLanguage });
+                        }}
+                        value={selectedLanguage}
+                      >
+                        {languages}
+                      </Select>
+                    </GridItem>
+                  </>
+                ) : (
+                  <></>
+                ) // ONly one account no need to show picker
+                }
+              </Grid>
+              <Grid className="MainLessonArea">
+                <GridItem columnSpan={3}>
+                  <LessonPicker
+                    levels={LEVELS}
+                    lesson={lesson}
+                    selectLesson={(level, lesson) =>
+                      this.chooseLesson(level, lesson)
+                    }
+                    selectLevel={level => this.chooseLesson(level, 0)}
+                    selectedLevel={currentLevel}
+                    selectedLesson={currentLesson}
+                    selectedLanguage={selectedLanguage}
+                  />
+                </GridItem>
+
+                <GridItem columnSpan={9}>
+                  <LessonContextProvider
+                    accountId={Number(selectedAccount)}
+                    chooseLesson={(level, lesson) => {
+                      this.chooseLesson(level, lesson);
+                      this.topRef.current.scrollIntoView();
                     }}
-                    value={selectedAccount}
                   >
-                    {accounts}
-                  </Select>
+                    <Lesson
+                      language={selectedLanguage}
+                      level={currentLevel}
+                      levelTitle={levelTitlePrefix}
+                      {...lesson}
+                    />
+                    {showNextButton && <NextLessonBt />}
+                  </LessonContextProvider>
                 </GridItem>
               </Grid>
-            ) : null // ONly one account no need to show picker
-            }
-            <Grid className="MainLessonArea">
-              <GridItem columnSpan={3}>
-                <LessonPicker
-                  levels={LEVELS}
-                  lesson={lesson}
-                  selectLesson={(level, lesson) =>
-                    this.chooseLesson(level, lesson)
-                  }
-                  selectLevel={level => this.chooseLesson(level, 0)}
-                  selectedLevel={currentLevel}
-                  selectedLesson={currentLesson}
-                />
-              </GridItem>
-
-              <GridItem columnSpan={9}>
-                <LessonContextProvider
-                  accountId={Number(selectedAccount)}
-                  chooseLesson={(level, lesson) => {
-                    this.chooseLesson(level, lesson);
-                    this.topRef.current.scrollIntoView();
-                  }}
-                >
-                  <Lesson levelTitle={levelTitlePrefix} {...lesson} />
-                  {showNextButton && <NextLessonBt />}
-                </LessonContextProvider>
-              </GridItem>
-            </Grid>
-          </>
-        ) : noAccounts === true ? (
-          <div className="StartupMessage">
-            Sorry, we could not find an account with recent transaction data.
-          </div>
-        ) : (
-          <div className="StartupMessage">
-            One moment while we set things up for you...{' '}
-            <Spinner type={Spinner.TYPE.DOT} />{' '}
-          </div>
-        )}
-      </div>
+            </>
+          ) : noAccounts === true ? (
+            <div className="StartupMessage">
+              Sorry, we could not find an account with recent transaction data.
+            </div>
+          ) : (
+            <div className="StartupMessage">
+              One moment while we set things up for you...{' '}
+              <Spinner type={Spinner.TYPE.DOT} />{' '}
+            </div>
+          )}
+        </div>
+      </I18nextProvider>
     );
   }
 }

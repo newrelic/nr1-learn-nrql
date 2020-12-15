@@ -77,8 +77,8 @@ export default class SampleQuery extends React.Component {
     } else if (chartType === 'funnel') {
       return FunnelChart;
     } else if (chartType === 'json') {
-      // return JsonChart
-      return JSONView;
+       return JsonChart
+      //return JSONView;
     } else if (chartType === 'jsonchart') {
       return JsonChart;
     } else if (chartType === 'histogram') {

@@ -17,12 +17,10 @@ import {
   HistogramChart,
   JsonChart,
   Icon,
-  Toast,
-  NrqlQuery
+  Toast
 } from 'nr1';
 
 const ReactMarkdown = require('react-markdown');
-const JSONPretty = require('react-json-pretty');
 
 export default class SampleQuery extends React.Component {
   static propTypes = {
@@ -37,32 +35,6 @@ export default class SampleQuery extends React.Component {
   };
 
   getChart() {
-    function JSONView({ query, accountId }) {
-      return (
-        <NrqlQuery accountId={accountId} query={query}>
-          {({ data }) => {
-            if (data && data[0] && data[0].data[0]) {
-              return (
-                <div>
-                  <JSONPretty
-                    style={{ height: '20em', overflow: 'scroll' }}
-                    id="json-pretty"
-                    data={data[0].data[0]}
-                  />
-                </div>
-              );
-            } else {
-              return (
-                <div>
-                  <pre>Loading data...</pre>
-                </div>
-              );
-            }
-          }}
-        </NrqlQuery>
-      );
-    }
-
     const { chartType, nrql } = this.props;
     if (chartType === 'line') {
       return LineChart;
@@ -77,8 +49,7 @@ export default class SampleQuery extends React.Component {
     } else if (chartType === 'funnel') {
       return FunnelChart;
     } else if (chartType === 'json') {
-       return JsonChart
-      //return JSONView;
+      return JsonChart;
     } else if (chartType === 'jsonchart') {
       return JsonChart;
     } else if (chartType === 'histogram') {

@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/newrelic/nr1-learn-nrql/compare/v1.3.0...v1.3.1) (2020-12-17)
+
+
+### Bug Fixes
+
+* Chapter 4 crash bug ([60725b9](https://github.com/newrelic/nr1-learn-nrql/commit/60725b976aba48f7e88f55022db965c75ed06f67))
+
 # [1.3.0](https://github.com/newrelic/nr1-learn-nrql/compare/v1.2.1...v1.3.0) (2020-11-06)
 
 

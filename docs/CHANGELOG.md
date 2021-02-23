@@ -1,3 +1,10 @@
+## [1.3.2](https://github.com/newrelic/nr1-learn-nrql/compare/v1.3.1...v1.3.2) (2021-02-23)
+
+
+### Bug Fixes
+
+* package.json & package-lock.json to reduce vulnerabilities ([bd882a5](https://github.com/newrelic/nr1-learn-nrql/commit/bd882a526e2bbebc1c97e1b9ff466b35fcc3e283))
+
 ## [1.3.1](https://github.com/newrelic/nr1-learn-nrql/compare/v1.3.0...v1.3.1) (2020-12-17)
 
 

@@ -16,12 +16,11 @@ code, the source code can be found at [https://github.com/newrelic/nr1-learn-nrq
 
 * [@kunukn/react-collapse](#kunuknreact-collapse)
 * [copy-to-clipboard](#copy-to-clipboard)
+* [i18next](#i18next)
 * [prop-types](#prop-types)
-* [react-dom](#react-dom)
-* [react-json-pretty](#react-json-pretty)
+* [react-i18next](#react-i18next)
 * [react-markdown](#react-markdown)
 * [react](#react)
-* [remove-markdown](#remove-markdown)
 
 **[devDependencies](#devDependencies)**
 
@@ -92,6 +91,35 @@ SOFTWARE.
 
 ```
 
+### i18next
+
+This product includes source derived from [i18next](https://github.com/i18next/i18next) ([v19.9.0](https://github.com/i18next/i18next/tree/v19.9.0)), distributed under the [MIT License](https://github.com/i18next/i18next/blob/v19.9.0/LICENSE):
+
+```
+The MIT License (MIT)
+
+Copyright (c) 2017 i18next
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+```
+
 ### prop-types
 
 This product includes source derived from [prop-types](https://github.com/facebook/prop-types) ([v15.7.2](https://github.com/facebook/prop-types/tree/v15.7.2)), distributed under the [MIT License](https://github.com/facebook/prop-types/blob/v15.7.2/LICENSE):
@@ -121,14 +149,14 @@ SOFTWARE.
 
 ```
 
-### react-dom
+### react-i18next
 
-This product includes source derived from [react-dom](https://github.com/facebook/react) ([v16.13.1](https://github.com/facebook/react/tree/v16.13.1)), distributed under the [MIT License](https://github.com/facebook/react/blob/v16.13.1/LICENSE):
+This product includes source derived from [react-i18next](https://github.com/i18next/react-i18next) ([v9.0.10](https://github.com/i18next/react-i18next/tree/v9.0.10)), distributed under the [MIT License](https://github.com/i18next/react-i18next/blob/v9.0.10/LICENSE):
 
 ```
-MIT License
+The MIT License (MIT)
 
-Copyright (c) Facebook, Inc. and its affiliates.
+Copyright (c) 2015 i18next
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -148,40 +176,12 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-```
 
-### react-json-pretty
-
-This product includes source derived from [react-json-pretty](https://github.com/chenckang/react-json-pretty) ([v2.2.0](https://github.com/chenckang/react-json-pretty/tree/v2.2.0)), distributed under the [MIT License](https://github.com/chenckang/react-json-pretty/blob/v2.2.0/LICENSE):
-
-```
-The MIT License (MIT)
-
-Copyright (c) 2013-2015 Fractal <chenckang@gmail.com>
-
-Permission is hereby granted, free of charge, to any person obtaining
-a copy of this software and associated documentation files (the
-"Software"), to deal in the Software without restriction, including
-without limitation the rights to use, copy, modify, merge, publish,
-distribute, sublicense, and/or sell copies of the Software, and to
-permit persons to whom the Software is furnished to do so, subject to
-the following conditions:
-
-The above copyright notice and this permission notice shall be
-included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
-LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
-OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
-WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ```
 
 ### react-markdown
 
-This product includes source derived from [react-markdown](https://github.com/rexxars/react-markdown) ([v4.3.1](https://github.com/rexxars/react-markdown/tree/v4.3.1)), distributed under the [MIT License](https://github.com/rexxars/react-markdown/blob/v4.3.1/LICENSE):
+This product includes source derived from [react-markdown](https://github.com/remarkjs/react-markdown) ([v5.0.3](https://github.com/remarkjs/react-markdown/tree/v5.0.3)), distributed under the [MIT License](https://github.com/remarkjs/react-markdown/blob/v5.0.3/license):
 
 ```
 The MIT License (MIT)
@@ -210,41 +210,12 @@ SOFTWARE.
 
 ### react
 
-This product includes source derived from [react](https://github.com/facebook/react) ([v16.13.1](https://github.com/facebook/react/tree/v16.13.1)), distributed under the [MIT License](https://github.com/facebook/react/blob/v16.13.1/LICENSE):
+This product includes source derived from [react](https://github.com/facebook/react) ([v16.14.0](https://github.com/facebook/react/tree/v16.14.0)), distributed under the [MIT License](https://github.com/facebook/react/blob/v16.14.0/LICENSE):
 
 ```
 MIT License
 
 Copyright (c) Facebook, Inc. and its affiliates.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-
-```
-
-### remove-markdown
-
-This product includes source derived from [remove-markdown](https://github.com/stiang/remove-markdown) ([v0.3.0](https://github.com/stiang/remove-markdown/tree/v0.3.0)), distributed under the [MIT License](https://github.com/stiang/remove-markdown/blob/v0.3.0/LICENSE):
-
-```
-The MIT License (MIT)
-
-Copyright (c) 2015 Stian Grytøyr
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

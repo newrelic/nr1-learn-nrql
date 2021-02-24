@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "Mon Jul 27 2020 12:37:01 GMT-0400 (Eastern Daylight Time)",
+  "lastUpdated": "Wed Feb 24 2021 12:11:32 GMT+0000 (Coordinated Universal Time)",
   "projectName": "nr1-learn-nrql",
   "projectUrl": "https://github.com/newrelic/nr1-learn-nrql",
   "includeDev": true,
@@ -29,6 +29,20 @@
       "publisher": "sudodoki",
       "email": "smd.deluzion@gmail.com"
     },
+    "i18next@19.9.0": {
+      "name": "i18next",
+      "version": "19.9.0",
+      "range": "^19.8.5",
+      "licenses": "MIT",
+      "repoUrl": "https://github.com/i18next/i18next",
+      "versionedRepoUrl": "https://github.com/i18next/i18next/tree/v19.9.0",
+      "licenseFile": "node_modules/i18next/LICENSE",
+      "licenseUrl": "https://github.com/i18next/i18next/blob/v19.9.0/LICENSE",
+      "licenseTextSource": "file",
+      "publisher": "Jan Mühlemann",
+      "email": "jan.muehlemann@gmail.com",
+      "url": "https://github.com/jamuhl"
+    },
     "prop-types@15.7.2": {
       "name": "prop-types",
       "version": "15.7.2",
@@ -40,64 +54,43 @@
       "licenseUrl": "https://github.com/facebook/prop-types/blob/v15.7.2/LICENSE",
       "licenseTextSource": "file"
     },
-    "react-dom@16.13.1": {
-      "name": "react-dom",
-      "version": "16.13.1",
-      "range": "^16.6.3",
+    "react-i18next@9.0.10": {
+      "name": "react-i18next",
+      "version": "9.0.10",
+      "range": "^9.0.10",
       "licenses": "MIT",
-      "repoUrl": "https://github.com/facebook/react",
-      "versionedRepoUrl": "https://github.com/facebook/react/tree/v16.13.1",
-      "licenseFile": "node_modules/react-dom/LICENSE",
-      "licenseUrl": "https://github.com/facebook/react/blob/v16.13.1/LICENSE",
-      "licenseTextSource": "file"
-    },
-    "react-json-pretty@2.2.0": {
-      "name": "react-json-pretty",
-      "version": "2.2.0",
-      "range": "^2.2.0",
-      "licenses": "MIT",
-      "repoUrl": "https://github.com/chenckang/react-json-pretty",
-      "versionedRepoUrl": "https://github.com/chenckang/react-json-pretty/tree/v2.2.0",
-      "licenseFile": "node_modules/react-json-pretty/LICENSE",
-      "licenseUrl": "https://github.com/chenckang/react-json-pretty/blob/v2.2.0/LICENSE",
+      "repoUrl": "https://github.com/i18next/react-i18next",
+      "versionedRepoUrl": "https://github.com/i18next/react-i18next/tree/v9.0.10",
+      "licenseFile": "node_modules/react-i18next/LICENSE",
+      "licenseUrl": "https://github.com/i18next/react-i18next/blob/v9.0.10/LICENSE",
       "licenseTextSource": "file",
-      "publisher": "chenckang@gmail.com"
+      "publisher": "Jan Mühlemann",
+      "email": "jan.muehlemann@gmail.com",
+      "url": "https://github.com/jamuhl"
     },
-    "react-markdown@4.3.1": {
+    "react-markdown@5.0.3": {
       "name": "react-markdown",
-      "version": "4.3.1",
-      "range": "^4.3.1",
+      "version": "5.0.3",
+      "range": "^5.0.3",
       "licenses": "MIT",
-      "repoUrl": "https://github.com/rexxars/react-markdown",
-      "versionedRepoUrl": "https://github.com/rexxars/react-markdown/tree/v4.3.1",
-      "licenseFile": "node_modules/react-markdown/LICENSE",
-      "licenseUrl": "https://github.com/rexxars/react-markdown/blob/v4.3.1/LICENSE",
+      "repoUrl": "https://github.com/remarkjs/react-markdown",
+      "versionedRepoUrl": "https://github.com/remarkjs/react-markdown/tree/v5.0.3",
+      "licenseFile": "node_modules/react-markdown/license",
+      "licenseUrl": "https://github.com/remarkjs/react-markdown/blob/v5.0.3/license",
       "licenseTextSource": "file",
       "publisher": "Espen Hovlandsdal",
       "email": "espen@hovlandsdal.com"
     },
-    "react@16.13.1": {
+    "react@16.14.0": {
       "name": "react",
-      "version": "16.13.1",
+      "version": "16.14.0",
       "range": "^16.6.3",
       "licenses": "MIT",
       "repoUrl": "https://github.com/facebook/react",
-      "versionedRepoUrl": "https://github.com/facebook/react/tree/v16.13.1",
+      "versionedRepoUrl": "https://github.com/facebook/react/tree/v16.14.0",
       "licenseFile": "node_modules/react/LICENSE",
-      "licenseUrl": "https://github.com/facebook/react/blob/v16.13.1/LICENSE",
+      "licenseUrl": "https://github.com/facebook/react/blob/v16.14.0/LICENSE",
       "licenseTextSource": "file"
-    },
-    "remove-markdown@0.3.0": {
-      "name": "remove-markdown",
-      "version": "0.3.0",
-      "range": "^0.3.0",
-      "licenses": "MIT",
-      "repoUrl": "https://github.com/stiang/remove-markdown",
-      "versionedRepoUrl": "https://github.com/stiang/remove-markdown/tree/v0.3.0",
-      "licenseFile": "node_modules/remove-markdown/LICENSE",
-      "licenseUrl": "https://github.com/stiang/remove-markdown/blob/v0.3.0/LICENSE",
-      "licenseTextSource": "file",
-      "publisher": "Stian Grytøyr"
     }
   },
   "devDependencies": {

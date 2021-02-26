@@ -1,3 +1,10 @@
+## [1.3.3](https://github.com/newrelic/nr1-learn-nrql/compare/v1.3.2...v1.3.3) (2021-02-24)
+
+
+### Bug Fixes
+
+* Upgrade react-markdown to latest, removed react-dom from dependencies ([a6e98d5](https://github.com/newrelic/nr1-learn-nrql/commit/a6e98d5829991baa8f3ea6f05d66ab1c78106942))
+
 ## [1.3.2](https://github.com/newrelic/nr1-learn-nrql/compare/v1.3.1...v1.3.2) (2021-02-23)
 
 

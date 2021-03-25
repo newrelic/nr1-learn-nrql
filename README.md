@@ -1,17 +1,17 @@
-[![New Relic One Catalog Project header](https://github.com/newrelic/open-source-office/raw/master/examples/categories/images/New_Relic_One_Catalog_Project.png)](https://github.com/newrelic/open-source-office/blob/master/examples/categories/index.md#nr1-catalog)
+![New Relic One Catalog Project header](https://github.com/newrelic/opensource-website/raw/master/src/images/categories/New_Relic_One_Catalog_Project.png)](https://opensource.newrelic.com/oss-category/#new-relic-one-catalog-project
 
 # New Relic One - NRQL Lessons
 
 ![CI](https://github.com/newrelic/nr1-learn-nrql/workflows/CI/badge.svg) ![GitHub release (latest SemVer including pre-releases)](https://img.shields.io/github/v/release/newrelic/nr1-learn-nrql?include_prereleases&sort=semver) [![Snyk](https://snyk.io/test/github/newrelic/nr1-learn-nrql/badge.svg)](https://snyk.io/test/github/newrelic/nr1-learn-nrql)
 
-The NRQL (New Relic Query Language) Lessons Nerdpack will help you quickly learn the value and power of our query language. We've developed this application for dashboard and alerts users, but everyone will get something out of it. We've broken this content into four levels, from simple to complex. Each level will expand your understanding of NRQL in a different way. 
+The NRQL (New Relic Query Language) Lessons Nerdpack will help you quickly learn the value and power of our query language. We've developed this application for dashboard and alerts users, but everyone will get something out of it. We've broken this content into four levels, from simple to complex. Each level will expand your understanding of NRQL in a different way.
 
 1. Level One: Learning the Ropes
 2. Level Two: Controlling Your Data
 3. Level Three: Advancing Your Dashboarding
 4. Level Four: NRQL Power User
 
-Each level uses easily understanable examples and descriptions with live data from your account to improve your NRQL skill. 
+Each level uses easily understanable examples and descriptions with live data from your account to improve your NRQL skill.
 
 We built these lessons with APM data in mind. If you're not using APM data, you may see some empty results, even though the query logic will still work. In future, we plan to include fallback queries so that lessons will work regardless of the data you're using.
 
@@ -76,7 +76,7 @@ New Relic hosts and moderates an online forum where customers can interact with 
 Issues and enhancement requests can be submitted in the [Issues tab of this repository](https://github.com/newrelic/nr1-learn-nrql/issues). Please search for and review the existing open issues before submitting a new issue.
 
 ## Security
-This project adheres to the New Relic [security policy](https://nerdlife.datanerd.us/new-relic/security-guidelines-for-publishing-source-code).
+This project adheres to the New Relic [security policy](https://github.com/newrelic/nr1-learn-nrql/security/policy).
 
 # Contributing
 

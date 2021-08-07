@@ -59,7 +59,7 @@ export default class NrqlTutorialNerdlet extends React.Component {
 
     let intendedState = {};
     if (accounts.length > 0) {
-      const APMbool = accounts[0].reportingEventTypes === null ? 'true' : 'false';
+      const APMbool = accounts[0].reportingEventTypes === null ? 'true' : 'false'; // eslint-disable-line prettier/prettier
       intendedState = {
         selectedAccount: accounts[0].id,
         hasNoAPM: APMbool,

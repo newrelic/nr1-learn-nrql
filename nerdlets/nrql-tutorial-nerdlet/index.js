@@ -211,7 +211,7 @@ export default class NrqlTutorialNerdlet extends React.Component {
                             );
                           this.setState({ selectedAccount: value,
                              hasNoAPM: hasAPMbool });
-                      }}
+                        }}
                         value={selectedAccount}
                       >
                         {accounts}

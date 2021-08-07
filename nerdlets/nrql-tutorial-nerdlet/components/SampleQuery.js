@@ -83,8 +83,8 @@ export default class SampleQuery extends React.Component {
     return (
       <LessonContextConsumer>
         {context => {
-          { context.hasNoAPM  ? (nrql = fallbacknrql) : -1 ; 
-            context.hasNoAPM  ? (nrqlPlain = fallbacknrql) : -1 }
+          // eslint-disable-next-line no-use-before-define
+          { context.hasNoAPM  ? (nrql = fallbacknrql) : -1 ; context.hasNoAPM  ? (nrqlPlain = fallbacknrql) : -1 }
           return (
             <Grid className="sample-query">
               <GridItem columnSpan={numSpan} style={{ height: '100%' }}>

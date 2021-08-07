@@ -29,8 +29,8 @@ export default function TimeRangesAdvanced() {
           SLA reports for a specified period of time.
         </Trans>
       </p>
-      <SampleQuery 
-        nrql={timedNRQL} fallbacknrql={fbtimedNRQL} span="12" 
+      <SampleQuery
+        nrql={timedNRQL} fallbacknrql={fbtimedNRQL} span="12"
       />
       <p>
         <Trans i18nKey="Contents.P2">
@@ -41,9 +41,7 @@ export default function TimeRangesAdvanced() {
       </p>
 
       <SampleQuery
-        nrql={timedNRQLTime}
-        fallbacknrql={fbtimedNRQLTime}
-        span="12"
+        nrql={timedNRQLTime} fallbacknrql={fbtimedNRQLTime} span="12"
       />
 
       <p>
@@ -55,7 +53,7 @@ export default function TimeRangesAdvanced() {
         </Trans>
       </p>
 
-      <SampleQuery 
+      <SampleQuery
         nrql={epochNRQL} fallbacknrql={fbepochNRQL} span="12"
       />
 

@@ -59,7 +59,7 @@ export default class NrqlTutorialNerdlet extends React.Component {
 
     let intendedState = {};
     if (accounts.length > 0) {
-      let APMbool = accounts[0].reportingEventTypes === null ? true : false;
+      const APMbool = accounts[0].reportingEventTypes === null ? 'true' : 'false';
       intendedState = {
         selectedAccount: accounts[0].id,
         hasNoAPM: APMbool,
@@ -205,12 +205,15 @@ export default class NrqlTutorialNerdlet extends React.Component {
                     <GridItem columnSpan={5}>
                       <Select
                         onChange={(event, value) => {
-                          const found = accounts.find(({ key }) => key === value );
+                          const found = accounts.find(
+                            ({ key }) => key === value
+                          );
                           const hasAPMbool = found.props.children.includes(
                             'no recent APM data'
-                            );
+                          );
                           this.setState({ selectedAccount: value,
-                             hasNoAPM: hasAPMbool });
+                             hasNoAPM: hasAPMbool
+                          });
                         }}
                         value={selectedAccount}
                       >

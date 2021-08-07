@@ -25,8 +25,8 @@ export default function Overview() {
         <Trans i18nKey="Contents.P3">
           In this level, we will cover faceting by case, advanced aggregation
           functions, the value of the EXTRAPOLATE keyword, filtering aggregation
-          functions, and how to override values. Remember if you've chosen an 
-          account without APM data. You will see backup queries that may not 
+          functions, and how to override values. Remember if you've chosen an
+          account without APM data. You will see backup queries that may not
           match the lesson description.
         </Trans>
       </p>

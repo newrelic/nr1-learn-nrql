@@ -83,8 +83,7 @@ export default class SampleQuery extends React.Component {
     return (
       <LessonContextConsumer>
         {context => {
-          // eslint-disable-next-line no-lone-blocks prettier/prettier
-          { context.hasNoAPM  ? (nrql = fallbacknrql) : -1 ; context.hasNoAPM  ? (nrqlPlain = fallbacknrql) : -1 }
+          { context.hasNoAPM  ? (nrql = fallbacknrql) : -1 ; context.hasNoAPM  ? (nrqlPlain = fallbacknrql) : -1 } // eslint-disable-line no-lone-blocks, prettier/prettier, no-unused-expressions
           return (
             <Grid className="sample-query">
               <GridItem columnSpan={numSpan} style={{ height: '100%' }}>

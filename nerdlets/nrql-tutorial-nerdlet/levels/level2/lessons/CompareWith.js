@@ -32,6 +32,7 @@ export default function CompareWith() {
 
       <SampleQuery
         nrql="SELECT average(duration) FROM Transaction SINCE 1 DAY AGO **COMPARE WITH 1 WEEK AGO**"
+        fallbacknrql="SELECT average(duration) FROM Public_APICall SINCE 1 day ago COMPARE WITH 1 week ago"
         span="6"
       />
 
@@ -46,6 +47,7 @@ export default function CompareWith() {
 
       <SampleQuery
         nrql="SELECT average(duration) FROM Transaction SINCE 1 DAY AGO **COMPARE WITH 1 WEEK AGO** TIMESERIES"
+        fallbacknrql="SELECT average(duration) FROM Public_APICall SINCE 1 day ago COMPARE WITH 1 week ago TIMESERIES"
         span="12"
       />
 
@@ -59,6 +61,7 @@ export default function CompareWith() {
 
       <SampleQuery
         nrql="SELECT average(duration) FROM Transaction SINCE 1 HOUR AGO **COMPARE WITH 6 HOURS AGO** TIMESERIES"
+        fallbacknrql="SELECT average(duration) FROM Public_APICall SINCE 1 hour ago COMPARE WITH 6 hours ago TIMESERIES"
         span="12"
       />
 

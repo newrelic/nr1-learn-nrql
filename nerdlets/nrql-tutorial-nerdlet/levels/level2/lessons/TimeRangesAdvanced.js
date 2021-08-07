@@ -10,9 +10,12 @@ const sevendaysago = epochSince.toLocaleDateString('fr-CA', {
   day: '2-digit'
 });
 const timedNRQL = `SELECT average(duration) FROM Transaction **SINCE '${sevendaysago}'** TIMESERIES MAX`;
+const fbtimedNRQL= `SELECT average(duration) FROM Public_APICall SINCE '${sevendaysago}' TIMESERIES MAX`;
 const timedNRQLTime = `SELECT average(duration) FROM Transaction **SINCE '${sevendaysago} 18:00'** TIMESERIES MAX`;
+const fbtimedNRQLTime = `SELECT average(duration) FROM Public_APICall SINCE '${sevendaysago} 18:00' TIMESERIES MAX`;
 const epochUntil = new Date();
 const epochNRQL = `SELECT average(duration) FROM Transaction **SINCE ${epochSince.getTime()} UNTIL ${epochUntil.getTime()}** TIMESERIES MAX`;
+const fbepochNRQL = `SELECT average(duration) FROM Public_APICall SINCE ${epochSince.getTime()} UNTIL ${epochUntil.getTime()} TIMESERIES MAX`;
 
 export default function TimeRangesAdvanced() {
   return (
@@ -27,7 +30,7 @@ export default function TimeRangesAdvanced() {
         </Trans>
       </p>
 
-      <SampleQuery nrql={timedNRQL} span="12" />
+      <SampleQuery nrql={timedNRQL} fallbacknrql={fbtimedNRQL}  span="12" />
 
       <p>
         <Trans i18nKey="Contents.P2">
@@ -37,7 +40,7 @@ export default function TimeRangesAdvanced() {
         </Trans>
       </p>
 
-      <SampleQuery nrql={timedNRQLTime} span="12" />
+      <SampleQuery nrql={timedNRQLTime} fallbacknrql={fbtimedNRQLTime} span="12" />
 
       <p>
         <Trans i18nKey="Contents.P3">
@@ -48,7 +51,7 @@ export default function TimeRangesAdvanced() {
         </Trans>
       </p>
 
-      <SampleQuery nrql={epochNRQL} span="12" />
+      <SampleQuery nrql={epochNRQL} fallbacknrql={fbepochNRQL} span="12" />
 
       <p>
         <Trans i18nKey="Contents.P4">
@@ -77,10 +80,12 @@ export default function TimeRangesAdvanced() {
 
       <SampleQuery
         nrql="SELECT count(\*) from Transaction since yesterday until today **WITH TIMEZONE 'America/Los_Angeles'** TIMESERIES"
+        fallbacknrql="SELECT count(*) FROM Public_APICall SINCE yesterday until today WITH TIMEZONE 'America/Los_Angeles' TIMESERIES"
         span="12"
       />
       <SampleQuery
         nrql="SELECT count(\*) from Transaction since yesterday until today **WITH TIMEZONE 'Europe/London'** TIMESERIES"
+        fallbacknrql="SELECT count(*) FROM Public_APICall SINCE yesterday until today WITH TIMEZONE 'Europe/London' TIMESERIES"
         span="12"
       />
 

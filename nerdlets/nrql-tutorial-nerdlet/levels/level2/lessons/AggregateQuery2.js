@@ -29,6 +29,7 @@ export default function AggregateQuery2() {
 
       <SampleQuery
         nrql="SELECT **uniqueCount(host)** FROM Transaction SINCE 1 day ago"
+        fallbacknrql="SELECT uniqueCount(http.url) FROM Public_APICall SINCE 1 day ago"
         span="6"
       />
 
@@ -48,6 +49,7 @@ export default function AggregateQuery2() {
 
       <SampleQuery
         nrql="SELECT **uniques(host)** FROM Transaction SINCE 1 day ago"
+        fallbacknrql="SELECT uniques(http.url) FROM Public_APICall SINCE 1 day ago"
         span="6"
         chartType="table"
       />
@@ -73,6 +75,7 @@ export default function AggregateQuery2() {
 
       <SampleQuery
         nrql="SELECT **latest(duration)** FROM Transaction WHERE transactionType = 'Web' SINCE 1 day ago"
+        fallbacknrql="SELECT latest(duration) FROM Public_APICall WHERE awsAPI = 'sqs' SINCE 1 day ago"
         span="6"
       />
 
@@ -89,6 +92,7 @@ export default function AggregateQuery2() {
 
       <SampleQuery
         nrql="SELECT **earliest(duration)** FROM Transaction WHERE transactionType = 'Web' SINCE 1 day ago"
+        fallbacknrql="SELECT earliest(duration) FROM Public_APICall WHERE awsAPI = 'sqs' SINCE 1 day ago"
         span="6"
       />
 
@@ -115,6 +119,7 @@ export default function AggregateQuery2() {
 
       <SampleQuery
         nrql="SELECT **percentage(count(*), WHERE duration > 0.1)** FROM Transaction SINCE 1 day ago"
+        fallbacknrql="SELECT percentage(count(*), WHERE duration > 0.1) FROM Public_APICall SINCE 1 day ago"
         span="6"
       />
 
@@ -137,6 +142,7 @@ export default function AggregateQuery2() {
 
       <SampleQuery
         nrql="SELECT **percentile(duration, 98)** FROM Transaction SINCE 1 day ago"
+        fallbacknrql="SELECT percentile(duration,98) FROM Public_APICall SINCE 1 day ago"
         span="6"
       />
 

@@ -25,6 +25,7 @@ export default function Wildcards() {
 
       <SampleQuery
         nrql="SELECT count(\*) FROM Transaction WHERE name **LIKE '%Web%'** FACET name SINCE 1 day ago"
+        fallbacknrql="SELECT count(*) FROM Public_APICall WHERE http.url LIKE '%amazonaws%' FACET http.url SINCE 1 day ago"
         span="6"
       />
 
@@ -39,6 +40,7 @@ export default function Wildcards() {
 
       <SampleQuery
         nrql="SELECT count(\*) FROM Transaction WHERE name **NOT LIKE '%Web%'** FACET name SINCE 1 day ago"
+        fallbacknrql="SELECT count(*) FROM Public_APICall WHERE http.url NOT LIKE '%google%' FACET http.url SINCE 1 day ago"
         span="6"
       />
 
@@ -64,6 +66,7 @@ export default function Wildcards() {
 
       <SampleQuery
         nrql="SELECT count(\*) FROM Transaction WHERE name **LIKE '%Web%index%'** FACET name SINCE 1 day ago"
+        fallbacknrql="SELECT count(*) FROM Public_APICall WHERE http.url NOT LIKE '%amazon%.com' FACET http.url SINCE 1 day ago"
         span="6"
       />
 
@@ -91,6 +94,7 @@ export default function Wildcards() {
 
       <SampleQuery
         nrql="SELECT count(\*) FROM Transaction WHERE transactionSubType **IN ('SpringController', 'StrutsAction')** SINCE 1 day ago"
+        fallbacknrql="SELECT count(*) FROM Public_APICall WHERE http.url IN ('graph.microsoft.com', 's3.amazonaws.com') SINCE 1 day ago"
         span="6"
       />
 

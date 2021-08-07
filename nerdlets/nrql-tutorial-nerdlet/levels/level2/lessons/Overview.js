@@ -27,7 +27,9 @@ export default function Overview() {
       </p>
 
       <p>
-        <Trans i18nKey="Contents.P3">Again if you have chosen an account without Transaction event reporting, we will fallback to other queries that are similar. Let's get started!</Trans>
+        <Trans i18nKey="Contents.P3">Again if you have chosen an account without Transaction event 
+        reporting, we will fallback to other queries that are similar. Let's 
+        get started!</Trans>
       </p>
     </div>
   );

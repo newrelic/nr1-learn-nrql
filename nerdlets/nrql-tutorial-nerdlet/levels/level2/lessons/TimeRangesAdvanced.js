@@ -10,7 +10,7 @@ const sevendaysago = epochSince.toLocaleDateString('fr-CA', {
   day: '2-digit'
 });
 const timedNRQL = `SELECT average(duration) FROM Transaction **SINCE '${sevendaysago}'** TIMESERIES MAX`;
-const fbtimedNRQL= `SELECT average(duration) FROM Public_APICall SINCE '${sevendaysago}' TIMESERIES MAX`;
+const fbtimedNRQL = `SELECT average(duration) FROM Public_APICall SINCE '${sevendaysago}' TIMESERIES MAX`;
 const timedNRQLTime = `SELECT average(duration) FROM Transaction **SINCE '${sevendaysago} 18:00'** TIMESERIES MAX`;
 const fbtimedNRQLTime = `SELECT average(duration) FROM Public_APICall SINCE '${sevendaysago} 18:00' TIMESERIES MAX`;
 const epochUntil = new Date();
@@ -29,9 +29,11 @@ export default function TimeRangesAdvanced() {
           SLA reports for a specified period of time.
         </Trans>
       </p>
-
-      <SampleQuery nrql={timedNRQL} fallbacknrql={fbtimedNRQL}  span="12" />
-
+      <SampleQuery 
+        nrql={timedNRQL} 
+        fallbacknrql={fbtimedNRQL}  
+        span="12" 
+      />
       <p>
         <Trans i18nKey="Contents.P2">
           You can even include specific time with the format{' '}
@@ -40,7 +42,11 @@ export default function TimeRangesAdvanced() {
         </Trans>
       </p>
 
-      <SampleQuery nrql={timedNRQLTime} fallbacknrql={fbtimedNRQLTime} span="12" />
+      <SampleQuery 
+        nrql={timedNRQLTime} 
+        fallbacknrql={fbtimedNRQLTime} 
+        span="12" 
+      />
 
       <p>
         <Trans i18nKey="Contents.P3">
@@ -51,7 +57,11 @@ export default function TimeRangesAdvanced() {
         </Trans>
       </p>
 
-      <SampleQuery nrql={epochNRQL} fallbacknrql={fbepochNRQL} span="12" />
+      <SampleQuery 
+        nrql={epochNRQL} 
+        fallbacknrql={fbepochNRQL} 
+        span="12"
+      />
 
       <p>
         <Trans i18nKey="Contents.P4">

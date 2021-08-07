@@ -205,14 +205,9 @@ export default class NrqlTutorialNerdlet extends React.Component {
                     <GridItem columnSpan={5}>
                       <Select
                         onChange={(key, value) => {
-                          // eslint-disable-next-line
-                          const found = accounts.find(
-                            ({ key }) => key === value
-                          );
-                          // eslint-disable-next-line
-                          const hasAPMbool = found.props.children.includes('no recent APM data');
-                          // eslint-disable-next-line
-                          this.setState({ selectedAccount: value, hasNoAPM: hasAPMbool });
+                          const found = accounts.find(({ key }) => key === value); // eslint-disable-line
+                          const hasAPMbool = found.props.children.includes('no recent APM data'); // eslint-disable-line
+                          this.setState({ selectedAccount: value, hasNoAPM: hasAPMbool }); // eslint-disable-line
                         }}
                         value={selectedAccount}
                       >

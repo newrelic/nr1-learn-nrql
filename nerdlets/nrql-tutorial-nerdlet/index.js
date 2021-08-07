@@ -59,9 +59,10 @@ export default class NrqlTutorialNerdlet extends React.Component {
 
     let intendedState = {};
     if (accounts.length > 0) {
+      let APMbool = accounts[0].reportingEventTypes === null ? true : false;
       intendedState = {
         selectedAccount: accounts[0].id,
-        hasNoAPM: accounts[0].reportingEventTypes === null ? true : false,
+        hasNoAPM: APMbool,
         accounts: accounts.map(account => {
           return (
             <SelectItem value={String(account.id)} key={account.id}>
@@ -165,7 +166,6 @@ export default class NrqlTutorialNerdlet extends React.Component {
       currentLesson,
       accounts,
       selectedAccount,
-      hasNoAPM,
       noAccounts,
       languages,
       selectedLanguage
@@ -186,6 +186,8 @@ export default class NrqlTutorialNerdlet extends React.Component {
       </Button>
     ));
 
+    NextLessonBt.displayName = 'NextLessonBt';
+
     // hide button on last lesson ?
     const showNextButton = !(
       currentLevel + 1 === LEVELS.length &&
@@ -203,13 +205,12 @@ export default class NrqlTutorialNerdlet extends React.Component {
                     <GridItem columnSpan={5}>
                       <Select
                         onChange={(event, value) => {
-                          const found = accounts.find( ({ key }) => key === value );
-                          const hasAPMbool = found.props.children.includes("no recent APM data")
-                          this.setState({ selectedAccount: value, hasNoAPM: hasAPMbool }, 
-                            //() => console.log("State Being Set: " + this.state.hasNoAPM),
+                          const found = accounts.find(({ key }) => key === value );
+                          const hasAPMbool = found.props.children.includes(
+                            'no recent APM data');
+                          this.setState(
+                            { selectedAccount: value, hasNoAPM: hasAPMbool }
                             );
-                          //console.log(found);
-                          //console.log("Has No APM VAR: " +hasAPMbool);
                         }}
                         value={selectedAccount}
                       >

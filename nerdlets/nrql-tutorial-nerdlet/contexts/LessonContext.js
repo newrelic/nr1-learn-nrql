@@ -7,6 +7,7 @@ export class LessonContextProvider extends React.Component {
   static propTypes = {
     children: PropTypes.node,
     accountId: PropTypes.number,
+    hasNoAPM: PropTypes.bool,
     chooseLesson: PropTypes.func
   };
 
@@ -15,6 +16,7 @@ export class LessonContextProvider extends React.Component {
       <LessonContext.Provider
         value={{
           accountId: this.props.accountId,
+          hasNoAPM: this.props.hasNoAPM,
           chooseLesson: this.props.chooseLesson
         }}
       >

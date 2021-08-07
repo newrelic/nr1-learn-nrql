@@ -61,6 +61,7 @@ export default class NrqlTutorialNerdlet extends React.Component {
     if (accounts.length > 0) {
       intendedState = {
         selectedAccount: accounts[0].id,
+        hasNoAPM: accounts[0].reportingEventTypes === null ? true : false,
         accounts: accounts.map(account => {
           return (
             <SelectItem value={String(account.id)} key={account.id}>
@@ -164,6 +165,7 @@ export default class NrqlTutorialNerdlet extends React.Component {
       currentLesson,
       accounts,
       selectedAccount,
+      hasNoAPM,
       noAccounts,
       languages,
       selectedLanguage
@@ -201,7 +203,13 @@ export default class NrqlTutorialNerdlet extends React.Component {
                     <GridItem columnSpan={5}>
                       <Select
                         onChange={(event, value) => {
-                          this.setState({ selectedAccount: value });
+                          const found = accounts.find( ({ key }) => key === value );
+                          const hasAPMbool = found.props.children.includes("no recent APM data")
+                          this.setState({ selectedAccount: value, hasNoAPM: hasAPMbool }, 
+                            //() => console.log("State Being Set: " + this.state.hasNoAPM),
+                            );
+                          //console.log(found);
+                          //console.log("Has No APM VAR: " +hasAPMbool);
                         }}
                         value={selectedAccount}
                       >
@@ -251,6 +259,7 @@ export default class NrqlTutorialNerdlet extends React.Component {
                 <GridItem columnSpan={9}>
                   <LessonContextProvider
                     accountId={Number(selectedAccount)}
+                    hasNoAPM={this.state.hasNoAPM}
                     chooseLesson={(level, lesson) => {
                       this.chooseLesson(level, lesson);
                       this.topRef.current.scrollIntoView();

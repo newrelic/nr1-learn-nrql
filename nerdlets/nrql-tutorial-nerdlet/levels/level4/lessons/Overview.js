@@ -16,7 +16,7 @@ export default function Overview() {
           This next section will discuss additional aggregation techniques,
           higher-level math functions, and advanced features like Regex
           filtering, and nested aggregation. We think you'll find these features
-          downright invaluable. Let's get started!
+          downright invaluable. Let's get started! (Remember if your account doesn't have Transaction event data the queries will fall back to safer queries)
         </Trans>
       </p>
     </div>

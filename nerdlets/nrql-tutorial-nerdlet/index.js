@@ -207,11 +207,11 @@ export default class NrqlTutorialNerdlet extends React.Component {
                         onChange={(event, value) => {
                           const found = accounts.find(({ key }) => key === value );
                           const hasAPMbool = found.props.children.includes(
-                            'no recent APM data');
-                          this.setState(
-                            { selectedAccount: value, hasNoAPM: hasAPMbool }
+                            'no recent APM data'
                             );
-                        }}
+                          this.setState({ selectedAccount: value,
+                             hasNoAPM: hasAPMbool });
+                      }}
                         value={selectedAccount}
                       >
                         {accounts}

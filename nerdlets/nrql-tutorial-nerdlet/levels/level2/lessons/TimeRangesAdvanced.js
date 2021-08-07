@@ -42,10 +42,10 @@ export default function TimeRangesAdvanced() {
         </Trans>
       </p>
 
-      <SampleQuery 
-        nrql={timedNRQLTime} 
-        fallbacknrql={fbtimedNRQLTime} 
-        span="12" 
+      <SampleQuery
+        nrql={timedNRQLTime}
+        fallbacknrql={fbtimedNRQLTime}
+        span="12"
       />
 
       <p>

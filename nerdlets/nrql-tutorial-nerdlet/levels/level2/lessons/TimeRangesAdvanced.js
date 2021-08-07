@@ -29,11 +29,7 @@ export default function TimeRangesAdvanced() {
           SLA reports for a specified period of time.
         </Trans>
       </p>
-      <SampleQuery
-        nrql={timedNRQL}
-        fallbacknrql={fbtimedNRQL}
-        span="12"
-      />
+      <SampleQuery nrql={timedNRQL} fallbacknrql={fbtimedNRQL} span="12" />
       <p>
         <Trans i18nKey="Contents.P2">
           You can even include specific time with the format{' '}
@@ -57,11 +53,7 @@ export default function TimeRangesAdvanced() {
         </Trans>
       </p>
 
-      <SampleQuery
-        nrql={epochNRQL}
-        fallbacknrql={fbepochNRQL}
-        span="12"
-      />
+      <SampleQuery nrql={epochNRQL} fallbacknrql={fbepochNRQL} span="12" />
 
       <p>
         <Trans i18nKey="Contents.P4">

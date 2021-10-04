@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/newrelic/nr1-learn-nrql/compare/v1.3.3...v1.4.0) (2021-10-04)
+
+
+### Features
+
+* update semantic release with node ([094559c](https://github.com/newrelic/nr1-learn-nrql/commit/094559c713b87d0dc9f444bd9623311707685188))
+
 ## [1.3.3](https://github.com/newrelic/nr1-learn-nrql/compare/v1.3.2...v1.3.3) (2021-02-24)
 
 

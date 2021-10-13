@@ -167,7 +167,7 @@ export default class SampleQuery extends React.Component {
 
 function openChartBuilder({ query, accountId }) {
   const nerdlet = {
-    id: 'wanda-data-exploration.data-explorer',
+    id: 'data-exploration.query-builder',
     urlState: {
       initialActiveInterface: 'nrqlEditor',
       initialAccountId: accountId,

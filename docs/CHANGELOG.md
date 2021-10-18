@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/newrelic/nr1-learn-nrql/compare/v1.4.0...v1.5.0) (2021-10-18)
+
+
+### Features
+
+* add whats inside screenshot for nerdlet and launcher ([f99fa71](https://github.com/newrelic/nr1-learn-nrql/commit/f99fa71ff8822a5ebb4dc9f8bf004448fa5d0de5))
+
 # [1.4.0](https://github.com/newrelic/nr1-learn-nrql/compare/v1.3.3...v1.4.0) (2021-10-04)
 
 

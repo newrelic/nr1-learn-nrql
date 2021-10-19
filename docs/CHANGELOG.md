@@ -1,3 +1,10 @@
+## [1.5.1](https://github.com/newrelic/nr1-learn-nrql/compare/v1.5.0...v1.5.1) (2021-10-19)
+
+
+### Bug Fixes
+
+* deprecated platform parameters ([19435e0](https://github.com/newrelic/nr1-learn-nrql/commit/19435e012e4c03ca43fca9759f2c2bad87285a7c))
+
 # [1.5.0](https://github.com/newrelic/nr1-learn-nrql/compare/v1.4.0...v1.5.0) (2021-10-18)
 
 

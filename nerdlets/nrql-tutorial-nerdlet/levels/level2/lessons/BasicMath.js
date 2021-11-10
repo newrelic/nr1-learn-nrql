@@ -25,6 +25,7 @@ export default function BasicMath() {
 
       <SampleQuery
         nrql="SELECT **duration - databaseDuration**, name FROM Transaction WHERE databaseDuration IS NOT NULL"
+        fallbacknrql="SELECT GigabytesIngestedBillable - GigabytesIngestedFree, metric  FROM NrMTDConsumption WHERE productLine IS NOT NULL"
         span="12"
         chartType="table"
       />
@@ -40,6 +41,7 @@ export default function BasicMath() {
 
       <SampleQuery
         nrql="SELECT **average(duration - databaseDuration)** FROM Transaction WHERE databaseDuration IS NOT NULL"
+        fallbacknrql="SELECT average(GigabytesIngestedBillable - GigabytesIngestedFree) FROM NrMTDConsumption WHERE GigabytesIngestedBillable IS NOT NULL"
         span="12"
       />
 
@@ -54,6 +56,7 @@ export default function BasicMath() {
 
       <SampleQuery
         nrql="SELECT **(average(duration) - average(databaseDuration)) / average(duration) \* 100** FROM Transaction WHERE databaseDuration IS NOT NULL"
+        fallbacknrql="SELECT average(GigabytesIngestedBillable - GigabytesIngestedFree) / unitPrice * 100 FROM NrMTDConsumption WHERE GigabytesIngestedBillable IS NOT NULL"
         span="12"
       />
 

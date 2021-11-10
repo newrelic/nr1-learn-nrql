@@ -16,6 +16,7 @@ export default function CastingAs() {
 
       <SampleQuery
         nrql="SELECT average(duration-externalDuration) from Transaction"
+        fallbacknrql="SELECT average(GigabytesIngestedBillable-GigabytesIngestedFree) FROM NrMTDConsumption"
         span="6"
       />
 
@@ -30,6 +31,7 @@ export default function CastingAs() {
 
       <SampleQuery
         nrql="SELECT average(duration-externalDuration) **AS 'Non-External Response Time'** from Transaction"
+        fallbacknrql="SELECT average(GigabytesIngestedBillable-GigabytesIngestedFree) AS 'GBs Ingested' FROM NrMTDConsumption"
         span="6"
       />
 

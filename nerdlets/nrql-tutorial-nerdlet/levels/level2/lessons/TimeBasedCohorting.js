@@ -34,6 +34,7 @@ export default function TimeBasedCohorting() {
 
       <SampleQuery
         nrql="SELECT average(duration) FROM Transaction **FACET hourOf(timestamp)** SINCE 1 week ago"
+        fallbacknrql="SELECT average(duration) FROM Public_APICall FACET hourOf(timestamp) SINCE 1 week ago"
         span="12"
       />
       <p>
@@ -53,6 +54,7 @@ export default function TimeBasedCohorting() {
 
       <SampleQuery
         nrql="SELECT average(duration) FROM Transaction **FACET weekdayOf(timestamp)** SINCE 1 week ago"
+        fallbacknrql="SELECT average(duration) FROM Public_APICall FACET weekdayOf(timestamp) SINCE 1 week ago"
         span="12"
       />
       <p>
@@ -73,6 +75,7 @@ export default function TimeBasedCohorting() {
 
       <SampleQuery
         nrql="SELECT average(duration) FROM Transaction **FACET dateOf(timestamp)** SINCE 1 week ago"
+        fallbacknrql="SELECT average(duration) FROM Public_APICall FACET dateOf(timestamp) SINCE 1 week ago"
         span="12"
       />
       <h2>

@@ -30,6 +30,7 @@ export default function FacetCases() {
       </p>
       <SampleQuery
         nrql="SELECT count(\*) from Transaction **FACET CASES(where response.status LIKE '2%' OR httpResponseCode LIKE '2%', where response.status LIKE '3%' OR httpResponseCode LIKE '3%', where response.status LIKE '4%' OR httpResponseCode LIKE '4%', where response.status LIKE '5%' OR httpResponseCode LIKE '5%')**"
+        fallbacknrql="SELECT count(*) FROM Public_APICall FACET CASES(WHERE http.url LIKE '%amazon%', WHERE http.url LIKE '%google%', WHERE http.url LIKE '%microsoft%')"
         span="12"
       />
       <p>
@@ -41,6 +42,7 @@ export default function FacetCases() {
       </p>
       <SampleQuery
         nrql="SELECT count(\*) from Transaction FACET CASES(where response.status LIKE '2%' OR httpResponseCode LIKE '2%' **as '2xx Responses'**, where response.status LIKE '3%' OR httpResponseCode LIKE '3%' **as '3xx Responses'**, where response.status LIKE '4%' OR httpResponseCode LIKE '4%' **as '4xx Responses'**, where response.status LIKE '5%' OR httpResponseCode LIKE '5%' **as '5xx Responses'**)"
+        fallbacknrql="SELECT count(*) FROM Public_APICall FACET CASES(WHERE http.url LIKE '%amazon%' AS 'Amazon', WHERE http.url LIKE '%google%' AS 'Google', WHERE http.url LIKE '%microsoft%' AS 'Microsoft')"
         span="12"
       />
 

@@ -24,6 +24,7 @@ export default function UsingRegex() {
       </p>
       <SampleQuery
         nrql="SELECT uniques(host) FROM Transaction WHERE host **RLIKE '^.\*\[02468bcdfghjklmnpqrstvwxyz]'**"
+        fallbacknrql="SELECT uniques(http.url) FROM Public_APICall WHERE http.url  RLIKE '^.*[02468bcdfghjklmnpqrstvwxyz]'"
         chartType="table"
         span="6"
       />
@@ -36,6 +37,7 @@ export default function UsingRegex() {
       </p>
       <SampleQuery
         nrql="SELECT count(\*) FROM Transaction WHERE name **RLIKE 'W.\*|O.\*'** FACET name"
+        fallbacknrql="SELECT count(*) FROM Public_APICall WHERE http.url  RLIKE 'sqs.*|dynamodb.*'"
         span="6"
       />
       <p>

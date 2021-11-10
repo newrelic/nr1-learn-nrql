@@ -24,12 +24,15 @@ export default function Extrapolate() {
           compensate for the effects of sampling, thereby returning results that
           more closely represent activity in your system. We store an extra
           value to record how many similar events occured over the limit. This
-          allows New Relic to deliver statistically accurate results.
+          allows New Relic to deliver statistically accurate results. There is
+          no fallback query for this if you have no APM data due to the fact
+          this is specific to Transaction events.
         </Trans>
       </p>
 
       <SampleQuery
         nrql="SELECT count(\*) FROM Transaction SINCE 60 minutes ago FACET appName TIMESERIES 1 minute **EXTRAPOLATE**"
+        fallbacknrql="SELECT count(*) FROM Transaction SINCE 60 minutes ago FACET appName TIMESERIES 1 minute EXTRAPOLATE"
         span="12"
       />
 

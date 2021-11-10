@@ -26,6 +26,7 @@ export default class SampleQuery extends React.Component {
   static propTypes = {
     chartType: PropTypes.string,
     nrql: PropTypes.string,
+    fallbacknrql: PropTypes.string,
     span: PropTypes.string,
     markdown: PropTypes.string
   };
@@ -64,7 +65,7 @@ export default class SampleQuery extends React.Component {
   }
 
   render() {
-    const { nrql, span, markdown } = this.props;
+    let { nrql, span, markdown, fallbacknrql } = this.props;
     let nrqlPlain = nrql
       .replace(/\*\*/g, '')
       .replace(/\\\*/g, '*')
@@ -82,6 +83,7 @@ export default class SampleQuery extends React.Component {
     return (
       <LessonContextConsumer>
         {context => {
+          { context.hasNoAPM  ? (nrql = fallbacknrql) : -1 ; context.hasNoAPM  ? (nrqlPlain = fallbacknrql) : -1 } // eslint-disable-line no-lone-blocks, prettier/prettier, no-unused-expressions
           return (
             <Grid className="sample-query">
               <GridItem columnSpan={numSpan} style={{ height: '100%' }}>

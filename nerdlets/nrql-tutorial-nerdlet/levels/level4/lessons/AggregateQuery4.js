@@ -29,6 +29,7 @@ export default function AggregateQuery4() {
       </p>
       <SampleQuery
         nrql="SELECT **stddev(duration)** from Transaction since 24 hours ago COMPARE WITH 24 hours ago TIMESERIES "
+        fallbacknrql="SELECT stddev(duration) from Public_APICall since 24 hours ago COMPARE WITH 24 hours ago TIMESERIES"
         span="12"
       />
 
@@ -80,6 +81,7 @@ export default function AggregateQuery4() {
       </p>
       <SampleQuery
         nrql="SELECT average(duration) FROM Transaction SINCE 12 hours ago FACET **buckets(databaseCallCount, 400, 10)**"
+        fallbacknrql="SELECT average(duration) from Public_APICall since 24 hours ago FACET buckets(duration, 400, 10)"
         span="12"
       />
       <h2>

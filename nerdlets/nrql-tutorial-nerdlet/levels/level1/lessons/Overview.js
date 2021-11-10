@@ -40,7 +40,10 @@ export default function Overview() {
           customers will have this type of data.
           <strong>
             If you have access to more than one account, please switch to an
-            account using APM.
+            account using APM. If none of your accounts have APM data. We will
+            use fallback queries. This may mean the lesson references
+            Transaction table. However the query may use another NR event to
+            showcase a similar query.
           </strong>
         </Trans>
       </p>

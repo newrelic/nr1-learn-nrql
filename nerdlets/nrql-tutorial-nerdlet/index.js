@@ -59,8 +59,10 @@ export default class NrqlTutorialNerdlet extends React.Component {
 
     let intendedState = {};
     if (accounts.length > 0) {
+      const APMbool = accounts[0].reportingEventTypes === null ? 'true' : 'false'; // eslint-disable-line prettier/prettier
       intendedState = {
         selectedAccount: accounts[0].id,
+        hasNoAPM: APMbool,
         accounts: accounts.map(account => {
           return (
             <SelectItem value={String(account.id)} key={account.id}>
@@ -184,6 +186,8 @@ export default class NrqlTutorialNerdlet extends React.Component {
       </Button>
     ));
 
+    NextLessonBt.displayName = 'NextLessonBt';
+
     // hide button on last lesson ?
     const showNextButton = !(
       currentLevel + 1 === LEVELS.length &&
@@ -200,8 +204,10 @@ export default class NrqlTutorialNerdlet extends React.Component {
                     <GridItem columnSpan={1}>Use data from account:</GridItem>
                     <GridItem columnSpan={5}>
                       <Select
-                        onChange={(event, value) => {
-                          this.setState({ selectedAccount: value });
+                        onChange={(key, value) => {
+                          const found = accounts.find(({ key }) => key === value); // eslint-disable-line prettier/prettier
+                          const hasAPMbool = found.props.children.includes('no recent APM data'); // eslint-disable-line prettier/prettier
+                          this.setState({ selectedAccount: value, hasNoAPM: hasAPMbool }); // eslint-disable-line prettier/prettier
                         }}
                         value={selectedAccount}
                       >
@@ -251,6 +257,7 @@ export default class NrqlTutorialNerdlet extends React.Component {
                 <GridItem columnSpan={9}>
                   <LessonContextProvider
                     accountId={Number(selectedAccount)}
+                    hasNoAPM={this.state.hasNoAPM}
                     chooseLesson={(level, lesson) => {
                       this.chooseLesson(level, lesson);
                       this.topRef.current.scrollIntoView();

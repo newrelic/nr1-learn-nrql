@@ -24,6 +24,7 @@ export default function AggregateQuery() {
       </p>
       <SampleQuery
         nrql="SELECT **average(duration)** FROM Transaction "
+        fallbacknrql="SELECT average(duration) FROM Public_APICall"
         span="6"
       />
 
@@ -56,7 +57,11 @@ export default function AggregateQuery() {
           </Trans>
         </em>
       </p>
-      <SampleQuery nrql="SELECT **max(duration)** FROM Transaction " span="6" />
+      <SampleQuery
+        nrql="SELECT **max(duration)** FROM Transaction "
+        fallbacknrql="SELECT max(duration) FROM Public_APICall"
+        span="6"
+      />
 
       <p>
         <Trans i18nKey="Contents.P7">
@@ -66,7 +71,11 @@ export default function AggregateQuery() {
           out.
         </Trans>
       </p>
-      <SampleQuery nrql="SELECT **min(duration)** FROM Transaction " span="6" />
+      <SampleQuery
+        nrql="SELECT **min(duration)** FROM Transaction "
+        fallbacknrql="SELECT min(duration) FROM Public_APICall"
+        span="6"
+      />
 
       <p>
         <Trans i18nKey="Contents.P8">
@@ -82,6 +91,7 @@ export default function AggregateQuery() {
       </p>
       <SampleQuery
         nrql="SELECT **sum(databaseCallCount)** FROM Transaction "
+        fallbacknrql="SELECT sum(duration) FROM Public_APICall"
         span="6"
       />
 
@@ -93,8 +103,11 @@ export default function AggregateQuery() {
           APM:
         </Trans>
       </p>
-      <SampleQuery nrql="SELECT **count(*)** FROM Transaction " span="6" />
-
+      <SampleQuery
+        nrql="SELECT **count(*)** FROM Transaction"
+        fallbacknrql="SELECT count(*) FROM Public_APICall"
+        span="6"
+      />
       <h2>
         <Trans i18nKey="Contents.H1">Lesson Summary</Trans>
       </h2>

@@ -45,6 +45,7 @@ export default function AdvancedMath() {
       </p>
       <SampleQuery
         nrql="SELECT **abs(duration)**, **round(duration)**, **ceil(duration)**, **floor(duration)** FROM Transaction SINCE 1 day ago"
+        fallbacknrql="SELECT abs(duration), round(duration), ceil(duration), floor(duration) from Public_APICall since 24 hours ago"
         chartType="table"
         span="12"
       />
@@ -66,6 +67,7 @@ export default function AdvancedMath() {
       </p>
       <SampleQuery
         nrql="SELECT **clamp\_max(average(duration), 10)**, **clamp\_min(average(duration), 1)** FROM Transaction SINCE 1 day ago TIMESERIES"
+        fallbacknrql="SELECT clamp_max(average(duration), 10), clamp_min(average(duration), 1) from Public_APICall since 24 hours ago TIMESERIES"
         span="12"
       />
 
@@ -117,6 +119,7 @@ export default function AdvancedMath() {
 
       <SampleQuery
         nrql="SELECT **pow(duration, 2)**, **sqrt(duration)**, **exp(duration)**, **ln(duration)**, **log2(duration)** FROM Transaction SINCE 1 day ago"
+        fallbacknrql="SELECT pow(duration, 2), sqrt(duration), exp(duration), ln(duration), log2(duration) from Public_APICall since 24 hours ago"
         chartType="table"
         span="12"
       />

@@ -104,7 +104,7 @@ export default class SampleQuery extends React.Component {
                     {showButton && (
                       <>
                         <Button
-                          type="primary"
+                          type="plain"
                           onClick={() =>
                             openChartBuilder({
                               query: nrqlPlain,
@@ -124,7 +124,7 @@ export default class SampleQuery extends React.Component {
                           Try this query
                         </Button>
                         <Button
-                          type="primary"
+                          type="plain"
                           onClick={() => {
                             copy(nrqlPlain);
                             Toast.showToast({

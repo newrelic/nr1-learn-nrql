@@ -1,3 +1,10 @@
+## [1.5.3](https://github.com/newrelic/nr1-learn-nrql/compare/v1.5.2...v1.5.3) (2022-02-23)
+
+
+### Bug Fixes
+
+* update buttons to plain prop ([2dfda6b](https://github.com/newrelic/nr1-learn-nrql/commit/2dfda6bc190a5862d1666921eda3f6b179f9cd26))
+
 ## [1.5.2](https://github.com/newrelic/nr1-learn-nrql/compare/v1.5.1...v1.5.2) (2022-02-23)
 
 

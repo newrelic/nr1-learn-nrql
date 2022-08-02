@@ -50,7 +50,7 @@ export default function FilterToEventTypes() {
           recently learned about to do something unique. We tell it{' '}
           <code>WHERE eventType()='PageView'</code>. This invokes the filter
           function to observe the event type as part of the total result set,
-          then filter to display only those specific events. We can even add
+          then filter to display only those specific events. We can even add{' '}
           <code>TIMESERIES</code> to visualize 2 directly comparable data points
           on a line graph.
         </Trans>

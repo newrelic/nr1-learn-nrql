@@ -202,7 +202,7 @@ const translate = {
       P5: `
         さて、ここで取得できたデータポイントの最大値を見つけるために、
         <1>SELECT ... FROM</1>を使って次のようにします。
-        <3>SELECT z FROM (SELECT x FROM y)</3>
+        <3>SELECT z FROM (SELECT x AS z FROM y)</3>
         `,
       H2: `例2 - CPU負荷の高いサーバー`,
       P6: `
@@ -229,6 +229,82 @@ const translate = {
         次に外側のクエリではカウントが1であるセッションの割合を計算します。
         `,
       H4: `本レッスンのまとめ`,
+      P9: `
+        In this lesson we have learned how we can use a query as the 
+        <2>FROM</2> of another query to answer more complicated
+        questions.
+        `
+    }
+  },
+  Subqueries: {
+    Title: 'Subqueries',
+    Contents: {
+      P1: `
+        Subqueries in NRQL are similar to nested aggregations, allowing you to
+        use a query nested inside another query. With subqueries the nested
+        query is used in the <1>SELECT</code> statement and the{' '}
+        <code>WHERE</code> clause, while nested aggregations are used in the{' '}
+        <code>FROM</code> clause.
+        `,
+      P2: `
+        Let's look at some examples of these different types of subqueries.
+        `,
+      H1: `Numeric Conditions`,
+      P3: `
+        Any query which returns a single numeric value can be used in numeric
+        conditions. This example uses a subquery in the <1>WHERE</1> 
+        clause that returns the value for the 97th percentile of the duration
+        for the transactions, and then returns the name and the duration for
+        those transactions that are greater than that.
+        `,
+      H2: `IN Conditions`,
+      P4: `
+        Where multiple values are returned from a subquery, use an 
+        <2>IN</2> condition for the parent query to compare against each
+        value. In the example, the <3>entity.guid</3> attribute for each
+        unique entity that has a transaction error is returned, and this is
+        matched against the <4>entity.guid</4> value for the
+        transactions to determine the average duration for the erroring
+        entities.
+        `,
+      H3: `Subqueries in the SELECT statement`,
+      P5: `
+        Subquery results can be used in calculations in the
+        <2>SELECT</2> statement, and may specify a different time range
+        from the outer query. This example calculates the delta between the
+        current average duration and that of the last 7 days.
+        `,
+      H4: `本レッスンのまとめ`,
+      P6: `
+        Subqueries are a powerful tool for data exploration, allowing for more
+        sophisticated queries across different data sources and time ranges.
+        `
+    }
+  },
+  Summary_L4: {
+    Title: 'まとめ',
+    Contents: {
+      P1: `Congratulations on completing Level 4: NRQL Power User!`,
+      P2: `
+        In this section we covered additional aggregation techniques,
+        higher-level math functions, and advanced features like Regex
+        filtering, nested aggregation and subqueries.
+        `,
+      P3: `Specifically, we learned how to use:`,
+      P4: `
+        The <1>stddev()</1> aggregation function, and how to group
+        aggregated data using the <3>buckets()</3> function
+      `,
+      P5: `
+        The advanced math functions available within NRQL to smooth, clamp
+        and manipulate the data
+        `,
+      P6: `
+        How to discover the event types and attributes available in your
+        data within a specific period
+      `,
+      P7: `How to filter data with Regex using <1>RLIKE</1>`,
+      P8: `How to use nested aggregation and subqueries`,
       P9: `
         お疲れ様でした！このコースでカバーしている、NRQLの素晴らしい機能をすべて学ぶことができました。
         あなたはすでに、真のNRQLの魔法使いです!

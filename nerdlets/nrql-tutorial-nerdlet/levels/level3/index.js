@@ -4,6 +4,7 @@ import Extrapolate from './lessons/Extrapolate';
 import FacetCases from './lessons/FacetCases';
 import FilterToEventTypes from './lessons/FilterToEventTypes';
 import OverridingValues from './lessons/OverridingValues';
+import Concatenation from './lessons/Concatenation';
 import NextSteps from './lessons/NextSteps';
 
 export default [
@@ -30,6 +31,10 @@ export default [
   {
     title: 'Overriding values',
     component: OverridingValues
+  },
+  {
+    title: 'String Concatenation',
+    component: Concatenation
   },
   {
     title: 'Summary',

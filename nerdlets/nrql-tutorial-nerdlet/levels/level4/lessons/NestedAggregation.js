@@ -2,21 +2,21 @@ import React from 'react';
 import SampleQuery from '../../../components/SampleQuery';
 import { Trans } from 'react-i18next';
 
-export default function SubQuery() {
+export default function NestedAggregation() {
   return (
     <div>
       <p>
         <Trans i18nKey="Contents.P1">
-          NRQL does not support the type of joins used in traditional SQL
-          databases. However, you can write nested aggregation queries that
-          resemble sub queries. This allows you to answer questions such as:
+          With NRQL you can write nested aggregation queries, where a NRQL query
+          is used as the 'FROM' for the parent query. This allows you to answer
+          questions such as:
         </Trans>
       </p>
       <ul>
         <Trans i18nKey="Contents.P2">
           <li>
-            How many requests per minute did my application handle, and what was
-            the maximum rate of requests per minute in the last hour?
+            How many transactions per minute did my application handle, and what
+            was the maximum rate of requests per minute in the last hour?
           </li>
           <li>
             What is the average CPU usage of all my servers, and which specific
@@ -36,7 +36,7 @@ export default function SubQuery() {
       </p>
 
       <h2>
-        <Trans i18nKey="Contents.H1">Example 1 - Max RPM for Last Hour</Trans>
+        <Trans i18nKey="Contents.H1">Example 1 - Max TPM for Last Hour</Trans>
       </h2>
       <p>
         <Trans i18nKey="Contents.P4">
@@ -46,7 +46,7 @@ export default function SubQuery() {
         </Trans>
       </p>
       <SampleQuery
-        nrql="SELECT count(\*) **AS rpm** FROM Transaction TIMESERIES 1 MINUTE"
+        nrql="SELECT count(\*) **AS tpm** FROM Transaction TIMESERIES 1 MINUTE"
         fallbacknrql="SELECT count(*) AS apicalls FROM Public_APICall TIMESERIES 1 minute"
         span="12"
       />
@@ -54,11 +54,11 @@ export default function SubQuery() {
         <Trans i18nKey="Contents.P5">
           Now, in order to find the maximum value reported across that period,
           we wrap the query in parentheses, and use <code>SELECT ... FROM</code>{' '}
-          like this: <code>SELECT z FROM (SELECT x FROM y)</code>
+          like this: <code>SELECT z FROM (SELECT x AS z FROM y)</code>
         </Trans>
       </p>
       <SampleQuery
-        nrql="**SELECT max(rpm) FROM (**SELECT count(\*) **AS rpm** FROM Transaction TIMESERIES 1 MINUTE**)**"
+        nrql="**SELECT max(tpm) FROM (**SELECT count(\*) **AS tpm** FROM Transaction TIMESERIES 1 MINUTE**)**"
         fallbacknrql="SELECT max(apicalls) FROM (SELECT count(*) AS apicalls FROM Public_APICall TIMESERIES 1 minute)"
         span="6"
         chartType="table"
@@ -126,26 +126,10 @@ export default function SubQuery() {
       </h2>
       <p>
         <Trans i18nKey="Contents.P9">
-          Well done! You have now learned all the amazing functionality of NRQL
-          covered in this course. You truly are a NRQL wizard!
+          In this lesson we have learned how we can use a query as the{' '}
+          <code>FROM</code> of another query to answer more complicated
+          questions.
         </Trans>
-      </p>
-      <p>
-        <Trans i18nKey="Contents.P10">
-          If you have further questions or encounter problems, feel free to
-          contact New Relic support via{' '}
-        </Trans>
-        <a href="https://support.newrelic.com" target="_blank" rel="noreferrer">
-          support.newrelic.com
-        </a>{' '}
-        <Trans i18nKey="Contents.P11">
-          You're also welcome to share your experience with our online community
-          at{' '}
-        </Trans>
-        <a href="https://discuss.newrelic.com" target="_blank" rel="noreferrer">
-          discuss.newrelic.com
-        </a>
-        .
       </p>
     </div>
   );

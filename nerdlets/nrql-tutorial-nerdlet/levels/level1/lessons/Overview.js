@@ -16,8 +16,8 @@ export default function Overview() {
       <p>
         <Trans i18nKey="Contents.P2">
           NRQL stands for <strong>New Relic Query Language</strong>. It gives
-          you realtime access to petabytes of Metric, Event, Log, and Trace data
-          in NRDB.
+          you real-time access to petabytes of Metric, Event, Log, and Trace
+          data in NRDB.
         </Trans>
       </p>
       <p>
@@ -38,13 +38,14 @@ export default function Overview() {
           of data quickly and easily. For the sake of convenience, examples in
           this tutorial use APM transaction data, because most New Relic
           customers will have this type of data.
-          <strong>
-            If you have access to more than one account, please switch to an
-            account using APM. If none of your accounts have APM data. We will
-            use fallback queries. This may mean the lesson references
-            Transaction table. However the query may use another NR event to
+          <br />
+          <em>
+            Note: If you have access to more than one account, please switch to
+            an account using APM. If none of your accounts have APM data, we
+            will use fallback queries. This may mean the lesson references the
+            Transaction table, however the query may use another NR event to
             showcase a similar query.
-          </strong>
+          </em>
         </Trans>
       </p>
       <p>

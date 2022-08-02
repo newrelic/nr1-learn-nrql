@@ -40,7 +40,7 @@ export default function OverridingValues() {
         </Trans>
       </p>
       <SampleQuery
-        nrql="SELECT count(apdexPerfZone) as 'Events With Values', count(apdexPerfZone **OR 'Null'**) as 'Events With and Without Values' from Transaction since 24 hours ago"
+        nrql="SELECT count(apdexPerfZone) as 'Events With Values', count(apdexPerfZone **OR 'Null'**) as 'Events With and Without Values' from Transaction SINCE 24 hours ago"
         fallbacknrql="SELECT count(duration) AS 'Events With Durations', count(http.url OR 'Null') AS Events With and Without URL' FROM Public_APICall SINCE 1 day ago"
         span="12"
       />
@@ -63,7 +63,7 @@ export default function OverridingValues() {
         </Trans>
       </p>
       <SampleQuery
-        nrql="SELECT average(**numeric(httpResponseCode)**) as 'Converted Attribute', average(httpResponseCode) as 'Non-converted Attribute'  from Transaction since 24 hours ago"
+        nrql="SELECT average(**numeric(httpResponseCode)**) as 'Converted Attribute', average(httpResponseCode) as 'Non-converted Attribute'  FROM Transaction SINCE 24 hours ago"
         fallbacknrql="SELECT average(numeric(duration)) AS 'Ensuring stored value is treated as numeric', average(duration) AS 'Non-Converted Attribute' FROM Public_APICall SINCE 1 day ago"
         span="12"
       />
@@ -81,8 +81,24 @@ export default function OverridingValues() {
         </Trans>
       </p>
       <SampleQuery
-        nrql="SELECT count(boolean(error)), count(error)  from Transaction since 24 hours ago"
-        fallbacknrql="SELECT count(boolean(sampleDataSet)), count(sampleDataSet)  from Public_APICall since 24 hours ago"
+        nrql="SELECT count(boolean(error)), count(error)  FROM Transaction SINCE 24 hours ago"
+        fallbacknrql="SELECT count(boolean(sampleDataSet)), count(sampleDataSet)  FROM Public_APICall SINCE 24 hours ago"
+        span="12"
+      />
+      <p>
+        <Trans i18nKey="Contents.P7">
+          You can also convert boolean and numeric values to strings by using
+          the <code>string()</code> function. Where numeric values are
+          floating-point numbers you can use the optional <code>precision</code>
+          argument to limit the number of decimal places for the string. This
+          query returns the duration value as a string limited to three decimal
+          places.
+        </Trans>
+      </p>
+      <SampleQuery
+        nrql="SELECT **string(duration, precision: 3)**  FROM Transaction SINCE 24 hours ago"
+        fallbacknrql="SELECT **string(duration, precision: 3)** FROM Public_APICall SINCE 24 hours ago"
+        chartType="table"
         span="12"
       />
       <h2>

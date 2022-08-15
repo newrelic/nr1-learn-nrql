@@ -33,7 +33,7 @@ export default [
     component: OverridingValues
   },
   {
-    title: 'String Concatenation',
+    title: 'String concatenation',
     component: Concatenation
   },
   {

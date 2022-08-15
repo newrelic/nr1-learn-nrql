@@ -21,7 +21,7 @@ export default function Concatenation() {
       </p>
       <SampleQuery
         nrql="SELECT **concat('The duration of ', name, ' is ', duration, ' seconds')** FROM Transaction"
-        fallbacknrql="SELECT **concat('The duration of ', name, ' is ', duration, ' seconds')** FROM Public_APICall"
+        fallbacknrql="SELECT **concat('The duration of ', http.url, ' is ', duration, ' seconds')** FROM Public_APICall"
         chartType="table"
         span="12"
       />
@@ -37,7 +37,7 @@ export default function Concatenation() {
       </p>
       <SampleQuery
         nrql="SELECT name, concat(duration, 's', **precision: 3**) FROM Transaction"
-        fallbacknrql="SELECT name, concat(duration, 's', **precision: 3**) FROM Public_APICall"
+        fallbacknrql="SELECT http.url, concat(duration, 's', **precision: 3**) FROM Public_APICall"
         chartType="table"
         span="12"
       />
@@ -54,7 +54,7 @@ export default function Concatenation() {
       </p>
       <SampleQuery
         nrql="SELECT name, concat(**'https://www.example.com/?appId=', appId, '&amp;error=', error**) AS 'URL' FROM Transaction"
-        fallbacknrql="SELECT name, concat(**'https://www.example.com/?appId=', appId, '&amp;error=', error**) AS 'URL' FROM Public_APICall"
+        fallbacknrql="SELECT http.url, concat(**'https://www.example.com/?appId=', api, '&amp;error=', error**) AS 'URL' FROM Public_APICall"
         chartType="table"
         span="12"
       />

@@ -40,27 +40,27 @@ export default function TimeRange() {
       </p>
       <SampleQuery
         nrql="SELECT average(duration) FROM Transaction **SINCE 1 day ago**"
-        fallbacknrql="SELECT average(duration) FROM Public_APICall SINCE 1 day ago"
+        fallbacknrql="SELECT average(duration) FROM Public_APICall **SINCE 1 day ago**"
         span="6"
       />
       <SampleQuery
         nrql="SELECT average(duration) FROM Transaction **SINCE 1 week ago UNTIL 2 days ago**"
-        fallbacknrql="SELECT average(duration) FROM Public_APICall SINCE 1 week ago UNTIL 2 days ago"
+        fallbacknrql="SELECT average(duration) FROM Public_APICall **SINCE 1 week ago UNTIL 2 days ago**"
         span="6"
       />
       <SampleQuery
         nrql="SELECT average(duration) FROM Transaction **SINCE 23 hours ago UNTIL 15 minutes ago**"
-        fallbacknrql="SELECT average(duration) FROM Public_APICall SINCE 23 hours ago UNTIL 15 minutes ago"
+        fallbacknrql="SELECT average(duration) FROM Public_APICall **SINCE 23 hours ago UNTIL 15 minutes ago**"
         span="6"
       />
       <SampleQuery
         nrql="SELECT average(duration) FROM Transaction **SINCE today**"
-        fallbacknrql="SELECT average(duration) FROM Public_APICall SINCE today"
+        fallbacknrql="SELECT average(duration) FROM Public_APICall **SINCE today**"
         span="6"
       />
       <SampleQuery
         nrql="SELECT average(duration) FROM Transaction **SINCE this week**"
-        fallbacknrql="SELECT average(duration) FROM Public_APICall SINCE this week"
+        fallbacknrql="SELECT average(duration) FROM Public_APICall **SINCE this week**"
         span="6"
       />
 

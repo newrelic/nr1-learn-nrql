@@ -72,6 +72,12 @@ export default class SampleQuery extends React.Component {
       .replace(/\\_/g, '_')
       .replace(/\\\[/g, '[');
 
+    let fallbacknrqlPlain = fallbacknrql ? fallbacknrql
+      .replace(/\*\*/g, '')
+      .replace(/\\\*/g, '*')
+      .replace(/\\_/g, '_')
+      .replace(/\\\[/g, '[') : "" ;
+
     if (markdown === 'no') {
       nrqlPlain = nrql;
     }
@@ -80,10 +86,34 @@ export default class SampleQuery extends React.Component {
 
     const Chart = this.getChart();
 
+    const renderChart = (nrqlPlain,accountId)=>{
+      //deal with different props based on type :( 
+      if(Chart.name == 'LineChart' || Chart.name == 'AreaChart'  || Chart.name == 'TableChart') {
+        return  <Chart
+        fullWidth
+        query={nrqlPlain}
+        accountIds={[accountId]}
+    />
+      } else {
+        return  <Chart
+        fullWidth
+        query={nrqlPlain}
+        accountId={accountId}
+    />
+      }
+     
+    }
+
     return (
       <LessonContextConsumer>
         {context => {
-          { context.hasNoAPM  ? (nrql = fallbacknrql) : -1 ; context.hasNoAPM  ? (nrqlPlain = fallbacknrql) : -1 } // eslint-disable-line no-lone-blocks, prettier/prettier, no-unused-expressions
+          let fallBackDescription;
+          if(context.hasNoAPM) {
+            nrql = fallbacknrql;
+            nrqlPlain = fallbacknrqlPlain;
+            fallBackDescription=<div className="fallBackNote">⚠️ Using fallback NRQL query example, this may differ slightly from the description.</div>
+
+          }
           return (
             <Grid className="sample-query">
               <GridItem columnSpan={numSpan} style={{ height: '100%' }}>
@@ -100,6 +130,7 @@ export default class SampleQuery extends React.Component {
                       <ReactMarkdown source={nrql} />
                     )}
                   </div>
+                  {fallBackDescription}
                   <div className="try-button">
                     {showButton && (
                       <>
@@ -152,11 +183,7 @@ export default class SampleQuery extends React.Component {
               <GridItem columnSpan={numSpan}>
                 <h3>Result</h3>
                 <div className="chart">
-                  <Chart
-                    fullWidth
-                    query={nrqlPlain}
-                    accountId={context.accountId}
-                  />
+                  {renderChart(nrqlPlain,context.accountId)}
                 </div>
               </GridItem>
             </Grid>

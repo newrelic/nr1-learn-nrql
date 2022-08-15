@@ -62,7 +62,6 @@ export default class NrqlTutorialNerdlet extends React.Component {
 
     // Get the 'accounts' from the returned data from the query to NerdGraph
     const { data: { actor: { accounts } } } = await NerdGraphQuery.query({ query }); // eslint-disable-line prettier/prettier
-    // const accounts = data.actor.accounts.filter(a => (a.reportingEventTypes || []).length > 0)
 
     // Get the previous level, lesson and language from the User Storage
     const { data: prevState } = await UserStorageQuery.query({
@@ -110,6 +109,9 @@ export default class NrqlTutorialNerdlet extends React.Component {
         <SelectItem value={String(id)} key={id}>{name}</SelectItem> // eslint-disable-line prettier/prettier
       );
     });
+    if (typeof selectedAccount !== 'number') {
+      selectedAccount = accounts.length > 0 ? accounts[0].id : -1;
+    }
 
     i18n.changeLanguage(selectedLanguage);
     this.setState({

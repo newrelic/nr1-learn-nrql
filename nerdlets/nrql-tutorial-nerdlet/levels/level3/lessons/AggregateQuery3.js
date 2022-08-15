@@ -46,7 +46,7 @@ export default function AggregateQuery3() {
       </p>
       <SampleQuery
         nrql="SELECT **rate(count(*), 5 minutes)** FROM Transaction SINCE 1 hour ago COMPARE WITH 1 hour ago"
-        fallbacknrql="SELECT rate(count(*), 5 minutes) FROM Public_APICall SINCE 1 hour ago COMPARE WITH 1 hour ago"
+        fallbacknrql="SELECT **rate(count(*), 5 minutes)** FROM Public_APICall SINCE 1 hour ago COMPARE WITH 1 hour ago"
         span="6"
       />
 
@@ -85,7 +85,7 @@ export default function AggregateQuery3() {
       </p>
       <SampleQuery
         nrql="SELECT **funnel(session, WHERE pageUrl LIKE 'http%//%.%.com/' AS 'Home', WHERE pageUrl NOT LIKE 'http%//%.%.com/' AS 'Any Other Page')** FROM PageView SINCE 1 week ago UNTIL now"
-        fallbacknrql="SELECT funnel(awsAPI, WHERE http.url LIKE '%.amazonaws.com', WHERE http.url LIKE '%.us-west%.amazonaws.com') FROM Public_APICall SINCE 1 week ago UNTIL now"
+        fallbacknrql="SELECT **funnel(awsAPI, WHERE http.url LIKE '%.amazonaws.com', WHERE http.url LIKE '%.us-west%.amazonaws.com')** FROM Public_APICall SINCE 1 week ago UNTIL now"
         chartType="funnel"
         span="6"
       />
@@ -104,7 +104,7 @@ export default function AggregateQuery3() {
       </p>
       <SampleQuery
         nrql="SELECT count(\*) as 'All Transactions', **filter(count(\*), WHERE transactionType = 'Web') as 'Web Transactions'**, filter(count(\*), WHERE transactionType !='Web') as 'Non-Web Transactions' FROM Transaction SINCE 24 hours ago"
-        fallbacknrql="SELECT count(*) AS 'All Transactions', filter(count(*), WHERE awsAPI = 'dynamodb') AS 'DynamoDB', filter(count(*), WHERE awsAPI = 'sqs') AS 'SQS' FROM Public_APICall SINCE 1 day ago"
+        fallbacknrql="SELECT count(\*) AS 'All Transactions', **filter(count(*), WHERE awsAPI = 'dynamodb') AS 'DynamoDB'**, filter(count(*), WHERE awsAPI = 'sqs') AS 'SQS' FROM Public_APICall SINCE 1 day ago"
         span="12"
       />
 
@@ -117,7 +117,7 @@ export default function AggregateQuery3() {
       </p>
       <SampleQuery
         nrql="SELECT (filter(count(\*), where transactionType = 'Web') **/ count(\*)) \* 100**  as 'Percent web' FROM Transaction SINCE 24 hours ago"
-        fallbacknrql="SELECT filter(count(*), WHERE awsAPI = 'dynamodb') / count(*) AS 'Percent of APIs that are DynamoDB' FROM Public_APICall SINCE 1 day ago"
+        fallbacknrql="SELECT filter(count(*), WHERE awsAPI = 'dynamodb') **/ count(*)** AS 'Percent of APIs that are DynamoDB' FROM Public_APICall SINCE 1 day ago"
         span="6"
       />
 
@@ -148,7 +148,7 @@ export default function AggregateQuery3() {
 
       <SampleQuery
         nrql="SELECT **histogram(duration, 1, 20)** FROM Transaction SINCE 24 hours ago"
-        fallbacknrql="SELECT histogram(duration, 1, 20) FROM Public_APICall SINCE 1 day ago"
+        fallbacknrql="SELECT **histogram(duration, 1, 20)** FROM Public_APICall SINCE 1 day ago"
         chartType="histogram"
         span="12"
       />
@@ -181,7 +181,7 @@ export default function AggregateQuery3() {
       </p>
       <SampleQuery
         nrql="SELECT apdex(duration, t: 0.08) as 'Apdex of Duration' FROM Transaction SINCE 1 week ago **TIMESERIES**"
-        fallbacknrql="SELECT apdex(duration, 0.1) AS 'Apdex Of Duration' FROM Public_APICall SINCE 1 week ago TIMESERIES"
+        fallbacknrql="SELECT apdex(duration, 0.1) AS 'Apdex Of Duration' FROM Public_APICall SINCE 1 week ago **TIMESERIES**"
         span="6"
       />
 

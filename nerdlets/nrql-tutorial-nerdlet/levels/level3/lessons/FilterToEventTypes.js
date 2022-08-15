@@ -23,7 +23,7 @@ export default function FilterToEventTypes() {
       </p>
       <SampleQuery
         nrql="SELECT count(\*) as 'Combined Events' **FROM Transaction, PageView** SINCE  1 day ago"
-        fallbacknrql="SELECT count(*) AS 'Combined Events' FROM Public_APICall, NrMTDConsumption SINCE 1 day ago"
+        fallbacknrql="SELECT count(\*) AS 'Combined Events' **FROM NrdbQuery, NrDailyUsage** SINCE 1 day ago"
         span="6"
       />
 
@@ -38,7 +38,7 @@ export default function FilterToEventTypes() {
       </p>
       <SampleQuery
         nrql="SELECT count(\*) as 'Combined Events', filter(count(\*), **WHERE eventType() = 'PageView'**) as 'Page Views', filter(count(\*), **WHERE eventType()='Transaction'**) as 'Transactions' FROM Transaction, PageView SINCE  1 day ago"
-        fallbacknrql="SELECT count(*) AS 'Combined Events', filter(count(*), WHERE eventType() = 'Public_APICall') as 'Public_APICall', filter(count(*), WHERE eventType()='NrMTDConsumption') as 'NrMTDConsumption' FROM Public_APICall, NrMTDConsumption SINCE 1 day ago"
+        fallbacknrql="SELECT count(\*) AS 'Combined Events', filter(count(*), **WHERE eventType() = 'NrdbQuery'**) as 'NrdbQuery', filter(count(*), WHERE eventType()='NrDailyUsage') as 'NrDailyUsage' FROM NrdbQuery, NrDailyUsage SINCE 1 day ago"
         span="12"
       />
 
@@ -58,7 +58,7 @@ export default function FilterToEventTypes() {
 
       <SampleQuery
         nrql="SELECT count(\*) as 'Combined Events', filter(count(\*), WHERE eventType() = 'PageView') as 'Page Views', filter(count(\*), WHERE eventType()='Transaction') as 'Transactions' FROM Transaction, PageView SINCE  1 day ago TIMESERIES max"
-        fallbacknrql="SELECT count(*) AS 'Combined Events', filter(count(*), WHERE eventType() = 'Public_APICall') as 'Public_APICall', filter(count(*), WHERE eventType()='NrMTDConsumption') as 'NrMTDConsumption' FROM Public_APICall, NrMTDConsumption SINCE 1 day ago TIMESERIES max"
+        fallbacknrql="SELECT count(\*) AS 'Combined Events', filter(count(\*), WHERE eventType() = 'NrdbQuery') as 'NrdbQuery', filter(count(\*), WHERE eventType()='NrDailyUsage') as 'NrDailyUsage' FROM NrdbQuery, NrDailyUsage SINCE 1 day ago TIMESERIES max"
         span="12"
       />
 

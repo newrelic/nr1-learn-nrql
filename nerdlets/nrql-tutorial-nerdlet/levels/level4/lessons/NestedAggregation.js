@@ -47,7 +47,7 @@ export default function NestedAggregation() {
       </p>
       <SampleQuery
         nrql="SELECT count(\*) **AS tpm** FROM Transaction TIMESERIES 1 MINUTE"
-        fallbacknrql="SELECT count(*) AS apicalls FROM Public_APICall TIMESERIES 1 minute"
+        fallbacknrql="SELECT count(\*) **AS apicalls** FROM Public_APICall TIMESERIES 1 minute"
         span="12"
       />
       <p>
@@ -58,8 +58,8 @@ export default function NestedAggregation() {
         </Trans>
       </p>
       <SampleQuery
-        nrql="**SELECT max(tpm) FROM (**SELECT count(\*) **AS tpm** FROM Transaction TIMESERIES 1 MINUTE**)**"
-        fallbacknrql="SELECT max(apicalls) FROM (SELECT count(*) AS apicalls FROM Public_APICall TIMESERIES 1 minute)"
+        nrql="**SELECT max(tpm) FROM (** SELECT count(\*) AS tpm** FROM Transaction TIMESERIES 1 MINUTE **)**"
+        fallbacknrql="**SELECT max(apicalls) FROM (** SELECT count(\*) AS apicalls FROM Public_APICall TIMESERIES 1 minute **)**"
         span="6"
         chartType="table"
       />
@@ -94,7 +94,7 @@ export default function NestedAggregation() {
       </p>
       <SampleQuery
         nrql="SELECT hostname, **cpu** FROM (SELECT average(cpuPercent) **AS cpu** FROM SystemSample FACET hostname) **WHERE cpu > 20**"
-        fallbacknrql="SELECT api, slowAPIDuration FROM (SELECT average(duration) AS slowAPIDuration FROM Public_APICall FACET api) WHERE slowAPIDuration > 1"
+        fallbacknrql="select query, **avgduration** from (select average(durationMs) **as avgduration** from NrdbQuery facet query) **where avgduration > 40**"
         span="12"
         chartType="table"
       />
@@ -117,7 +117,7 @@ export default function NestedAggregation() {
       </p>
       <SampleQuery
         nrql="SELECT percentage(count(\*), **WHERE sessionLength = 1**) FROM (SELECT count(\*) **AS sessionLength** FROM PageView FACET session)"
-        fallbacknrql="SELECT percentage(count(*), WHERE slowAPIDuration > 1) FROM (SELECT average(duration) AS slowAPIDuration FROM Public_APICall FACET api)"
+        fallbacknrql="select percentage(count(*), **where avgduration > 20** ) from (select average(durationMs) **as avgduration** from NrdbQuery facet query)"
         span="12"
       />
 

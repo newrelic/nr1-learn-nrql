@@ -41,7 +41,7 @@ export default function OverridingValues() {
       </p>
       <SampleQuery
         nrql="SELECT count(apdexPerfZone) as 'Events With Values', count(apdexPerfZone **OR 'Null'**) as 'Events With and Without Values' from Transaction SINCE 24 hours ago"
-        fallbacknrql="SELECT count(duration) AS 'Events With Durations', count(http.url OR 'Null') AS Events With and Without URL' FROM Public_APICall SINCE 1 day ago"
+        fallbacknrql="SELECT count(duration) AS 'Events With Durations', count(http.url **OR 'Null'**) AS 'Events With and Without URL' FROM Public_APICall SINCE 1 day ago"
         span="12"
       />
 
@@ -64,7 +64,7 @@ export default function OverridingValues() {
       </p>
       <SampleQuery
         nrql="SELECT average(**numeric(httpResponseCode)**) as 'Converted Attribute', average(httpResponseCode) as 'Non-converted Attribute'  FROM Transaction SINCE 24 hours ago"
-        fallbacknrql="SELECT average(numeric(duration)) AS 'Ensuring stored value is treated as numeric', average(duration) AS 'Non-Converted Attribute' FROM Public_APICall SINCE 1 day ago"
+        fallbacknrql="SELECT average(**numeric(duration)**) AS 'Ensuring stored value is treated as numeric', average(duration) AS 'Non-Converted Attribute' FROM Public_APICall SINCE 1 day ago"
         span="12"
       />
 
@@ -81,8 +81,8 @@ export default function OverridingValues() {
         </Trans>
       </p>
       <SampleQuery
-        nrql="SELECT count(boolean(error)), count(error)  FROM Transaction SINCE 24 hours ago"
-        fallbacknrql="SELECT count(boolean(sampleDataSet)), count(sampleDataSet)  FROM Public_APICall SINCE 24 hours ago"
+        nrql="SELECT count(**boolean(error)**), count(error)  FROM Transaction SINCE 24 hours ago"
+        fallbacknrql="SELECT count(**boolean(sampleDataSet)**), count(sampleDataSet)  FROM Public_APICall SINCE 24 hours ago"
         span="12"
       />
       <p>

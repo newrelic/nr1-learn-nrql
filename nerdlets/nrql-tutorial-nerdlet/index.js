@@ -90,6 +90,7 @@ export default class NrqlTutorialNerdlet extends React.Component {
       selectedLanguage = 'en';
     }
 
+    selectedAccount=accounts[0].id
     const processedAccounts = accounts.map(account => {
       let { name, id, reportingEventTypes } = account;
       if (reportingEventTypes && reportingEventTypes.length > 0) {

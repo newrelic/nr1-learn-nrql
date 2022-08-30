@@ -276,12 +276,55 @@ const translate = {
         もし属性の値が文字列の"TRUE"になっているのであれば、<3>boolean()</3>を使って型強制し、
         クエリを意図した通りに実行できるようにしましょう。
       `,
+      P7: `
+        You can also convert boolean and numeric values to strings by using
+        the <1>string()</1> function. Where numeric values are
+        floating-point numbers you can use the optional <1>precision</1>
+        argument to limit the number of decimal places for the string. This
+        query returns the duration value as a string limited to three decimal
+        places.
+      `,
       H3: `本レッスンのまとめ`,
       P6: `
         神は細部に宿るといいます。このレッスンでは、データフォーマットを制御し、NRQLでどのように動作させたいかを指定することを学びました。
         New Relicのエージェントから送られてくるデータは一般的な利用方法を元にフォーマットされているのですが、
         もし独自のシナリオがありフォーマット変換を行う必要がある場合は、このレッスンで説明した機能を使用することで
         オーバーライドや型強制ができるのでご利用ください。
+      `
+    }
+  },
+  'String Concatenation': {
+    Title: 'String Concatenation',
+    Contents: {
+      P1: `
+        There may be some cases where you need to append and/or prepend text
+        to the returned value of an attribute. This can be achieved using the{' '}
+        <code>concat()</code> function.
+      `,
+      P2: `
+        You can provide upto 20 arguments for the <code>concat()</code>{' '}
+        function to concatenate into a string.
+      `,
+      P3: `
+        We can limit the number of decimal places that are used for any
+        floating point numbers in the values of the concatenated attributes.
+        To do this we use the optional <code>precision:</code> argument as the
+        last value. In this example we are appending 's' to denote seconds,
+        and limiting the value to 3 decimal places.
+      `,
+      P4: `
+        Values that start with 'http(s)' are automatically displayed as links
+        which can be clicked to open a new page, which means it is possible to
+        create integrations to solutions where a dynamic URL can be used to
+        open a related page to the entity. The following example demonstrates
+        an example URL where the query parameter values are set by the
+        attribute values.
+      `,
+      H1: `本レッスンのまとめ`,
+      P5: `
+        You can use the <code>concat()</code> function to combine values
+        together (e.g. city and country for location), and prepend/append
+        additional strings to present the data as you need.
       `
     }
   },

@@ -53,63 +53,76 @@ export default class NrqlTutorialNerdlet extends React.Component {
         }
       }
     }`;
-    const { data } = await NerdGraphQuery.query({ query });
-    // const accounts = data.actor.accounts.filter(a => (a.reportingEventTypes || []).length > 0)
-    const accounts = data.actor.accounts;
+    let currentLevel;
+    let currentLesson;
+    let selectedLanguage;
+    let selectedAccount;
+    let prevAccount;
+    let hasNoAPM = true;
 
-    let intendedState = {};
-    if (accounts.length > 0) {
-      const APMbool = accounts[0].reportingEventTypes === null ? 'true' : 'false'; // eslint-disable-line prettier/prettier
-      intendedState = {
-        selectedAccount: accounts[0].id,
-        hasNoAPM: APMbool,
-        accounts: accounts.map(account => {
-          return (
-            <SelectItem value={String(account.id)} key={account.id}>
-              {account.name +
-                ((account.reportingEventTypes || []).length === 0
-                  ? ' [no recent APM data]'
-                  : '')}
-            </SelectItem>
-          );
-        })
-      };
-    } else {
-      intendedState = { noAccounts: true };
-    }
+    // Get the 'accounts' from the returned data from the query to NerdGraph
+    const { data: { actor: { accounts } } } = await NerdGraphQuery.query({ query }); // eslint-disable-line prettier/prettier
 
-    // load from local store
-    UserStorageQuery.query({
+    // Get the previous level, lesson and language from the User Storage
+    const { data: prevState } = await UserStorageQuery.query({
       collection: this.collectionId,
       documentId: this.documentId
-    })
-      .then(({ data }) => {
-        if (data !== null) {
-          intendedState = { ...intendedState, ...data };
-          // sanity check that loaded lesson actually exists
-          if (
-            !(
-              data.currentLevel !== undefined &&
-              data.currentLesson !== undefined &&
-              LEVELS[data.currentLevel] &&
-              LEVELS[data.currentLevel].lessons[data.currentLesson]
-            )
-          ) {
-            // eslint-disable-next-line no-console
-            console.log('level/lesson doesnt exist, setting to lesson 1');
-            intendedState.currentLevel = 0;
-            intendedState.currentLesson = 0;
+      // eslint-disable-next-line no-console
+    }).catch(err => console.log(err));
+
+    if (prevState) {
+      currentLevel = prevState.currentLevel;
+      currentLesson = prevState.currentLesson;
+      selectedLanguage = prevState.selectedLanguage || 'en';
+      prevAccount = prevState.selectedAccount;
+      // sanity check that loaded lesson actually exists
+      const level = LEVELS[currentLevel];
+      if (!level || !level.lessons[currentLesson]) {
+        // eslint-disable-next-line no-console, prettier/prettier
+        console.log(`Lesson ${currentLesson + 1} of level ${currentLevel + 1} doesn't exist! Resetting to level 1, lesson 1.`);
+        currentLevel = 0;
+        currentLesson = 0;
+      }
+    } else {
+      currentLevel = 0;
+      currentLesson = 0;
+      selectedLanguage = 'en';
+    }
+
+    const processedAccounts = accounts.map(account => {
+      let { name, id, reportingEventTypes } = account;
+      if (reportingEventTypes && reportingEventTypes.length > 0) {
+        if (prevAccount === id) {
+          selectedAccount = id;
+        }
+        if (hasNoAPM) {
+          hasNoAPM = false;
+          if (typeof selectedAccount !== 'number') {
+            selectedAccount = id;
           }
         }
-      })
-      // eslint-disable-next-line no-console
-      .catch(err => console.log(err))
-      .finally(() => {
-        if (intendedState.selectedLanguage) {
-          i18n.changeLanguage(intendedState.selectedLanguage);
-        }
-        this.setState(intendedState);
-      });
+      } else {
+        name += ' [no recent APM data]';
+      }
+
+      return (
+        <SelectItem value={String(id)} key={id}>{name}</SelectItem> // eslint-disable-line prettier/prettier
+      );
+    });
+    if (typeof selectedAccount !== 'number') {
+      selectedAccount = accounts.length > 0 ? accounts[0].id : -1;
+    }
+
+    i18n.changeLanguage(selectedLanguage);
+    this.setState({
+      currentLevel,
+      currentLesson,
+      selectedLanguage,
+      selectedAccount,
+      hasNoAPM,
+      noAccounts: accounts.length === 0,
+      accounts: processedAccounts
+    });
   }
 
   async loadLanguages() {

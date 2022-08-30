@@ -23,7 +23,7 @@ export default function Where() {
       </p>
       <SampleQuery
         nrql="SELECT average(duration) FROM Transaction **WHERE transactionType='Web'** TIMESERIES"
-        fallbacknrql="SELECT average(duration) FROM Public_APICall WHERE awsAPI='dynamodb' TIMESERIES"
+        fallbacknrql="SELECT average(duration) FROM Public_APICall **WHERE awsAPI='dynamodb'** TIMESERIES"
         span="12"
       />
       <p>
@@ -43,7 +43,7 @@ export default function Where() {
       </p>
       <SampleQuery
         nrql="SELECT average(duration) FROM Transaction WHERE transactionType='Web' **AND** duration < 0.1 **AND (**httpResponseCode=200 **OR** httpResponseCode=302**)** TIMESERIES"
-        fallbacknrql="SELECT average(duration) FROM Public_APICall WHERE awsAPI='dynamodb' AND duration > 0.02 AND http.method = 'POST' OR http.method = 'HEAD' TIMESERIES"
+        fallbacknrql="SELECT average(duration) FROM Public_APICall WHERE awsAPI='dynamodb' **AND** duration > 0.02 **AND** **(** http.method = 'POST' **OR** http.method = 'HEAD' **)** TIMESERIES"
         span="12"
       />
 

@@ -45,8 +45,8 @@ export default function AggregateQuery3() {
         </Trans>
       </p>
       <SampleQuery
-        nrql="SELECT **rate(count(*), 5 minutes)** from Transaction SINCE 1 hour ago COMPARE WITH 1 hour ago"
-        fallbacknrql="SELECT rate(count(*), 5 minutes) FROM Public_APICall SINCE 1 hour ago COMPARE WITH 1 hour ago"
+        nrql="SELECT **rate(count(*), 5 minutes)** FROM Transaction SINCE 1 hour ago COMPARE WITH 1 hour ago"
+        fallbacknrql="SELECT **rate(count(*), 5 minutes)** FROM Public_APICall SINCE 1 hour ago COMPARE WITH 1 hour ago"
         span="6"
       />
 
@@ -85,7 +85,7 @@ export default function AggregateQuery3() {
       </p>
       <SampleQuery
         nrql="SELECT **funnel(session, WHERE pageUrl LIKE 'http%//%.%.com/' AS 'Home', WHERE pageUrl NOT LIKE 'http%//%.%.com/' AS 'Any Other Page')** FROM PageView SINCE 1 week ago UNTIL now"
-        fallbacknrql="SELECT funnel(awsAPI, WHERE http.url LIKE '%.amazonaws.com', WHERE http.url LIKE '%.us-west%.amazonaws.com') FROM Public_APICall SINCE 1 week ago UNTIL now"
+        fallbacknrql="SELECT **funnel(awsAPI, WHERE http.url LIKE '%.amazonaws.com', WHERE http.url LIKE '%.us-west%.amazonaws.com')** FROM Public_APICall SINCE 1 week ago UNTIL now"
         chartType="funnel"
         span="6"
       />
@@ -103,8 +103,8 @@ export default function AggregateQuery3() {
         </Trans>
       </p>
       <SampleQuery
-        nrql="SELECT count(\*) as 'All Transactions', **filter(count(\*), where transactionType ='Web') as 'Web Transactions'**, filter(count(\*), where transactionType !='Web') as 'Non-Web Transactions' from Transaction since 24 hours ago"
-        fallbacknrql="SELECT count(*) AS 'All Transactions', filter(count(*), WHERE awsAPI = 'dynamodb') AS 'DynamoDB', filter(count(*), WHERE awsAPI = 'sqs') AS 'SQS' FROM Public_APICall SINCE 1 day ago"
+        nrql="SELECT count(\*) as 'All Transactions', **filter(count(\*), WHERE transactionType = 'Web') as 'Web Transactions'**, filter(count(\*), WHERE transactionType !='Web') as 'Non-Web Transactions' FROM Transaction SINCE 24 hours ago"
+        fallbacknrql="SELECT count(\*) AS 'All Transactions', **filter(count(*), WHERE awsAPI = 'dynamodb') AS 'DynamoDB'**, filter(count(*), WHERE awsAPI = 'sqs') AS 'SQS' FROM Public_APICall SINCE 1 day ago"
         span="12"
       />
 
@@ -116,8 +116,8 @@ export default function AggregateQuery3() {
         </Trans>
       </p>
       <SampleQuery
-        nrql="SELECT (filter(count(\*), where transactionType ='Web') **/ count(\*)) \* 100**  as 'Percent web' from Transaction since 24 hours ago"
-        fallbacknrql="SELECT filter(count(*), WHERE awsAPI = 'dynamodb') / count(*) AS 'Percent of APIs that are DynamoDB' FROM Public_APICall SINCE 1 day ago"
+        nrql="SELECT (filter(count(\*), where transactionType = 'Web') **/ count(\*)) \* 100**  as 'Percent web' FROM Transaction SINCE 24 hours ago"
+        fallbacknrql="SELECT filter(count(*), WHERE awsAPI = 'dynamodb') **/ count(*)** AS 'Percent of APIs that are DynamoDB' FROM Public_APICall SINCE 1 day ago"
         span="6"
       />
 
@@ -130,7 +130,7 @@ export default function AggregateQuery3() {
           data. This assists in understanding how data points are grouped by
           frequency, not just averages. The <code>histogram()</code> function
           takes three arguments:
-          <ol type="1">
+          <ol type="1" style={{ 'margin-left': '2em' }}>
             <li>the attribute you want to plot (such as duration)</li>
             <li>
               the maximum value of the range you want to consider (such as "1"
@@ -147,8 +147,8 @@ export default function AggregateQuery3() {
       </p>
 
       <SampleQuery
-        nrql="SELECT **histogram(duration, 1, 20)** from Transaction since 24 hours ago"
-        fallbacknrql="SELECT histogram(duration, 1, 20) FROM Public_APICall SINCE 1 day ago"
+        nrql="SELECT **histogram(duration, 1, 20)** FROM Transaction SINCE 24 hours ago"
+        fallbacknrql="SELECT **histogram(duration, 1, 20)** FROM Public_APICall SINCE 1 day ago"
         chartType="histogram"
         span="12"
       />
@@ -181,7 +181,7 @@ export default function AggregateQuery3() {
       </p>
       <SampleQuery
         nrql="SELECT apdex(duration, t: 0.08) as 'Apdex of Duration' FROM Transaction SINCE 1 week ago **TIMESERIES**"
-        fallbacknrql="SELECT apdex(duration, 0.1) AS 'Apdex Of Duration' FROM Public_APICall SINCE 1 week ago TIMESERIES"
+        fallbacknrql="SELECT apdex(duration, 0.1) AS 'Apdex Of Duration' FROM Public_APICall SINCE 1 week ago **TIMESERIES**"
         span="6"
       />
 
@@ -193,17 +193,18 @@ export default function AggregateQuery3() {
           We just explored a whole new set of visualizations with{' '}
           <code>funnel()</code> and <code>histogram()</code>. We also learned
           how <code>filter()</code> can help us get more specific in queries
-          with WHERE clauses, and how
-          <code>rate()</code> can displays the rate of attribute over time.
+          with WHERE clauses, and how <code>rate()</code> can display the rate
+          of an attribute over time.
         </Trans>
       </p>
       <p>
         <Trans i18nKey="Contents.P14">
           These queries further advance your NRQL ability. Apdex is an industry
-          standard and is applicable many scenarios. Funnels can track progress
-          through desired paths. Histograms visualize the clear distribution of
-          the data; and filters let you get super specific with your returned
-          values. Next, we will learn about <code>extrapolate</code>.
+          standard and is applicable in many scenarios. Funnels can track
+          progress through desired paths. Histograms visualize the clear
+          distribution of the data; and filters let you get super specific with
+          your returned values. Next, we will learn about{' '}
+          <code>EXTRAPOLATE</code>.
         </Trans>
       </p>
     </div>

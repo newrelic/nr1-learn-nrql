@@ -16,7 +16,7 @@ export default function Facet() {
       </p>
       <SampleQuery
         nrql="SELECT average(duration) FROM Transaction **FACET name** SINCE 1 day ago"
-        fallbacknrql="SELECT average(duration) FROM Public_APICall FACET awsAPI SINCE 1 day ago"
+        fallbacknrql="SELECT average(duration) FROM Public_APICall **FACET awsAPI** SINCE 1 day ago"
         chartType="bar"
         span="6"
       />
@@ -30,7 +30,7 @@ export default function Facet() {
       </p>
       <SampleQuery
         nrql="SELECT average(duration) FROM Transaction **FACET name** SINCE 3 hours ago **LIMIT 5** TIMESERIES"
-        fallbacknrql="SELECT average(duration) FROM Public_APICall FACET awsAPI SINCE 3 hours ago LIMIT 5 TIMESERIES"
+        fallbacknrql="SELECT average(duration) FROM Public_APICall **FACET awsAPI** SINCE 3 hours ago **LIMIT 5** TIMESERIES"
         span="6"
       />
       <p>
@@ -42,13 +42,13 @@ export default function Facet() {
       </p>
       <SampleQuery
         nrql="SELECT average(duration) FROM Transaction **FACET name** SINCE 3 hours ago **LIMIT 20**"
-        fallbacknrql="SELECT average(duration) FROM Public_APICall FACET awsAPI SINCE 3 hours ago LIMIT 20"
+        fallbacknrql="SELECT average(duration) FROM Public_APICall **FACET awsAPI** SINCE 3 hours ago **LIMIT 20**"
         chartType="bar"
         span="6"
       />
       <SampleQuery
         nrql="SELECT average(duration) FROM Transaction **FACET name** SINCE 3 hours ago **LIMIT 20**"
-        fallbacknrql="SELECT average(duration) FROM Public_APICall FACET awsAPI SINCE 3 hours ago LIMIT 20"
+        fallbacknrql="SELECT average(duration) FROM Public_APICall FACET awsAPI SINCE 3 hours ago **LIMIT 20**"
         chartType="pie"
         span="6"
       />
@@ -60,7 +60,7 @@ export default function Facet() {
       </p>
       <SampleQuery
         nrql="SELECT count(\*) FROM Transaction WHERE transactionType='Web' **FACET appName** LIMIT 5 SINCE 6 hours ago TIMESERIES"
-        fallbacknrql="SELECT count(*) FROM Public_APICall FACET awsAPI LIMIT 5 SINCE 6 hours ago TIMESERIES"
+        fallbacknrql="SELECT count(*) FROM Public_APICall **FACET awsAPI** LIMIT 5 SINCE 6 hours ago TIMESERIES"
         span="12"
       />
 

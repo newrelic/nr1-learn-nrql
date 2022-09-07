@@ -230,81 +230,64 @@ const translate = {
         `,
       H4: `本レッスンのまとめ`,
       P9: `
-        In this lesson we have learned how we can use a query as the 
-        <2>FROM</2> of another query to answer more complicated
-        questions.
+        本レッスンでは、より複雑な問いへ回答するため、<2>FROM</2>句で別のクエリの結果を利用したクエリが使えることを学びました。
         `
     }
   },
   Subqueries: {
-    Title: 'Subqueries',
+    Title: 'サブクエリ',
     Contents: {
       P1: `
-        Subqueries in NRQL are similar to nested aggregations, allowing you to
-        use a query nested inside another query. With subqueries the nested
-        query is used in the <1>SELECT</code> statement and the{' '}
-        <code>WHERE</code> clause, while nested aggregations are used in the{' '}
-        <code>FROM</code> clause.
+        NRQLのサブクエリは、ネストされた集約のように、クエリーの中に別のクエリーをネストして記述することができます。
+        サブクエリでは、ネストされたクエリは、<1>SELECT</>文と<code>WHERE</code>句で利用でき、ネストされた集約は、<code>FROM</code>句で利用されます。
         `,
       P2: `
-        Let's look at some examples of these different types of subqueries.
+        それでは、いくつかの異なるサブクエリの例を見ていきましょう。
         `,
-      H1: `Numeric Conditions`,
+      H1: `数値条件としての利用`,
       P3: `
-        Any query which returns a single numeric value can be used in numeric
-        conditions. This example uses a subquery in the <1>WHERE</1> 
-        clause that returns the value for the 97th percentile of the duration
-        for the transactions, and then returns the name and the duration for
-        those transactions that are greater than that.
+        単一の数値を返すクエリの結果を条件として利用できます。
+        この例では、<1>WHERE</1>句の中で、Transactionに含まれるdurationの値の97パーセンタイルの値を返すサブクエリを利用し、
+        その値より大きなdurationの値を持つTransactionの名前を返しています。
         `,
-      H2: `IN Conditions`,
+      H2: `IN条件での利用`,
       P4: `
-        Where multiple values are returned from a subquery, use an 
-        <2>IN</2> condition for the parent query to compare against each
-        value. In the example, the <3>entity.guid</3> attribute for each
-        unique entity that has a transaction error is returned, and this is
-        matched against the <4>entity.guid</4> value for the
-        transactions to determine the average duration for the erroring
-        entities.
+        複数の値を返すサブクエリの結果を、親クエリの<2>IN</2>条件で利用しそれぞれを比較します。
+        この例では、TransactionErrorから<3>entity.guid</3>のユニークなエンティティのリストを返し、
+        そしてそれらエラーが発生しているエンティティの平均
+        Transactionエラーのある属性のユニークなリストを返します。
+        そして、それら<4>entity.guid</4>の値にマッチするエラーが発生しているエンティティのdurationの平均を出しています。
         `,
-      H3: `Subqueries in the SELECT statement`,
+      H3: `SELECT文内でのサブクエリ`,
       P5: `
-        Subquery results can be used in calculations in the
-        <2>SELECT</2> statement, and may specify a different time range
-        from the outer query. This example calculates the delta between the
-        current average duration and that of the last 7 days.
+        サブクエリの結果は、<2>SELECT</2>文内での計算にも利用でき、アウターのクエリの異なる時間範囲を指定することができる可能性があります。
+        この例は、現在のdurationの平均と、最新7日間の平均との差を計算しています。
         `,
       H4: `本レッスンのまとめ`,
       P6: `
-        Subqueries are a powerful tool for data exploration, allowing for more
-        sophisticated queries across different data sources and time ranges.
+        サブクエリは、異なるデータソースや時間範囲をまたがる、より洗練されたクエリを可能にするデータ探索の強力なツールです。
         `
     }
   },
   Summary_L4: {
     Title: 'まとめ',
     Contents: {
-      P1: `Congratulations on completing Level 4: NRQL Power User!`,
+      P1: `レベル 4: RNQLを極めるはこれで完了です。お疲れ様でした！`,
       P2: `
-        In this section we covered additional aggregation techniques,
-        higher-level math functions, and advanced features like Regex
-        filtering, nested aggregation and subqueries.
+        このセクションでは、追加の集約技術、高度な算術関数、正規表現によるフィルタ、ネストされた集約、そしてサブクエリについて学びました。
         `,
-      P3: `Specifically, we learned how to use:`,
+      P3: `具体的には以下の機能の利用方法を学びました：`,
       P4: `
-        The <1>stddev()</1> aggregation function, and how to group
-        aggregated data using the <3>buckets()</3> function
+        <1>stddev()</1>集約関数と<3>buckets()</3>関数を利用したデータのグループ集約の方法
       `,
       P5: `
-        The advanced math functions available within NRQL to smooth, clamp
-        and manipulate the data
+        丸め、クランピングやデータ操作などのNRQLで利用できる高度な算術関数
         `,
       P6: `
-        How to discover the event types and attributes available in your
-        data within a specific period
+        任意の期間のイベントタイプやデータ内の属性の探索の方法
       `,
-      P7: `How to filter data with Regex using <1>RLIKE</1>`,
-      P8: `How to use nested aggregation and subqueries`,
+      P7: `<1>RLIKE</1>を利用した正規表現によるデータのフィルタ方法`,
+      P8: `ネストされた集約やサブクエリの利用方法`,
       P9: `
         お疲れ様でした！このコースでカバーしている、NRQLの素晴らしい機能をすべて学ぶことができました。
         あなたはすでに、真のNRQLの魔法使いです!

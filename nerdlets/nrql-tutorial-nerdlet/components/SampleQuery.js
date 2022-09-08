@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { LessonContextConsumer } from '../contexts/LessonContext';
 import copy from 'copy-to-clipboard';
+import { Trans } from 'react-i18next';
 
 import {
   LineChart,
@@ -88,7 +89,7 @@ export default class SampleQuery extends React.Component {
 
     const renderChart = (nrqlPlain,accountId)=>{
       //deal with different props based on type :( 
-      if(Chart.name == 'LineChart' || Chart.name == 'AreaChart'  || Chart.name == 'TableChart') {
+      if (Chart.name == 'LineChart' || Chart.name == 'AreaChart'  || Chart.name == 'TableChart') {
         return  <Chart
         fullWidth
         query={nrqlPlain}
@@ -111,8 +112,12 @@ export default class SampleQuery extends React.Component {
           if(context.hasNoAPM) {
             nrql = fallbacknrql;
             nrqlPlain = fallbacknrqlPlain;
-            fallBackDescription=<div className="fallBackNote">⚠️ Using fallback NRQL query example, this may differ slightly from the description.</div>
-
+            fallBackDescription=<div className="fallBackNote">⚠️
+                <Trans i18nKey="NRQL:Warn">
+                  Using fallback NRQL query example, this may differ slightly
+                  from the description. English
+                </Trans>
+              </div>
           }
           return (
             <Grid className="sample-query">

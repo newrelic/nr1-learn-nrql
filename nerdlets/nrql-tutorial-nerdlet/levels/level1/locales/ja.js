@@ -1,4 +1,8 @@
 const translate = {
+  NRQL: {
+    Warn:
+      'Using fallback NRQL query example, this may differ slightly from the description.'
+  },
   'Level One': {
     Title: 'コツを掴む',
     Level: 'レベル1 : '

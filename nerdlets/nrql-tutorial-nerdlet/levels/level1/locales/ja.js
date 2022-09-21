@@ -1,7 +1,7 @@
 const translate = {
   NRQL: {
     Warn:
-      'Using fallback NRQL query example, this may differ slightly from the description.'
+      'Transactionが無いため代替のNRQLクエリの例を表示しています。そのため記述の内容と差分がある場合があります'
   },
   'Level One': {
     Title: 'コツを掴む',

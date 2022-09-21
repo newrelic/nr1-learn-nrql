@@ -1,7 +1,7 @@
 const translate = {
   NRQL: {
     Warn:
-      'Transactionが無いため代替のNRQLクエリの例を表示しています。そのため記述の内容と差分がある場合があります'
+      'Transactionが無いため代替のNRQLクエリの例を表示しています。そのため記述の内容と差分がある場合があります。'
   },
   'Level One': {
     Title: 'コツを掴む',

@@ -41,7 +41,7 @@ export default function OverridingValues() {
       </p>
       <SampleQuery
         nrql="SELECT count(apdexPerfZone) as 'Events With Values', count(apdexPerfZone **OR 'Null'**) as 'Events With and Without Values' from Transaction since 24 hours ago"
-        fallbacknrql="SELECT count(duration) AS 'Events With Durations', count(http.url OR 'Null') AS Events With and Without URL' FROM Public_APICall SINCE 1 day ago"
+        fallbacknrql="SELECT count(duration) AS 'Events With Durations', count(http.url OR 'Null') AS 'Events With and Without URL' FROM Public_APICall SINCE 1 day ago"
         span="12"
       />
 

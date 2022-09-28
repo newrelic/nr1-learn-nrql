@@ -28,7 +28,7 @@ export default function Timeseries() {
       </p>
       <SampleQuery
         nrql="SELECT average(duration) FROM Transaction SINCE 1 day ago **TIMESERIES**"
-        fallbacknrql="SELECT average(duration) FROM Public_APICall SINCE 1 day ago TIMESERIES"
+        fallbacknrql="SELECT average(duration) FROM Public_APICall SINCE 1 day ago **TIMESERIES**"
         span="12"
       />
       <p>
@@ -42,7 +42,7 @@ export default function Timeseries() {
       </p>
       <SampleQuery
         nrql="SELECT average(duration) FROM Transaction SINCE 1 day ago **TIMESERIES 1 hour**"
-        fallbacknrql="SELECT average(duration) FROM Public_APICall SINCE 1 day ago TIMESERIES 1 hour"
+        fallbacknrql="SELECT average(duration) FROM Public_APICall SINCE 1 day ago **TIMESERIES 1 hour**"
         span="12"
       />
       <p>
@@ -58,7 +58,7 @@ export default function Timeseries() {
       </p>
       <SampleQuery
         nrql="SELECT average(duration) FROM Transaction SINCE 1 day ago **TIMESERIES MAX**"
-        fallbacknrql="SELECT average(duration) FROM Public_APICall SINCE 1 day ago TIMESERIES MAX"
+        fallbacknrql="SELECT average(duration) FROM Public_APICall SINCE 1 day ago **TIMESERIES MAX**"
         span="12"
       />
 

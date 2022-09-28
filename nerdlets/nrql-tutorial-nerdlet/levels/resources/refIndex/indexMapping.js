@@ -196,6 +196,17 @@ export const indexMapping = [
     ]
   },
   {
+    op: 'concat()',
+    docs:
+      'https://docs.newrelic.com/docs/query-your-data/nrql-new-relic-query-language/get-started/nrql-syntax-clauses-functions#func-concat',
+    refs: [
+      {
+        level: 3,
+        lesson: 7
+      }
+    ]
+  },
+  {
     op: 'count()',
     docs:
       'https://docs.newrelic.com/docs/query-your-data/nrql-new-relic-query-language/get-started/nrql-syntax-clauses-functions#func-count',
@@ -756,6 +767,28 @@ export const indexMapping = [
       {
         level: 4,
         lesson: 2
+      }
+    ]
+  },
+  {
+    op: 'string()',
+    docs:
+      'https://docs.newrelic.com/docs/query-your-data/nrql-new-relic-query-language/get-started/nrql-syntax-clauses-functions/#func-string',
+    refs: [
+      {
+        level: 3,
+        lesson: 6
+      }
+    ]
+  },
+  {
+    op: 'Subquery',
+    docs:
+      'https://docs.newrelic.com/docs/query-your-data/nrql-new-relic-query-language/get-started/subqueries-in-nrql/',
+    refs: [
+      {
+        level: 4,
+        lesson: 7
       }
     ]
   },

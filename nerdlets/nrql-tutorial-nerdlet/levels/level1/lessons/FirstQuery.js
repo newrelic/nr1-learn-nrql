@@ -29,7 +29,7 @@ export default function FirstQuery() {
 
       <SampleQuery
         nrql="**SELECT** \* **FROM** Transaction"
-        fallbacknrql="SELECT * FROM Public_APICall"
+        fallbacknrql="SELECT \* FROM Public_APICall"
         chartType="table"
         span="12"
       />
@@ -44,7 +44,7 @@ export default function FirstQuery() {
 
       <SampleQuery
         nrql="SELECT \* FROM Transaction **LIMIT 1**"
-        fallbacknrql="SELECT * FROM Public_APICall LIMIT 1"
+        fallbacknrql="SELECT \* FROM Public_APICall **LIMIT 1**"
         chartType="table"
         span="12"
       />
@@ -80,7 +80,7 @@ export default function FirstQuery() {
 
       <SampleQuery
         nrql="SELECT **name, duration** FROM Transaction "
-        fallbacknrql="SELECT api, duration FROM Public_APICall"
+        fallbacknrql="SELECT **api, duration** FROM Public_APICall"
         chartType="table"
         span="12"
       />

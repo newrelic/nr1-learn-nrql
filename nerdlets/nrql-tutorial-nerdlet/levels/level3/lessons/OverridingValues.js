@@ -89,7 +89,7 @@ export default function OverridingValues() {
         <Trans i18nKey="Contents.P7">
           You can also convert boolean and numeric values to strings by using
           the <code>string()</code> function. Where numeric values are
-          floating-point numbers you can use the optional <code>precision</code>
+          floating-point numbers you can use the optional <code>precision</code>{' '}
           argument to limit the number of decimal places for the string. This
           query returns the duration value as a string limited to three decimal
           places.

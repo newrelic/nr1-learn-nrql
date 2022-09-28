@@ -115,8 +115,8 @@ const translate = {
       H6: '本レッスンのまとめ',
       P13: `
         新たな可視化ツールである、<2>funnel()</2> と <4>histogram()</4> をご紹介しました。
-        また、 <7>filter()</7> を使ってWHERE句でクエリを絞り込む方法と、
-        <9>rate()</9> で属性の頻度を可視化する方法をご紹介しました。
+        また、 <6>filter()</6> を使ってWHERE句でクエリを絞り込む方法と、
+        <8>rate()</8> で属性の頻度を可視化する方法をご紹介しました。
       `,
       P14: `
         これらのクエリで、よりNRQLを使いこなすことができるようになります。
@@ -124,7 +124,7 @@ const translate = {
         ファネル図は指定した経路の進捗状況を追跡できます。
         ヒストグラムはデータの分布を明確に可視化できます。
         フィルタは返却値を自在に絞り込むことができるようになります。
-        次は、 <1>extrapolate</1> をご紹介しましょう。
+        次は、 <2>extrapolate</2> をご紹介しましょう。
       `
     }
   },
@@ -162,7 +162,7 @@ const translate = {
       `,
       P5: `
         <1>EXTRAPOLATE</1> は、均質なデータ（スループットやエラーレートなど）に対して上手く動きます。
-        個別の値を求めるようなクエリ（<3>uniqueCount()</3> や <5>uniques()</5> など）では、
+        個別の値を求めるようなクエリ（<4>uniqueCount()</4> や <6>uniques()</6> など）では、
         あまり上手く動きません。
         このキーワードは、下記の集計関数を使っているときに動作します：
       `
@@ -225,7 +225,7 @@ const translate = {
         しかし、皆様はもう<7>filter()</7>を使って<10>WHERE eventType()='PageView'</10>という条件を
         書けばフィルタできるということをご存知です。このように、イベントタイプごとの集合を全体の
         結果セットの一部として取得することで、特定のイベントのみのデータを表示することができます
-        <12>TIMESERIES</12>を使えば、折れ線グラフで２つのデータを直接比較することができます。
+        <13>TIMESERIES</13>を使えば、折れ線グラフで２つのデータを直接比較することができます。
       `,
       H1: '本レッスンのまとめ',
       P5: `
@@ -263,7 +263,7 @@ const translate = {
       P4: `
         NRQLは型強制を自動的には行いません。文字列は文字列として扱われるので、<1>sum()</1> や <3>average()</3>
         のような関数を利用できません。このような場合、<3>boolean()</3>または<5>numeric()</5>を使用して
-        真偽値や数値に変換します。次の例で利用している<7>average()</7>関数で "httpResponseCode "
+        真偽値や数値に変換します。次の例で利用している<8>average()</8>関数で "httpResponseCode "
         属性を指定しても、値が取得できません。というのも、この属性が文字列だからです。
         しかし、<10>numeric</10>(httpResponseCode)を使って数値として型強制すると、
         <12>average()</12>関数は正常に動作します。
@@ -277,12 +277,9 @@ const translate = {
         クエリを意図した通りに実行できるようにしましょう。
       `,
       P7: `
-        You can also convert boolean and numeric values to strings by using
-        the <1>string()</1> function. Where numeric values are
-        floating-point numbers you can use the optional <1>precision</1>
-        argument to limit the number of decimal places for the string. This
-        query returns the duration value as a string limited to three decimal
-        places.
+        また、<1>string()</1>関数を利用することにより、ブール値や数値を文字列に変換することができます。
+        数値が小数点を含む値の場合、オプショナルの引数である<1>precision</1>で、小数点以下の桁数の制限を設定できます。
+        このクエリはdurationの値を、小数点以下を3桁に制限した文字列として返却しています。
       `,
       H3: `本レッスンのまとめ`,
       P6: `
@@ -293,38 +290,29 @@ const translate = {
       `
     }
   },
-  'String Concatenation': {
-    Title: 'String Concatenation',
+  'String concatenation': {
+    Title: '文字列の結合',
     Contents: {
       P1: `
-        There may be some cases where you need to append and/or prepend text
-        to the returned value of an attribute. This can be achieved using the{' '}
-        <code>concat()</code> function.
+        クエリから返却される属性の値に、任意の文字列を追加したいケースがあるでしょう。
+        その場合、<2>concat()</2>関数を使って実現することができます。
       `,
       P2: `
-        You can provide upto 20 arguments for the <code>concat()</code>{' '}
-        function to concatenate into a string.
+        <1>concat()</1> 関数は、最大で20の引数を渡すことができ、1つの文字列に結合します。
       `,
       P3: `
-        We can limit the number of decimal places that are used for any
-        floating point numbers in the values of the concatenated attributes.
-        To do this we use the optional <code>precision:</code> argument as the
-        last value. In this example we are appending 's' to denote seconds,
-        and limiting the value to 3 decimal places.
+        また、結合文字列に含まれる小数点を含む数値の小数点以下の桁数を制限することもできます。
+        関数の最後のオプショナルの引数として、 <1>precision:</1> とともに値を設定することで実現できます。
+        この例の場合、小数点以下の桁数を3桁に制限した上で、計測時間（秒）の最後に 's' を追加しています。
       `,
       P4: `
-        Values that start with 'http(s)' are automatically displayed as links
-        which can be clicked to open a new page, which means it is possible to
-        create integrations to solutions where a dynamic URL can be used to
-        open a related page to the entity. The following example demonstrates
-        an example URL where the query parameter values are set by the
-        attribute values.
+        また、 'http(s)' で始まる値の場合、クリックすると新しいページを開くことができるリンクとして表示されます。
+        そのため、クエリの結果に含まれるエンティティに関連するページのリンクを表示することも可能になります。
+        次の例は、属性から取得された値を使ってURLを作成したデモになります。
       `,
       H1: `本レッスンのまとめ`,
       P5: `
-        You can use the <code>concat()</code> function to combine values
-        together (e.g. city and country for location), and prepend/append
-        additional strings to present the data as you need.
+        <1>concat()</1> 関数を使って、値同士を結合したり、任意の文字列を追加したりすることができることを学びました。
       `
     }
   },

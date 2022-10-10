@@ -209,7 +209,7 @@ export default class NrqlTutorialNerdlet extends React.Component {
     return (
       <I18nextProvider i18n={i18n}>
         <div ref={this.topRef}>
-          {selectedAccount && accounts ? (
+          {selectedAccount && accounts && noAccounts !== true? (
             <>
               <Grid className="AccountChooser">
                 {accounts.length > 1 ? (

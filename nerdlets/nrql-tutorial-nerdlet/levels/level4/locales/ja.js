@@ -30,7 +30,7 @@ const translate = {
       P2: `
         標準偏差は、数値の集合内での変動や分散の量を測定するときに利用します。
         これは、低い値（平均に近い値）から高値(平均値とはかけ離れた値)にかけてのスケールを知ることができます。
-        <1>stddev()</1>関数を使用すると、平均値の行間を見ることができ、どのような状況かより深いレベルで確認できます。
+        <2>stddev()</2>関数を使用すると、平均値の行間を見ることができ、どのような状況かより深いレベルで確認できます。
         この例ではのトランザクション応答時間(duration)の標準偏差について、24時間前から現在までの標準偏差を、
         前日分と比較しています。
         `,
@@ -79,7 +79,7 @@ const translate = {
         `,
       P3: `
         <1>abs(n)</1>関数はnの絶対値を返します。負でない n の値は n を返し、負の n の値は 正に変換したnの値を返します。
-        例えば、<3>abs(2) = 2</3>となり、<6>abs(-4) = 4</6>となります。応答速度は常に正なのですが、
+        例えば、<3>abs(2) = 2</3>となり、<5>abs(-4) = 4</5>となります。応答速度は常に正なのですが、
         簡単に利用できるので試してみましょう。
         `,
       P4: `
@@ -91,7 +91,7 @@ const translate = {
         クランプを使用すると、値の上限または下限を指定できます。
         これは、極端な外れ値を補正する場合に有効で、時系列グラフのスケールを歪めないようにできます。
         <2>clamp_max(duration, 10)</2>は応答速度を返すのですが、10を超える場合は10となります。
-        逆に、<4>clamp_min(duration,1)</4>を使うと、1を下回る場合は１となります。
+        逆に、<5>clamp_min(duration,1)</5>を使うと、1を下回る場合は１となります。
         `,
       H3: `冪乗、平方根、指数、対数`,
       P6: `
@@ -104,10 +104,10 @@ const translate = {
         `,
       P8: `最後は、対数の関数です。`,
       P9: `
-        <1>ln(n)</1> 自然対数を計算します: 対数基底 e
-        <2>log2(n)</2> 対数基底2を計算します
-        <3>log10(n)</3> 対数基底10を計算します
-        <4>log(n, b)</4> 任意の対数基底bで対数を計算します
+        <0><0>ln(n)</0> 自然対数を計算します: 対数基底 e</0>
+        <1><0>log2(n)</0> 対数基底2を計算します</1>
+        <2><0>log10(n)</0> 対数基底10を計算します</2>
+        <3><0>log(n, b)</0> 任意の対数基底bで対数を計算します</3>
       `,
       H4: `本レッスンのまとめ`,
       P10: `
@@ -131,7 +131,7 @@ const translate = {
         今現在、あなたのNew Relicアカウントで収集できているイベントの種類のリストが欲しいとします。
         <1>SHOW EVENT TYPES</1>を使うと指定した時間帯で収集できている全てのイベントタイプ
         のリストを取得することができます。
-        このクエリは一つの例外で、<3>SELECT</3> および <5>FROM</5>は不要です。
+        このクエリは一つの例外で、<3>SELECT</3> および <6>FROM</6>は不要です。
         例えばカスタムイベントが存在しているかどうかの確認に利用できます.
         `,
       H2: `属性のリスト`,
@@ -164,7 +164,7 @@ const translate = {
         `,
       P4: `
         正規表現エンジンは<2>RE2構文</2>を使用します。
-        文字をエスケープする必要がある場合は、ダブルバックスラッシュでエスケープします。e.g. <5>\\\\*</5>
+        文字をエスケープする必要がある場合は、ダブルバックスラッシュでエスケープします。e.g. <4>\\\\*</4>
         `,
       P5: `
         <1>RLIKE</1>は複雑で<3>LIKE</3>よりもパフォーマンスが高くないことに注意してください。
@@ -202,7 +202,7 @@ const translate = {
       P5: `
         さて、ここで取得できたデータポイントの最大値を見つけるために、
         <1>SELECT ... FROM</1>を使って次のようにします。
-        <3>SELECT z FROM (SELECT x AS z FROM y)</3>
+        <4>SELECT z FROM (SELECT x AS z FROM y)</4>
         `,
       H2: `例2 - CPU負荷の高いサーバー`,
       P6: `
@@ -230,81 +230,62 @@ const translate = {
         `,
       H4: `本レッスンのまとめ`,
       P9: `
-        In this lesson we have learned how we can use a query as the 
-        <2>FROM</2> of another query to answer more complicated
-        questions.
+        本レッスンでは、より複雑な問いへ回答するため、<2>FROM</2>句で別のクエリの結果を利用したクエリが使えることを学びました。
         `
     }
   },
   Subqueries: {
-    Title: 'Subqueries',
+    Title: 'サブクエリ',
     Contents: {
       P1: `
-        Subqueries in NRQL are similar to nested aggregations, allowing you to
-        use a query nested inside another query. With subqueries the nested
-        query is used in the <1>SELECT</code> statement and the{' '}
-        <code>WHERE</code> clause, while nested aggregations are used in the{' '}
-        <code>FROM</code> clause.
+        NRQLのサブクエリは、ネストされた集約のように、クエリーの中に別のクエリーをネストして記述することができます。
+        サブクエリでは、ネストされたクエリは、<1>SELECT</>文と<4>WHERE</4>句で利用でき、ネストされた集約は、<7>FROM</7>句で利用されます。
         `,
       P2: `
-        Let's look at some examples of these different types of subqueries.
+        それでは、いくつかの異なるサブクエリの例を見ていきましょう。
         `,
-      H1: `Numeric Conditions`,
+      H1: `数値条件としての利用`,
       P3: `
-        Any query which returns a single numeric value can be used in numeric
-        conditions. This example uses a subquery in the <1>WHERE</1> 
-        clause that returns the value for the 97th percentile of the duration
-        for the transactions, and then returns the name and the duration for
-        those transactions that are greater than that.
+        単一の数値を返すクエリの結果を条件として利用できます。
+        この例では、<1>WHERE</1>句の中で、Transactionに含まれるdurationの値の97パーセンタイルの値を返すサブクエリを利用し、
+        その値より大きなdurationの値を持つTransactionの名前を返しています。
         `,
-      H2: `IN Conditions`,
+      H2: `IN条件での利用`,
       P4: `
-        Where multiple values are returned from a subquery, use an 
-        <2>IN</2> condition for the parent query to compare against each
-        value. In the example, the <3>entity.guid</3> attribute for each
-        unique entity that has a transaction error is returned, and this is
-        matched against the <4>entity.guid</4> value for the
-        transactions to determine the average duration for the erroring
-        entities.
+        サブクエリが複数の値を返す場合、それぞれの値を比較するため、親クエリで<2>IN</2>条件を利用します。
+        この例では、TransactionErrorの<4>entity.guid</4>からユニークなentityを返します。
+        そして、<6>entity.guid</6>が一致するTransactionを抽出することで、エラーが発生しているEntityの平均のdurationを出しています。
         `,
-      H3: `Subqueries in the SELECT statement`,
+      H3: `SELECT文内でのサブクエリ`,
       P5: `
-        Subquery results can be used in calculations in the
-        <2>SELECT</2> statement, and may specify a different time range
-        from the outer query. This example calculates the delta between the
-        current average duration and that of the last 7 days.
+        サブクエリの結果は、<2>SELECT</2>文内での計算にも利用でき、アウターのクエリの異なる時間範囲を指定することができる可能性があります。
+        この例は、現在のdurationの平均と、最新7日間の平均との差を計算しています。
         `,
       H4: `本レッスンのまとめ`,
       P6: `
-        Subqueries are a powerful tool for data exploration, allowing for more
-        sophisticated queries across different data sources and time ranges.
+        サブクエリは、異なるデータソースや時間範囲をまたがる、より洗練されたクエリを可能にするデータ探索の強力なツールです。
         `
     }
   },
   Summary_L4: {
     Title: 'まとめ',
     Contents: {
-      P1: `Congratulations on completing Level 4: NRQL Power User!`,
+      P1: `レベル 4: RNQLを極めるはこれで完了です。お疲れ様でした！`,
       P2: `
-        In this section we covered additional aggregation techniques,
-        higher-level math functions, and advanced features like Regex
-        filtering, nested aggregation and subqueries.
+        このセクションでは、追加の集約技術、高度な算術関数、正規表現によるフィルタ、ネストされた集約、そしてサブクエリについて学びました。
         `,
-      P3: `Specifically, we learned how to use:`,
+      P3: `具体的には以下の機能の利用方法を学びました：`,
       P4: `
-        The <1>stddev()</1> aggregation function, and how to group
-        aggregated data using the <3>buckets()</3> function
+        <1>stddev()</1>集約関数と<3>buckets()</3>関数を利用したデータのグループ集約の方法
       `,
       P5: `
-        The advanced math functions available within NRQL to smooth, clamp
-        and manipulate the data
+        丸め、クランピングやデータ操作などのNRQLで利用できる高度な算術関数
         `,
       P6: `
-        How to discover the event types and attributes available in your
-        data within a specific period
+        任意の期間のイベントタイプやデータ内の属性の探索の方法
       `,
-      P7: `How to filter data with Regex using <1>RLIKE</1>`,
-      P8: `How to use nested aggregation and subqueries`,
+      P7: `<1>RLIKE</1>を利用した正規表現によるデータのフィルタ方法`,
+      P8: `ネストされた集約やサブクエリの利用方法`,
       P9: `
         お疲れ様でした！このコースでカバーしている、NRQLの素晴らしい機能をすべて学ぶことができました。
         あなたはすでに、真のNRQLの魔法使いです!

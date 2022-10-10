@@ -49,7 +49,9 @@ export default class NrqlTutorialNerdlet extends React.Component {
     const query = `{
       actor {
         accounts {
-          name id reportingEventTypes(filter: ["Transaction"])
+          name
+          id
+          reportingEventTypes
         }
       }
     }`;
@@ -62,6 +64,7 @@ export default class NrqlTutorialNerdlet extends React.Component {
 
     // Get the 'accounts' from the returned data from the query to NerdGraph
     const { data: { actor: { accounts } } } = await NerdGraphQuery.query({ query }); // eslint-disable-line prettier/prettier
+    const noAccounts = accounts.length === 0;
 
     // Get the previous level, lesson and language from the User Storage
     const { data: prevState } = await UserStorageQuery.query({
@@ -89,19 +92,25 @@ export default class NrqlTutorialNerdlet extends React.Component {
       selectedLanguage = 'en';
     }
 
+    // Check all the accounts of the user to see if any contain the Transaction event type
     const processedAccounts = accounts.map(account => {
       let { name, id, reportingEventTypes } = account;
-      if (reportingEventTypes && reportingEventTypes.length > 0) {
+      if (reportingEventTypes && reportingEventTypes.includes('Transaction')) {
+        // The account does contain the Transaction event type
         if (prevAccount === id) {
+          // Use this account for this session if it was the selected account in the previous session
           selectedAccount = id;
         }
         if (hasNoAPM) {
+          // We have APM data from Transaction, so clear the hasNoAPM flag
           hasNoAPM = false;
           if (typeof selectedAccount !== 'number') {
+            // If we haven't already selected an account, select this one
             selectedAccount = id;
           }
         }
       } else {
+        // If this account doesn't contain Transaction event types, update account the name to show this
         name += ' [no recent APM data]';
       }
 
@@ -109,8 +118,10 @@ export default class NrqlTutorialNerdlet extends React.Component {
         <SelectItem value={String(id)} key={id}>{name}</SelectItem> // eslint-disable-line prettier/prettier
       );
     });
-    if (typeof selectedAccount !== 'number') {
-      selectedAccount = accounts.length > 0 ? accounts[0].id : -1;
+    // Check if we do not have an account selected when there are accounts (i.e. none contain Transaction event type)
+    if (typeof !noAccounts && selectedAccount !== 'number') {
+      //  If no account selected, use the first account in the list.
+      selectedAccount = accounts[0].id;
     }
 
     i18n.changeLanguage(selectedLanguage);
@@ -120,7 +131,7 @@ export default class NrqlTutorialNerdlet extends React.Component {
       selectedLanguage,
       selectedAccount,
       hasNoAPM,
-      noAccounts: accounts.length === 0,
+      noAccounts,
       accounts: processedAccounts
     });
   }
@@ -209,7 +220,7 @@ export default class NrqlTutorialNerdlet extends React.Component {
     return (
       <I18nextProvider i18n={i18n}>
         <div ref={this.topRef}>
-          {selectedAccount && accounts && noAccounts !== true? (
+          {selectedAccount && accounts ? (
             <>
               <Grid className="AccountChooser">
                 {accounts.length > 1 ? (

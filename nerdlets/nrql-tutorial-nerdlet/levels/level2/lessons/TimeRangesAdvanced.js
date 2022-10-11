@@ -2,20 +2,16 @@ import React from 'react';
 import SampleQuery from '../../../components/SampleQuery';
 import { Trans } from 'react-i18next';
 
-const epochSince = new Date(Date.now() - 2 * 24 * 60 * 60 * 1000);
-const sevendaysago = epochSince.toLocaleDateString('fr-CA', {
+// Get the epoch time for 'now'
+const epochUntil = Date.now();
+// Get the epoch time for 2 days before 'now'
+const epochSince = epochUntil - 2 * 24 * 60 * 60 * 1000;
+const dateSinceStr = new Date(epochSince).toLocaleDateString('fr-CA', {
   // you can skip the first argument
   year: 'numeric',
   month: '2-digit',
   day: '2-digit'
 });
-const timedNRQL = `SELECT average(duration) FROM Transaction **SINCE '${sevendaysago}'** TIMESERIES MAX`;
-const fbtimedNRQL = `SELECT average(duration) FROM Public_APICall SINCE '${sevendaysago}' TIMESERIES MAX`;
-const timedNRQLTime = `SELECT average(duration) FROM Transaction **SINCE '${sevendaysago} 18:00'** TIMESERIES MAX`;
-const fbtimedNRQLTime = `SELECT average(duration) FROM Public_APICall SINCE '${sevendaysago} 18:00' TIMESERIES MAX`;
-const epochUntil = new Date();
-const epochNRQL = `SELECT average(duration) FROM Transaction **SINCE ${epochSince.getTime()} UNTIL ${epochUntil.getTime()}** TIMESERIES MAX`;
-const fbepochNRQL = `SELECT average(duration) FROM Public_APICall SINCE ${epochSince.getTime()} UNTIL ${epochUntil.getTime()} TIMESERIES MAX`;
 
 export default function TimeRangesAdvanced() {
   return (
@@ -29,7 +25,11 @@ export default function TimeRangesAdvanced() {
           SLA reports for a specified period of time.
         </Trans>
       </p>
-      <SampleQuery nrql={timedNRQL} fallbacknrql={fbtimedNRQL} span="12" />
+      <SampleQuery
+        nrql={`SELECT average(duration) FROM Transaction **SINCE '${dateSinceStr}'** TIMESERIES MAX`}
+        fallbacknrql={`SELECT average(duration) FROM Public_APICall SINCE '${dateSinceStr}' TIMESERIES MAX`}
+        span="12"
+      />
       <p>
         <Trans i18nKey="Contents.P2">
           You can even include specific time with the format{' '}
@@ -39,21 +39,25 @@ export default function TimeRangesAdvanced() {
       </p>
 
       <SampleQuery
-        nrql={timedNRQLTime}
-        fallbacknrql={fbtimedNRQLTime}
+        nrql={`SELECT average(duration) FROM Transaction **SINCE '${dateSinceStr} 18:00'** TIMESERIES MAX`}
+        fallbacknrql={`SELECT average(duration) FROM Public_APICall SINCE '${dateSinceStr} 18:00' TIMESERIES MAX`}
         span="12"
       />
 
       <p>
         <Trans i18nKey="Contents.P3">
           Sometimes, as an engineer, you might receive an event time in epoch
-          (unixtime). Conveniently, epoch timestamps are an acceptable value in{' '}
+          (unix) time. Conveniently, epoch timestamps are an acceptable value in{' '}
           <code>SINCE</code> and <code>UNTIL</code> clauses, so you don't have
           to translate these values into another date format.
         </Trans>
       </p>
 
-      <SampleQuery nrql={epochNRQL} fallbacknrql={fbepochNRQL} span="12" />
+      <SampleQuery
+        nrql={`SELECT average(duration) FROM Transaction **SINCE ${epochSince} UNTIL ${epochUntil}** TIMESERIES MAX`}
+        fallbacknrql={`SELECT average(duration) FROM Public_APICall SINCE ${epochSince} UNTIL ${epochUntil} TIMESERIES MAX`}
+        span="12"
+      />
 
       <p>
         <Trans i18nKey="Contents.P4">
@@ -81,8 +85,8 @@ export default function TimeRangesAdvanced() {
       </p>
 
       <SampleQuery
-        nrql="SELECT count(\*) from Transaction since yesterday until today **WITH TIMEZONE 'America/Los_Angeles'** TIMESERIES"
-        fallbacknrql="SELECT count(*) FROM Public_APICall SINCE yesterday until today WITH TIMEZONE 'America/Los_Angeles' TIMESERIES"
+        nrql="SELECT count(\*) FROM Transaction SINCE yesterday UNTIL today **WITH TIMEZONE 'America/Los_Angeles'** TIMESERIES"
+        fallbacknrql="SELECT count(*) FROM Public_APICall SINCE yesterday UNTIL today WITH TIMEZONE 'America/Los_Angeles' TIMESERIES"
         span="12"
       />
       <SampleQuery

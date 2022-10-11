@@ -49,67 +49,91 @@ export default class NrqlTutorialNerdlet extends React.Component {
     const query = `{
       actor {
         accounts {
-          name id reportingEventTypes(filter: ["Transaction"])
+          name
+          id
+          reportingEventTypes
         }
       }
     }`;
-    const { data } = await NerdGraphQuery.query({ query });
-    // const accounts = data.actor.accounts.filter(a => (a.reportingEventTypes || []).length > 0)
-    const accounts = data.actor.accounts;
+    let currentLevel;
+    let currentLesson;
+    let selectedLanguage;
+    let selectedAccount;
+    let prevAccount;
+    let hasNoAPM = true;
 
-    let intendedState = {};
-    if (accounts.length > 0) {
-      const APMbool = accounts[0].reportingEventTypes === null ? 'true' : 'false'; // eslint-disable-line prettier/prettier
-      intendedState = {
-        selectedAccount: accounts[0].id,
-        hasNoAPM: APMbool,
-        accounts: accounts.map(account => {
-          return (
-            <SelectItem value={String(account.id)} key={account.id}>
-              {account.name +
-                ((account.reportingEventTypes || []).length === 0
-                  ? ' [no recent APM data]'
-                  : '')}
-            </SelectItem>
-          );
-        })
-      };
-    } else {
-      intendedState = { noAccounts: true };
-    }
+    // Get the 'accounts' from the returned data from the query to NerdGraph
+    const { data: { actor: { accounts } } } = await NerdGraphQuery.query({ query }); // eslint-disable-line prettier/prettier
+    const noAccounts = accounts.length === 0;
 
-    // load from local store
-    UserStorageQuery.query({
+    // Get the previous level, lesson and language from the User Storage
+    const { data: prevState } = await UserStorageQuery.query({
       collection: this.collectionId,
       documentId: this.documentId
-    })
-      .then(({ data }) => {
-        if (data !== null) {
-          intendedState = { ...intendedState, ...data };
-          // sanity check that loaded lesson actually exists
-          if (
-            !(
-              data.currentLevel !== undefined &&
-              data.currentLesson !== undefined &&
-              LEVELS[data.currentLevel] &&
-              LEVELS[data.currentLevel].lessons[data.currentLesson]
-            )
-          ) {
-            // eslint-disable-next-line no-console
-            console.log('level/lesson doesnt exist, setting to lesson 1');
-            intendedState.currentLevel = 0;
-            intendedState.currentLesson = 0;
+      // eslint-disable-next-line no-console
+    }).catch(err => console.log(err));
+
+    if (prevState) {
+      currentLevel = prevState.currentLevel;
+      currentLesson = prevState.currentLesson;
+      selectedLanguage = prevState.selectedLanguage || 'en';
+      prevAccount = prevState.selectedAccount;
+      // sanity check that loaded lesson actually exists
+      const level = LEVELS[currentLevel];
+      if (!level || !level.lessons[currentLesson]) {
+        // eslint-disable-next-line no-console, prettier/prettier
+        console.log(`Lesson ${currentLesson + 1} of level ${currentLevel + 1} doesn't exist! Resetting to level 1, lesson 1.`);
+        currentLevel = 0;
+        currentLesson = 0;
+      }
+    } else {
+      currentLevel = 0;
+      currentLesson = 0;
+      selectedLanguage = 'en';
+    }
+
+    // Check all the accounts of the user to see if any contain the Transaction event type
+    const processedAccounts = accounts.map(account => {
+      let { name, id, reportingEventTypes } = account;
+      if (reportingEventTypes && reportingEventTypes.includes('Transaction')) {
+        // The account does contain the Transaction event type
+        if (prevAccount === id) {
+          // Use this account for this session if it was the selected account in the previous session
+          selectedAccount = id;
+        }
+        if (hasNoAPM) {
+          // We have APM data from Transaction, so clear the hasNoAPM flag
+          hasNoAPM = false;
+          if (typeof selectedAccount !== 'number') {
+            // If we haven't already selected an account, select this one
+            selectedAccount = id;
           }
         }
-      })
-      // eslint-disable-next-line no-console
-      .catch(err => console.log(err))
-      .finally(() => {
-        if (intendedState.selectedLanguage) {
-          i18n.changeLanguage(intendedState.selectedLanguage);
-        }
-        this.setState(intendedState);
-      });
+      } else {
+        // If this account doesn't contain Transaction event types, update account the name to show this
+        name += ' [no recent APM data]';
+      }
+
+      return (
+        <SelectItem value={String(id)} key={id}>{name}</SelectItem> // eslint-disable-line prettier/prettier
+      );
+    });
+    // Check if we do not have an account selected when there are accounts (i.e. none contain Transaction event type)
+    if (typeof !noAccounts && selectedAccount !== 'number') {
+      //  If no account selected, use the first account in the list.
+      selectedAccount = accounts[0].id;
+    }
+
+    i18n.changeLanguage(selectedLanguage);
+    this.setState({
+      currentLevel,
+      currentLesson,
+      selectedLanguage,
+      selectedAccount,
+      hasNoAPM,
+      noAccounts,
+      accounts: processedAccounts
+    });
   }
 
   async loadLanguages() {
@@ -201,7 +225,7 @@ export default class NrqlTutorialNerdlet extends React.Component {
               <Grid className="AccountChooser">
                 {accounts.length > 1 ? (
                   <>
-                    <GridItem columnSpan={1}>Use data from account:</GridItem>
+                    <GridItem columnSpan={1} className="useDataLabel">Use data from account:</GridItem>
                     <GridItem columnSpan={5}>
                       <Select
                         onChange={(key, value) => {

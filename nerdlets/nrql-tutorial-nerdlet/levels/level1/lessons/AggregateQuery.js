@@ -24,7 +24,7 @@ export default function AggregateQuery() {
       </p>
       <SampleQuery
         nrql="SELECT **average(duration)** FROM Transaction "
-        fallbacknrql="SELECT average(duration) FROM Public_APICall"
+        fallbacknrql="SELECT **average(duration)** FROM Public_APICall"
         span="6"
       />
 
@@ -59,7 +59,7 @@ export default function AggregateQuery() {
       </p>
       <SampleQuery
         nrql="SELECT **max(duration)** FROM Transaction "
-        fallbacknrql="SELECT max(duration) FROM Public_APICall"
+        fallbacknrql="SELECT **max(duration)** FROM Public_APICall"
         span="6"
       />
 
@@ -73,7 +73,7 @@ export default function AggregateQuery() {
       </p>
       <SampleQuery
         nrql="SELECT **min(duration)** FROM Transaction "
-        fallbacknrql="SELECT min(duration) FROM Public_APICall"
+        fallbacknrql="SELECT **min(duration)** FROM Public_APICall"
         span="6"
       />
 
@@ -91,7 +91,7 @@ export default function AggregateQuery() {
       </p>
       <SampleQuery
         nrql="SELECT **sum(databaseCallCount)** FROM Transaction "
-        fallbacknrql="SELECT sum(duration) FROM Public_APICall"
+        fallbacknrql="SELECT **sum(duration)** FROM Public_APICall"
         span="6"
       />
 
@@ -104,8 +104,8 @@ export default function AggregateQuery() {
         </Trans>
       </p>
       <SampleQuery
-        nrql="SELECT **count(*)** FROM Transaction"
-        fallbacknrql="SELECT count(*) FROM Public_APICall"
+        nrql="SELECT **count(\*)** FROM Transaction"
+        fallbacknrql="SELECT **count(\*)** FROM Public_APICall"
         span="6"
       />
       <h2>

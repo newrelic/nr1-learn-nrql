@@ -88,21 +88,11 @@ export default class SampleQuery extends React.Component {
     const Chart = this.getChart();
 
     const renderChart = (nrqlPlain,accountId)=>{
-      //deal with different props based on type :( 
-      if(Chart.name == 'LineChart' || Chart.name == 'AreaChart'  || Chart.name == 'TableChart') {
         return  <Chart
-        fullWidth
-        query={nrqlPlain}
-        accountIds={[accountId]}
-    />
-      } else {
-        return  <Chart
-        fullWidth
-        query={nrqlPlain}
-        accountId={accountId}
-    />
-      }
-     
+          fullWidth
+          query={nrqlPlain}
+          accountIds={[accountId]}
+        />
     }
 
     return (
@@ -115,7 +105,7 @@ export default class SampleQuery extends React.Component {
             fallBackDescription=<div className="fallBackNote">⚠️
                 <Trans i18nKey="NRQL:Warn">
                   Using fallback NRQL query example, this may differ slightly
-                  from the description. English
+                  from the description.
                 </Trans>
               </div>
           }

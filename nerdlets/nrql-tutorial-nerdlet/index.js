@@ -225,7 +225,7 @@ export default class NrqlTutorialNerdlet extends React.Component {
               <Grid className="AccountChooser">
                 {accounts.length > 1 ? (
                   <>
-                    <GridItem columnSpan={1}>Use data from account:</GridItem>
+                    <GridItem columnSpan={1} className="useDataLabel">Use data from account:</GridItem>
                     <GridItem columnSpan={5}>
                       <Select
                         onChange={(key, value) => {

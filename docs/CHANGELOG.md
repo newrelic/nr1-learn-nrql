@@ -1,3 +1,10 @@
+## [1.7.1](https://github.com/newrelic/nr1-learn-nrql/compare/v1.7.0...v1.7.1) (2022-11-03)
+
+
+### Bug Fixes
+
+* kick build ([84069fc](https://github.com/newrelic/nr1-learn-nrql/commit/84069fc7a9b021d157d43ac1aeb0205a40c83dff))
+
 # [1.7.0](https://github.com/newrelic/nr1-learn-nrql/compare/v1.6.0...v1.7.0) (2022-11-03)
 
 

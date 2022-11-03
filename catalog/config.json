@@ -13,5 +13,5 @@
       "url": "https://discuss.newrelic.com/t/new-relic-nrql-lessons-nerdpack/109646"
     }
   },
-  "whatsNew": "- Fix crash in chapter 4"
+  "whatsNew": "- New NRQL features and fixes for deprecations"
 }

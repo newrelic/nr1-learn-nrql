@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/newrelic/nr1-learn-nrql/compare/v1.6.0...v1.7.0) (2022-11-03)
+
+
+### Features
+
+* Whats new ([#48](https://github.com/newrelic/nr1-learn-nrql/issues/48)) ([b6d2144](https://github.com/newrelic/nr1-learn-nrql/commit/b6d214476523d300aeb928c0d4fd74212f485376))
+
 # [1.6.0](https://github.com/newrelic/nr1-learn-nrql/compare/v1.5.3...v1.6.0) (2022-10-11)
 
 

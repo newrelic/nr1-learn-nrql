@@ -2,7 +2,7 @@
     "private": true,
     "name": "nrql-tutorial",
     "description": "NRQL Tutorial App",
-    "version": "1.6.0",
+    "version": "1.7.0",
     "scripts": {
         "start": "nr1 nerdpack:serve",
         "test": "exit 0",

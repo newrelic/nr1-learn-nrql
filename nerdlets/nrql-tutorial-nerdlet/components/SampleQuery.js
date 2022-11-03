@@ -73,11 +73,13 @@ export default class SampleQuery extends React.Component {
       .replace(/\\_/g, '_')
       .replace(/\\\[/g, '[');
 
-    let fallbacknrqlPlain = fallbacknrql ? fallbacknrql
-      .replace(/\*\*/g, '')
-      .replace(/\\\*/g, '*')
-      .replace(/\\_/g, '_')
-      .replace(/\\\[/g, '[') : "" ;
+    const fallbacknrqlPlain = fallbacknrql
+      ? fallbacknrql
+          .replace(/\*\*/g, '')
+          .replace(/\\\*/g, '*')
+          .replace(/\\_/g, '_')
+          .replace(/\\\[/g, '[')
+      : '';
 
     if (markdown === 'no') {
       nrqlPlain = nrql;
@@ -87,27 +89,26 @@ export default class SampleQuery extends React.Component {
 
     const Chart = this.getChart();
 
-    const renderChart = (nrqlPlain,accountId)=>{
-        return  <Chart
-          fullWidth
-          query={nrqlPlain}
-          accountIds={[accountId]}
-        />
-    }
+    const renderChart = (nrqlPlain, accountId) => {
+      return <Chart fullWidth query={nrqlPlain} accountIds={[accountId]} />;
+    };
 
     return (
       <LessonContextConsumer>
         {context => {
           let fallBackDescription;
-          if(context.hasNoAPM) {
+          if (context.hasNoAPM) {
             nrql = fallbacknrql;
             nrqlPlain = fallbacknrqlPlain;
-            fallBackDescription=<div className="fallBackNote">⚠️
+            fallBackDescription = (
+              <div className="fallBackNote">
+                ⚠️
                 <Trans i18nKey="NRQL:Warn">
                   Using fallback NRQL query example, this may differ slightly
                   from the description.
                 </Trans>
               </div>
+            );
           }
           return (
             <Grid className="sample-query">
@@ -178,7 +179,7 @@ export default class SampleQuery extends React.Component {
               <GridItem columnSpan={numSpan}>
                 <h3>Result</h3>
                 <div className="chart">
-                  {renderChart(nrqlPlain,context.accountId)}
+                  {renderChart(nrqlPlain, context.accountId)}
                 </div>
               </GridItem>
             </Grid>

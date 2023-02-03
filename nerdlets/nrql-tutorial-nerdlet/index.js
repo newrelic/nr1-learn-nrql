@@ -119,7 +119,7 @@ export default class NrqlTutorialNerdlet extends React.Component {
       );
     });
     // Check if we do not have an account selected when there are accounts (i.e. none contain Transaction event type)
-    if (typeof !noAccounts && selectedAccount !== 'number') {
+    if (!noAccounts && typeof selectedAccount !== 'number') {
       //  If no account selected, use the first account in the list.
       selectedAccount = accounts[0].id;
     }

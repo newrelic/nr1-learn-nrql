@@ -956,4 +956,15 @@ export const indexMapping = [
       }
     ]
   },
+  {
+    op: 'aparse()',
+    docs:
+      'https://docs.newrelic.com/docs/query-your-data/nrql-new-relic-query-language/get-started/nrql-syntax-clauses-functions/#func-aparse',
+    refs: [
+      {
+        level: 4,
+        lesson: 8
+      }
+    ]
+  },
 ];

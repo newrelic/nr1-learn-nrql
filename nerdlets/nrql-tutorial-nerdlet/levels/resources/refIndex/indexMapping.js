@@ -944,5 +944,27 @@ export const indexMapping = [
         lesson: 7
       }
     ]
-  }
+  },
+  {
+    op: 'if()',
+    docs:
+      'https://docs.newrelic.com/docs/query-your-data/nrql-new-relic-query-language/get-started/nrql-syntax-clauses-functions/#func-if',
+    refs: [
+      {
+        level: 3,
+        lesson: 8
+      }
+    ]
+  },
+  {
+    op: 'aparse()',
+    docs:
+      'https://docs.newrelic.com/docs/query-your-data/nrql-new-relic-query-language/get-started/nrql-syntax-clauses-functions/#func-aparse',
+    refs: [
+      {
+        level: 4,
+        lesson: 8
+      }
+    ]
+  },
 ];

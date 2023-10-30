@@ -50,7 +50,7 @@ export default function DiscoverEventsAndAttributes() {
       </p>
       <SampleQuery
         nrql="SELECT **keyset()** FROM Transaction SINCE 1 week ago"
-        fallbacknrql="SHOW keyset() FROM Public_APICall SINCE 1 week ago"
+        fallbacknrql="SELECT keyset() FROM Public_APICall SINCE 1 week ago"
         chartType="json"
         span="12"
       />

@@ -13,8 +13,8 @@ export default function IfThen() {
       </p>
 
       <SampleQuery
-        nrql="FROM Public_APICall select count(\*), **IF(count(\*)> 1000000,'High traffic','Low traffic') as 'Scale'** FACET api "
-        fallbacknrql="FROM Public_APICall select count(\*), **IF(count(\*)> 1000000,'High traffic','Low traffic') as 'Scale'** FACET api"
+        nrql="FROM Transaction SELECT COUNT(\*), **IF(COUNT(\*)> 1000000,'High traffic','Low traffic') AS 'Scale'** FACET request.headers.host"
+        fallbacknrql="FROM Public_APICall SELECT COUNT(\*), **IF(COUNT(\*)> 1000000,'High traffic','Low traffic') AS 'Scale'** FACET api"
         chartType="table"
         span="12"
       />
@@ -26,8 +26,8 @@ export default function IfThen() {
         </Trans>
       </p>
       <SampleQuery
-        nrql="FROM Public_APICall select average(duration), **IF(average(duration)> 1,'🔴','🟢') as 'Flag'** FACET api"
-        fallbacknrql="FROM Public_APICall select  average(duration), **IF(average(duration)> 1,'🔴','🟢') as 'Flag'** FACET api"
+        nrql="FROM Transaction SELECT average(duration), **IF(average(duration)> 1,'🔴','🟢') AS 'Flag'** FACET request.headers.host"
+        fallbacknrql="FROM Public_APICall SELECT average(duration), **IF(average(duration)> 1,'🔴','🟢') AS 'Flag'** FACET api"
         chartType="table"
         span="12"
       />
@@ -39,8 +39,8 @@ export default function IfThen() {
         </Trans>
       </p>
       <SampleQuery
-        nrql="FROM Public_APICall SELECT count(*) **FACET IF(api like 'amazon%', 'Amazon', if(api like 'google%', 'Google','Everything else')) AS 'Service'**"
-        fallbacknrql="FROM Public_APICall SELECT count(*) **FACET IF(api like 'amazon%', 'Amazon', if(api like 'google%', 'Google','Everything else')) AS 'Service'**"
+        nrql="FROM Transaction SELECT COUNT(*) **FACET IF(api LIKE 'amazon%', 'Amazon', IF(api LIKE 'google%', 'Google','Everything else')) AS 'Service'**"
+        fallbacknrql="FROM Public_APICall SELECT COUNT(*) **FACET IF(api LIKE 'amazon%', 'Amazon', IF(api LIKE 'google%', 'Google','Everything else')) AS 'Service'**"
         chartType="pie"
         span="12"
       />

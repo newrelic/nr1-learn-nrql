@@ -71,17 +71,10 @@ export default function Capture() {
       </h2>
       <p>
         <Trans i18nKey="Contents.P5">
-          TBC
+          NRQL also has support for reqex captures which is documented in great detail in the{' '}
+          <a href="https://docs.newrelic.com/docs/nrql/nrql-syntax-clauses-functions/#func-capture" target="_blank">New Relic Docs</a>
         </Trans>
       </p>
-      <SampleQuery
-        nrql="SELECT average(duration) FROM Transaction WHERE entity.guid **IN (SELECT uniques(entity.guid) FROM TransactionError)** FACET appName TIMESERIES"
-        fallbacknrql="SELECT average(duration) FROM Public_APICall WHERE api **IN (SELECT uniques(api) FROM Public_APICall where duration > 2)** FACET api TIMESERIES"
-        span="12"
-        chartType="line"
-      />
-
-      
     </div>
   );
 }

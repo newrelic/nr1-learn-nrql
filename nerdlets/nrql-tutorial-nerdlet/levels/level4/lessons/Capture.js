@@ -13,8 +13,6 @@ export default function Capture() {
           more efficient but capture() provides more complex regular expression support.
         </Trans>
       </p>
-
-
       <h2>
         <Trans i18nKey="Contents.H1">Capture with aparse()</Trans>
       </h2>
@@ -24,8 +22,7 @@ export default function Capture() {
           provide the string you wish to extract from and a pattern controlling the extraction. The pattern supports 
           two wild cards:<br />
           <code>%</code>- Non capturing wild card<br />
-          <code>8</code>- A capturing wild card
-         
+          <code>*</code>- A capturing wild card
         </Trans>
       </p>
       <p>
@@ -37,26 +34,24 @@ export default function Capture() {
         </Trans>
       </p>
       <SampleQuery
-        nrql="select count(*) from Public_APICall  where http.url like '%amazonaws.com' **facet aparse(http.url,'\*.%') as 'service'**"
-        fallbacknrql="select count(*) from Public_APICall  where http.url like '%amazonaws.com' **facet aparse(http.url,'\*.%') as 'service'**"
+        nrql="SELECT COUNT(*) FROM Transaction WHERE request.headers.host LIKE '%.com' FACET aparse(request.headers.host,'\*.%') AS 'service'**"
+        fallbacknrql="SELECT COUNT(*) FROM Public_APICall WHERE http.url LIKE '%amazonaws.com' **FACET aparse(http.url,'\*.%') AS 'service'**"
         span="12"
         chartType="table"
       />
-
-        <p>
+      <p>
         <Trans i18nKey="Contents.P3">
           If we wanted to extract the region from the string instead then we need this pattern: <code>'%.*.%'</code> This discards 
           everthing matched before the first period, captures everything up to the next period, and disregards the rest:
         </Trans>
       </p>
       <SampleQuery
-        nrql="select count(*) from Public_APICall  where http.url like '%amazonaws.com' **facet aparse(http.url,'%.\*.%') as 'region'**"
-        fallbacknrql="select count(*) from Public_APICall  where http.url like '%amazonaws.com' **facet aparse(http.url,'%.\*.%') as 'region'**"
+        nrql="SELECT COUNT(*) FROM Transaction WHERE request.headers.host LIKE '%.com' FACET aparse(request.headers.host,'%.\*.%') AS 'region'**"
+        fallbacknrql="SELECT COUNT(*) FROM Public_APICall WHERE http.url LIKE '%amazonaws.com' **FACET aparse(http.url,'%.\*.%') AS 'region'**"
         span="12"
         chartType="table"
       />
-
-<p>
+      <p>
         <Trans i18nKey="Contents.P4">
           It is possible to extract more than one field using aparse() but you cant use them directly in the facet. This requires 
           variables which are covered in another section, but whilst we are here lets see how that would look. We need to adjust our 
@@ -66,28 +61,20 @@ export default function Capture() {
         </Trans>
       </p>
       <SampleQuery
-        nrql="FROM Public_APICall **WITH aparse(http.url,'*.*.%') AS (service,region)** SELECT count(*) WHERE http.url like '%amazonaws.com' **FACET service, region**"
-        fallbacknrql="FROM Public_APICall **WITH aparse(http.url,'*.*.%') AS (service,region)** SELECT count(*) WHERE http.url like '%amazonaws.com' **FACET service, region**"
+        nrql="FROM Transaction **WITH aparse(request.headers.host,'\*.\*.%') AS (service,region)** SELECT COUNT(*) WHERE request.headers.host LIKE '%.com' **FACET service, region**"
+        fallbacknrql="FROM Public_APICall **WITH aparse(http.url,'\*.\*.%') AS (service,region)** SELECT COUNT(*) WHERE http.url LIKE '%amazonaws.com' **FACET service, region**"
         span="12"
         chartType="table"
       />
-
       <h2>
         <Trans i18nKey="Contents.H2">Regex Capture</Trans>
       </h2>
       <p>
         <Trans i18nKey="Contents.P5">
-          TBC
+          NRQL also has support for reqex captures which is documented in great detail in the{' '}
+          <a href="https://docs.newrelic.com/docs/nrql/nrql-syntax-clauses-functions/#func-capture" target="_blank">New Relic Docs</a>
         </Trans>
       </p>
-      <SampleQuery
-        nrql="SELECT average(duration) FROM Transaction WHERE entity.guid **IN (SELECT uniques(entity.guid) FROM TransactionError)** FACET appName TIMESERIES"
-        fallbacknrql="SELECT average(duration) FROM Public_APICall WHERE api **IN (SELECT uniques(api) FROM Public_APICall where duration > 2)** FACET api TIMESERIES"
-        span="12"
-        chartType="line"
-      />
-
-      
     </div>
   );
 }

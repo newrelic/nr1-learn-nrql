@@ -26,7 +26,7 @@ export default function IfThen() {
         </Trans>
       </p>
       <SampleQuery
-        nrql="FROM Transaction SELECT average(duration), **IF(average(duration)> 1,'🔴','🟢') AS 'Flag'** FACET request.headers.host"
+        nrql="FROM Transaction SELECT average(duration), **IF(average(duration)>0.5,'🔴','🟢') AS 'Flag'** FACET request.headers.host"
         fallbacknrql="FROM Public_APICall SELECT average(duration), **IF(average(duration)> 1,'🔴','🟢') AS 'Flag'** FACET api"
         chartType="table"
         span="12"
@@ -39,7 +39,7 @@ export default function IfThen() {
         </Trans>
       </p>
       <SampleQuery
-        nrql="FROM Transaction SELECT COUNT(*) **FACET IF(api LIKE 'amazon%', 'Amazon', IF(api LIKE 'google%', 'Google','Everything else')) AS 'Service'**"
+        nrql="FROM Public_APICall SELECT COUNT(*) **FACET IF(api LIKE 'amazon%', 'Amazon', IF(api LIKE 'google%', 'Google','Everything else')) AS 'Service'**"
         fallbacknrql="FROM Public_APICall SELECT COUNT(*) **FACET IF(api LIKE 'amazon%', 'Amazon', IF(api LIKE 'google%', 'Google','Everything else')) AS 'Service'**"
         chartType="pie"
         span="12"

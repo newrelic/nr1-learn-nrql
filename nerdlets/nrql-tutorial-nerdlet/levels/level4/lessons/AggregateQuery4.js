@@ -76,8 +76,11 @@ export default function AggregateQuery4() {
           400 calls, and group it in 10 buckets. The result is the performance
           of transactions making 0-40, 40-80, 80-120, 120-160, 160-200, 200-240,
           240-280, 280-320, 320-360, and &gt;360 Database Calls. 10 clear
-          buckets divided evenly up to the ceiling.
+          buckets divided evenly up to the ceiling. 
         </Trans>
+      </p>
+      <p className="notice">
+        If you dont see much of an output in the chart, change the value 400 to match your data.
       </p>
       <SampleQuery
         nrql="SELECT average(duration) FROM Transaction SINCE 12 hours ago FACET **buckets(databaseCallCount, 400, 10)**"

@@ -23,8 +23,8 @@ export default function UsingRegex() {
         </Trans>
       </p>
       <SampleQuery
-        nrql="SELECT uniques(host) FROM Transaction WHERE host **RLIKE '^.\*\[02468bcdfghjklmnpqrstvwxyz]'**"
-        fallbacknrql="SELECT uniques(http.url) FROM Public_APICall WHERE http.url  RLIKE '^.*[02468bcdfghjklmnpqrstvwxyz]'"
+        nrql="SELECT uniques(host) as hosts FROM Transaction WHERE host **RLIKE '^.\*\[02468bcdfghjklmnpqrstvwxyz]'**"
+        fallbacknrql="SELECT uniques(http.url) as urls FROM Public_APICall WHERE http.url  RLIKE '^.*[02468bcdfghjklmnpqrstvwxyz]'"
         chartType="table"
         span="6"
       />
@@ -66,6 +66,23 @@ export default function UsingRegex() {
         </strong>
       </p>
 
+      <h2>
+        <Trans i18nKey="Contents.H1">Regex String Literals</Trans>
+      </h2>
+
+      <p>
+        <Trans i18nKey="Contents.P5b">
+          To make working with regex a little easier you can prefix the pattern 
+          opening quote <code>r</code> e.g.<code>r'your-regex-here'</code>.
+          This will mean you dont have to escape some special characters
+        </Trans>
+      </p>
+      <SampleQuery
+        nrql="SELECT count(\*) FROM Transaction WHERE name **RLIKE r'.\*\\/W.\*'** FACET name"
+        fallbacknrql="SELECT count(*) FROM Public_APICall WHERE http.url RLIKE r'dynamodb\\.us.*' "
+        span="6"
+      />
+      
       <h2>
         <Trans i18nKey="Contents.H1">Lesson Summary</Trans>
       </h2>

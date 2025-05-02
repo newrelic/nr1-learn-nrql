@@ -58,8 +58,8 @@ export default function NestedAggregation() {
         </Trans>
       </p>
       <SampleQuery
-        nrql="**SELECT max(tpm) FROM (** SELECT count(\*) AS tpm** FROM Transaction TIMESERIES 1 MINUTE **)**"
-        fallbacknrql="**SELECT max(apicalls) FROM (** SELECT count(\*) AS apicalls FROM Public_APICall TIMESERIES 1 minute **)**"
+        nrql="**SELECT max(tpm) as maxTPM FROM (** SELECT count(\*) AS tpm** FROM Transaction TIMESERIES 1 MINUTE **)**"
+        fallbacknrql="**SELECT max(apicalls) as maxTPM FROM (** SELECT count(\*) AS apicalls FROM Public_APICall TIMESERIES 1 minute **)**"
         span="6"
         chartType="table"
       />

@@ -48,8 +48,8 @@ export default function AggregateQuery2() {
       </p>
 
       <SampleQuery
-        nrql="SELECT **uniques(host)** FROM Transaction SINCE 1 day ago"
-        fallbacknrql="SELECT uniques(http.url) FROM Public_APICall SINCE 1 day ago"
+        nrql="SELECT **uniques(host)** as hosts FROM Transaction SINCE 1 day ago"
+        fallbacknrql="SELECT uniques(http.url) as urls FROM Public_APICall SINCE 1 day ago"
         span="6"
         chartType="table"
       />

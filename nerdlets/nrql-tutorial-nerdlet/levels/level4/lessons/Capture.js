@@ -7,10 +7,10 @@ export default function Capture() {
     <div>
       <p>
         <Trans i18nKey="Contents.P1">
-          Sometimes you want to extract or display only a sub part of your column data. For instance you may want 
+          Sometimes you want to extract or display just part of a vlaue. For instance you may want 
           to extract and display the product ID from a long URL that contains it rather than display the full URL. 
-          There are two NRQL functions that can help with this: aparse() and capture(). aparse() is simple and 
-          more efficient but capture() provides more complex regular expression support.
+          There are two NRQL functions that can help with this: <code>aparse()</code> and <code>capture()</code>. <code>aparse()</code> is simple and 
+          more efficient but <code>capture()</code> offers more complex regular expression support.
         </Trans>
       </p>
       <h2>
@@ -34,25 +34,25 @@ export default function Capture() {
         </Trans>
       </p>
       <SampleQuery
-        nrql="SELECT COUNT(*) FROM Transaction WHERE request.headers.host LIKE '%.com' FACET aparse(request.headers.host,'\*.%') AS 'service'**"
+        nrql="SELECT COUNT(*) FROM Public_APICall WHERE http.url LIKE '%amazonaws.com' **FACET aparse(http.url,'\*.%') AS 'service'**"
         fallbacknrql="SELECT COUNT(*) FROM Public_APICall WHERE http.url LIKE '%amazonaws.com' **FACET aparse(http.url,'\*.%') AS 'service'**"
         span="12"
         chartType="table"
       />
       <p>
-        <Trans i18nKey="Contents.P3">
+        <Trans i18nKey="Contents.P4">
           If we wanted to extract the region from the string instead then we need this pattern: <code>'%.*.%'</code> This discards 
           everthing matched before the first period, captures everything up to the next period, and disregards the rest:
         </Trans>
       </p>
       <SampleQuery
-        nrql="SELECT COUNT(*) FROM Transaction WHERE request.headers.host LIKE '%.com' FACET aparse(request.headers.host,'%.\*.%') AS 'region'**"
+        nrql="SELECT COUNT(*) FROM Public_APICall WHERE http.url LIKE '%amazonaws.com' **FACET aparse(http.url,'%.\*.%') AS 'region'**"
         fallbacknrql="SELECT COUNT(*) FROM Public_APICall WHERE http.url LIKE '%amazonaws.com' **FACET aparse(http.url,'%.\*.%') AS 'region'**"
         span="12"
         chartType="table"
       />
       <p>
-        <Trans i18nKey="Contents.P4">
+        <Trans i18nKey="Contents.P5">
           It is possible to extract more than one field using aparse() but you cant use them directly in the facet. This requires 
           variables which are covered in another section, but whilst we are here lets see how that would look. We need to adjust our 
           pattern so that it includes two capture groups: <code>'*.*.%'</code>. We set these to the variables 'service' and 'region' 
@@ -61,20 +61,33 @@ export default function Capture() {
         </Trans>
       </p>
       <SampleQuery
-        nrql="FROM Transaction **WITH aparse(request.headers.host,'\*.\*.%') AS (service,region)** SELECT COUNT(*) WHERE request.headers.host LIKE '%.com' **FACET service, region**"
+        nrql="FROM Public_APICall **WITH aparse(http.url,'\*.\*.%') AS (service,region)** SELECT COUNT(*) WHERE http.url LIKE '%amazonaws.com' **FACET service, region**"
         fallbacknrql="FROM Public_APICall **WITH aparse(http.url,'\*.\*.%') AS (service,region)** SELECT COUNT(*) WHERE http.url LIKE '%amazonaws.com' **FACET service, region**"
         span="12"
         chartType="table"
       />
       <h2>
-        <Trans i18nKey="Contents.H2">Regex Capture</Trans>
+        <Trans i18nKey="Contents.H2">Regex Capture()</Trans>
       </h2>
       <p>
-        <Trans i18nKey="Contents.P5">
-          NRQL also has support for reqex captures which is documented in great detail in the{' '}
-          <a href="https://docs.newrelic.com/docs/nrql/nrql-syntax-clauses-functions/#func-capture" target="_blank">New Relic Docs</a>
+        <Trans i18nKey="Contents.P6">
+          When you want to use more complex regex patterns you can use the <code>capture()</code> function. This function
+          takes a string and a regex pattern. The pattern can contain multiple capture groups using the <a href="https://github.com/google/re2/wiki/Syntax" targe="_blank">RE2 named-capture 
+          syntax</a> to capture the contained pattern, given the specified name. 
         </Trans>
       </p>
-    </div>
+      <p>
+        <Trans i18nKey="Contents.P7">
+        Multiple values can be captured by specifying additional capture groups in a regular expression as illustrated in this example. Refer to the 
+        <a href="https://docs.newrelic.com/docs/nrql/nrql-syntax-clauses-functions/#func-capture" target="_blank">New Relic documentation</a> for more examples.
+        </Trans>
+      </p>
+      <SampleQuery
+        nrql="FROM Public_APICall WITH **capture(http.url,r'^(?P<service>.*)\\.(?P<region>.*)\\.amazonaws\.com$') as (service,region)** SELECT COUNT(*) WHERE http.url LIKE '%amazonaws.com' FACET service, region since 10 minutes ago"
+        fallbacknrql="FROM Public_APICall WITH **capture(http.url,r'^(?P<service>.*)\\.(?P<region>.*)\\.amazonaws\.com$') as (service,region)** SELECT COUNT(*) WHERE http.url LIKE '%amazonaws.com' FACET service, region since 10 minutes ago"
+        span="12"
+        chartType="table"
+      />
+   </div>
   );
 }

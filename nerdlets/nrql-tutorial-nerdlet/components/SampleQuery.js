@@ -71,6 +71,7 @@ export default class SampleQuery extends React.Component {
       .replace(/\*\*/g, '')
       .replace(/\\\*/g, '*')
       .replace(/\\_/g, '_')
+      .replace(/\\\\/g, '\\')
       .replace(/\\\[/g, '[');
 
     const fallbacknrqlPlain = fallbacknrql

@@ -44,7 +44,7 @@ cd nr1-learn-nrql
 npm install
 nr1 nerdpack:uuid -gf
 nr1 nerdpack:publish
-nr1 nerdpack:subscribe  -C STABLE
+nr1 nerdpack:subscribe
 ```
 This last command will subscribe the application to the account you've set as your default profile. You can check this using `nr1 profiles:default`. If you're not ready to deploy it to your account or want to test out changes you've made locally you can use:
 

@@ -81,6 +81,7 @@ export default class NrqlTutorialNerdlet extends React.Component {
       // sanity check that loaded lesson actually exists
       const level = LEVELS[currentLevel];
       if (!level || !level.lessons[currentLesson]) {
+        // eslint-disable-next-line no-console
         console.log(`Lesson ${currentLesson + 1} of level ${currentLevel + 1} doesn't exist! Resetting to level 1, lesson 1.`);
         currentLevel = 0;
         currentLesson = 0;

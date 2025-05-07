@@ -63,7 +63,7 @@ export default class NrqlTutorialNerdlet extends React.Component {
     let hasNoAPM = true;
 
     // Get the 'accounts' from the returned data from the query to NerdGraph
-    const { data: { actor: { accounts } } } = await NerdGraphQuery.query({ query }); // eslint-disable-line prettier/prettier
+    const { data: { actor: { accounts } } } = await NerdGraphQuery.query({ query }); 
     const noAccounts = accounts.length === 0;
 
     // Get the previous level, lesson and language from the User Storage
@@ -115,7 +115,7 @@ export default class NrqlTutorialNerdlet extends React.Component {
       }
 
       return (
-        <SelectItem value={String(id)} key={id}>{name}</SelectItem> // eslint-disable-line prettier/prettier
+        <SelectItem value={String(id)} key={id}>{name}</SelectItem> 
       );
     });
     // Check if we do not have an account selected when there are accounts (i.e. none contain Transaction event type)
@@ -231,9 +231,9 @@ export default class NrqlTutorialNerdlet extends React.Component {
                     <GridItem columnSpan={5}>
                       <Select
                         onChange={(key, value) => {
-                          const found = accounts.find(({ key }) => key === value); // eslint-disable-line prettier/prettier
-                          const hasAPMbool = found.props.children.includes('no recent APM data'); // eslint-disable-line prettier/prettier
-                          this.setState({ selectedAccount: value, hasNoAPM: hasAPMbool }); // eslint-disable-line prettier/prettier
+                          const found = accounts.find(({ key }) => key === value); 
+                          const hasAPMbool = found.props.children.includes('no recent APM data'); 
+                          this.setState({ selectedAccount: value, hasNoAPM: hasAPMbool }); 
                         }}
                         value={selectedAccount}
                       >

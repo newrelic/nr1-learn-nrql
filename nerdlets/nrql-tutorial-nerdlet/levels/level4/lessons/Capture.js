@@ -72,14 +72,14 @@ export default function Capture() {
       <p>
         <Trans i18nKey="Contents.P6">
           When you want to use more complex regex patterns you can use the <code>capture()</code> function. This function
-          takes a string and a regex pattern. The pattern can contain multiple capture groups using the <a href="https://github.com/google/re2/wiki/Syntax" targe="_blank">RE2 named-capture 
+          takes a string and a regex pattern. The pattern can contain multiple capture groups using the <a href="https://github.com/google/re2/wiki/Syntax" rel="noreferrer" target="_blank">RE2 named-capture 
           syntax</a> to capture the contained pattern, given the specified name. 
         </Trans>
       </p>
       <p>
         <Trans i18nKey="Contents.P7">
         Multiple values can be captured by specifying additional capture groups in a regular expression as illustrated in this example. Refer to the 
-        <a href="https://docs.newrelic.com/docs/nrql/nrql-syntax-clauses-functions/#func-capture" target="_blank">New Relic documentation</a> for more examples.
+        <a href="https://docs.newrelic.com/docs/nrql/nrql-syntax-clauses-functions/#func-capture" target="_blank" rel="noreferrer">New Relic documentation</a> for more examples.
         </Trans>
       </p>
       <SampleQuery

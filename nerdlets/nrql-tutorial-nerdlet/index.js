@@ -63,7 +63,7 @@ export default class NrqlTutorialNerdlet extends React.Component {
     let hasNoAPM = true;
 
     // Get the 'accounts' from the returned data from the query to NerdGraph
-    const { data: { actor: { accounts } } } = await NerdGraphQuery.query({ query }); // eslint-disable-line prettier/prettier
+    const { data: { actor: { accounts } } } = await NerdGraphQuery.query({ query }); 
     const noAccounts = accounts.length === 0;
 
     // Get the previous level, lesson and language from the User Storage
@@ -81,7 +81,7 @@ export default class NrqlTutorialNerdlet extends React.Component {
       // sanity check that loaded lesson actually exists
       const level = LEVELS[currentLevel];
       if (!level || !level.lessons[currentLesson]) {
-        // eslint-disable-next-line no-console, prettier/prettier
+        // eslint-disable-next-line no-console
         console.log(`Lesson ${currentLesson + 1} of level ${currentLevel + 1} doesn't exist! Resetting to level 1, lesson 1.`);
         currentLevel = 0;
         currentLesson = 0;
@@ -115,11 +115,11 @@ export default class NrqlTutorialNerdlet extends React.Component {
       }
 
       return (
-        <SelectItem value={String(id)} key={id}>{name}</SelectItem> // eslint-disable-line prettier/prettier
+        <SelectItem value={String(id)} key={id}>{name}</SelectItem> 
       );
     });
     // Check if we do not have an account selected when there are accounts (i.e. none contain Transaction event type)
-    if (typeof !noAccounts && selectedAccount !== 'number') {
+    if (!noAccounts && typeof selectedAccount !== 'number') {
       //  If no account selected, use the first account in the list.
       selectedAccount = accounts[0].id;
     }
@@ -231,9 +231,9 @@ export default class NrqlTutorialNerdlet extends React.Component {
                     <GridItem columnSpan={5}>
                       <Select
                         onChange={(key, value) => {
-                          const found = accounts.find(({ key }) => key === value); // eslint-disable-line prettier/prettier
-                          const hasAPMbool = found.props.children.includes('no recent APM data'); // eslint-disable-line prettier/prettier
-                          this.setState({ selectedAccount: value, hasNoAPM: hasAPMbool }); // eslint-disable-line prettier/prettier
+                          const found = accounts.find(({ key }) => key === value); 
+                          const hasAPMbool = found.props.children.includes('no recent APM data'); 
+                          this.setState({ selectedAccount: value, hasNoAPM: hasAPMbool }); 
                         }}
                         value={selectedAccount}
                       >

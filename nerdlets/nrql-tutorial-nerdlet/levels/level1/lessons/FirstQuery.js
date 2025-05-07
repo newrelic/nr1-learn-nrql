@@ -55,7 +55,7 @@ export default function FirstQuery() {
           which is 100 table rows for <code>SELECT *</code> queries or 10
           aggregated values for <code>FACET</code> queries and{' '}
           <code>SELECT (attributes)</code> queries. You can specify any limit up
-          to the maximum. Use <code>LIMIT MAX</code> to return the maximum
+          to the maximum. Use <code>LIMIT MAX</code> to return the maximum (10k) 
           number of results possible.
         </Trans>
       </p>

@@ -5,6 +5,7 @@ import FacetCases from './lessons/FacetCases';
 import FilterToEventTypes from './lessons/FilterToEventTypes';
 import OverridingValues from './lessons/OverridingValues';
 import Concatenation from './lessons/Concatenation';
+import IfThen from './lessons/IfThen';
 import NextSteps from './lessons/NextSteps';
 
 export default [
@@ -35,6 +36,10 @@ export default [
   {
     title: 'String concatenation',
     component: Concatenation
+  },
+  {
+    title: 'Conditional logic',
+    component: IfThen
   },
   {
     title: 'Summary',

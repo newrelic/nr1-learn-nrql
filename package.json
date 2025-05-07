@@ -2,7 +2,7 @@
     "private": true,
     "name": "nrql-tutorial",
     "description": "NRQL Tutorial App",
-    "version": "1.7.1",
+    "version": "1.8.0",
     "scripts": {
         "start": "nr1 nerdpack:serve",
         "test": "exit 0",
@@ -17,11 +17,11 @@
         "@kunukn/react-collapse": "^1.2.7",
         "copy-to-clipboard": "^3.3.1",
         "i18next": "^19.8.5",
-        "react-i18next": "^9.0.10",
-        "react-markdown": "^5.0.3",
         "prop-types": "15.7.2",
         "react": "17.0.2",
-        "react-dom": "17.0.2"
+        "react-dom": "17.0.2",
+        "react-i18next": "^9.0.10",
+        "react-markdown": "^5.0.3"
     },
     "browserslist": [
         "last 2 versions",

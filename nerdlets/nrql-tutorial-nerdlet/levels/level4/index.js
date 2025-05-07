@@ -5,6 +5,7 @@ import Subqueries from './lessons/Subqueries';
 import NestedAggregation from './lessons/NestedAggregation';
 import DiscoverEventsAndAttributes from './lessons/DiscoverEventsAndAttributes';
 import AdvancedMath from './lessons/AdvancedMath';
+import Capture from './lessons/Capture';
 import Summary from './lessons/Summary';
 
 export default [
@@ -35,6 +36,10 @@ export default [
   {
     title: 'Subqueries',
     component: Subqueries
+  },
+  {
+    title: 'Capturing data',
+    component: Capture
   },
   {
     title: 'Summary',

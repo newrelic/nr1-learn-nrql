@@ -44,7 +44,7 @@ cd nr1-learn-nrql
 npm install
 nr1 nerdpack:uuid -gf
 nr1 nerdpack:publish
-nr1 nerdpack:subscribe -c STABLE
+nr1 nerdpack:subscribe
 ```
 This last command will subscribe the application to the account you've set as your default profile. You can check this using `nr1 profiles:default`. If you're not ready to deploy it to your account or want to test out changes you've made locally you can use:
 
@@ -82,4 +82,4 @@ This project adheres to the New Relic [security policy](https://github.com/newre
 
 Contributions are encouraged! If you submit an enhancement request, we'll invite you to contribute the change yourself. Please review our [Contributors Guide](CONTRIBUTING.md).
 
-Keep in mind that when you submit your pull request, you'll need to sign the CLA via the click-through using CLA-Assistant. If you'd like to execute our corporate CLA, or if you have any questions, please drop us an email at opensource+learn_nrql@newrelic.com
+Keep in mind that when you submit your pull request, you'll need to sign the CLA via the click-through using CLA-Assistant. If you'd like to execute our corporate CLA, or if you have any questions, please drop us an email at opensource+learn_nrql@newrelic.com.

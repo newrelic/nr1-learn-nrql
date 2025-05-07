@@ -403,6 +403,17 @@ export const indexMapping = [
     ]
   },
   {
+    op: 'if()',
+    docs:
+      'https://docs.newrelic.com/docs/nrql/nrql-syntax-clauses-functions/#func-if',
+    refs: [
+      {
+        level: 3,
+        lesson: 8
+      }
+    ]
+  },
+  {
     op: 'IN',
     docs:
       'https://docs.newrelic.com/docs/query-your-data/nrql-new-relic-query-language/get-started/nrql-syntax-clauses-functions#sel-where',
@@ -944,5 +955,38 @@ export const indexMapping = [
         lesson: 7
       }
     ]
-  }
+  },
+  {
+    op: 'if()',
+    docs:
+      'https://docs.newrelic.com/docs/query-your-data/nrql-new-relic-query-language/get-started/nrql-syntax-clauses-functions/#func-if',
+    refs: [
+      {
+        level: 3,
+        lesson: 8
+      }
+    ]
+  },
+  {
+    op: 'aparse()',
+    docs:
+      'https://docs.newrelic.com/docs/query-your-data/nrql-new-relic-query-language/get-started/nrql-syntax-clauses-functions/#func-aparse',
+    refs: [
+      {
+        level: 4,
+        lesson: 8
+      }
+    ]
+  },
+  {
+    op: 'capture()',
+    docs:
+      'https://docs.newrelic.com/docs/nrql/nrql-syntax-clauses-functions/#func-capture',
+    refs: [
+      {
+        level: 4,
+        lesson: 8
+      }
+    ]
+  },
 ];

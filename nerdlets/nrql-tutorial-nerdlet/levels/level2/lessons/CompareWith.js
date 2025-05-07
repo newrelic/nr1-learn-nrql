@@ -25,14 +25,14 @@ export default function CompareWith() {
       <p>
         <Trans i18nKey="Contents.P3">
           Specifically, in the sample query below we compare the last day
-          against the previous week using a relative offset of{' '}
-          <code>1 week ago</code>.
+          against the previous day'ss using a relative offset of{' '}
+          <code>1 day ago</code>.
         </Trans>
       </p>
 
       <SampleQuery
-        nrql="SELECT average(duration) FROM Transaction SINCE 1 DAY AGO **COMPARE WITH 1 WEEK AGO**"
-        fallbacknrql="SELECT average(duration) FROM Public_APICall SINCE 1 day ago COMPARE WITH 1 week ago"
+        nrql="SELECT average(duration) FROM Transaction SINCE 1 DAY AGO **COMPARE WITH 1 DAY AGO**"
+        fallbacknrql="SELECT average(duration) FROM Public_APICall SINCE 1 day ago COMPARE WITH 1 DAY ago"
         span="6"
       />
 
@@ -46,8 +46,8 @@ export default function CompareWith() {
       </p>
 
       <SampleQuery
-        nrql="SELECT average(duration) FROM Transaction SINCE 1 DAY AGO **COMPARE WITH 1 WEEK AGO** TIMESERIES"
-        fallbacknrql="SELECT average(duration) FROM Public_APICall SINCE 1 day ago COMPARE WITH 1 week ago TIMESERIES"
+        nrql="SELECT average(duration) FROM Transaction SINCE 1 DAY AGO **COMPARE WITH 1 DAY AGO** TIMESERIES"
+        fallbacknrql="SELECT average(duration) FROM Public_APICall SINCE 1 day ago COMPARE WITH 1 DAY ago TIMESERIES"
         span="12"
       />
 

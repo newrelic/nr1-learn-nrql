@@ -66,8 +66,8 @@ export default function AdvancedMath() {
         </Trans>
       </p>
       <SampleQuery
-        nrql="SELECT **clamp\_max(average(duration), 10)**, **clamp\_min(average(duration), 1)** FROM Transaction SINCE 1 day ago TIMESERIES"
-        fallbacknrql="SELECT clamp_max(average(duration), 10), clamp_min(average(duration), 1) from Public_APICall since 24 hours ago TIMESERIES"
+        nrql="SELECT **clamp\_max(average(duration), 10) as clampMax**, **clamp\_min(average(duration), 1) as clampMin** FROM Transaction SINCE 1 day ago TIMESERIES"
+        fallbacknrql="SELECT clamp_max(average(duration), 10) as clampMax, clamp_min(average(duration), 1) as clampMin from Public_APICall since 24 hours ago TIMESERIES"
         span="12"
       />
 

@@ -1,5 +1,9 @@
 name: NR1 Library Deprecation Checks
 
+permissions:
+  contents: read
+  issues: write
+
 on: [push, workflow_dispatch]
 
 jobs:

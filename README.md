@@ -1,10 +1,10 @@
 [![New Relic One Catalog Project header](https://github.com/newrelic/opensource-website/raw/master/src/images/categories/New_Relic_One_Catalog_Project.png)](https://opensource.newrelic.com/oss-category/#new-relic-one-catalog-project)
 
-# New Relic One - NRQL Lessons
-
 ![CI](https://github.com/newrelic/nr1-learn-nrql/workflows/CI/badge.svg) ![GitHub release (latest SemVer including pre-releases)](https://img.shields.io/github/v/release/newrelic/nr1-learn-nrql?include_prereleases&sort=semver) [![Snyk](https://snyk.io/test/github/newrelic/nr1-learn-nrql/badge.svg)](https://snyk.io/test/github/newrelic/nr1-learn-nrql)
 
-The NRQL (New Relic Query Language) Lessons Nerdpack will help you quickly learn the value and power of our query language. We've developed this application for dashboard and alerts users, but everyone will get something out of it. We've broken this content into four levels, from simple to complex. Each level will expand your understanding of NRQL in a different way.
+# NRQL Lessons
+
+The NRQL (New Relic Query Language) Lessons App will help you quickly learn the value and power of our query language. We've developed this application for dashboard and alerts users, but everyone will get something out of it. We've broken this content into four levels, from simple to complex. Each level will expand your understanding of NRQL in a different way.
 
 1. Level One: Learning the Ropes
 2. Level Two: Controlling Your Data
@@ -15,20 +15,21 @@ Each level uses easily understanable examples and descriptions with live data fr
 
 We built these lessons with APM data in mind. If you're not using APM data, you may see some empty results, even though the query logic will still work. In future, we plan to include fallback queries so that lessons will work regardless of the data you're using.
 
-## Open source license
+## Enabling this App
 
-This project is distributed under the [Apache 2 license](LICENSE).
+This app is available via the New Relic Catalog.
 
-## Install using New Relic One Application Catalog
+To enable it in your account:
+1. Go to `Integrations & Agents > Apps and Visualizations` and search for "NRQL Lessons"
+2. Click the `NRQL Lessons` card, and then click the `Add this App` button to add it to your account(s)
+3. Click `Open App` to launch the app (note: on the first time accessing the app, you may be prompted to enable it)
 
-This application is primarily designed to be installed via the New Relic Application Catalog.
+Once you have added your accounts, you can also open the app by:
+1. Open the `Apps` left-hand navigation menu item (you may need to click on the `Add More` ellipsis if it doesn't show up by default)
+2. In the `Your Apps` section, locate and click on the `NRQL Lessons` card to open the app
 
-In [New Relic One](https://one.newrelic.com), navigate to your Apps section and click the NRQL Lessons application. The application will give you clear details about the goals of each lesson. The Manage Access button in the top right will let you choose the account where you want to make this app visible. It will be visible to all users of that account.
 
-## Install using New Relic One CLI
-
-NRQL Lessons is also an Open Source application. You can quickly and easily deploy it manually using the New Relic One CLI.
-
+#### Manual Deployment
 Ensure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [npm](https://www.npmjs.com/get-npm) installed. If you're unsure whether you have them installed, run the following commands (they'll return version numbers if they're installed):
 
 ```bash
@@ -59,27 +60,28 @@ nr1 nerdpack:serve
 
 Once you've done that, visit [https://one.newrelic.com/?nerdpacks=local](https://one.newrelic.com/?nerdpacks=local), navigate to Apps, then NRQL Lessons, and :sparkles: enjoy!
 
-# Support
+## Support
 
-New Relic has open-sourced this project. This project is provided AS-IS WITHOUT WARRANTY OR DEDICATED SUPPORT. Issues and contributions should be reported to the project here on GitHub.
+<a href="https://github.com/newrelic?q=nrlabs-viz&amp;type=all&amp;language=&amp;sort="><img src="https://user-images.githubusercontent.com/1786630/214122263-7a5795f6-f4e3-4aa0-b3f5-2f27aff16098.png" height=50 /></a>
 
-We encourage you to bring your experiences and questions to the [Explorers Hub](https://discuss.newrelic.com) where our community members collaborate on solutions and new ideas.
+This project is actively maintained by the New Relic Labs team. Connect with us directly by [creating issues](../../issues) or [asking questions in the discussions section](../../discussions) of this repo.
 
-## Community
+We also encourage you to bring your experiences and questions to the [Explorers Hub](https://discuss.newrelic.com) where our community members collaborate on solutions and new ideas.
 
-New Relic hosts and moderates an online forum where customers can interact with New Relic employees as well as other customers to get help and share best practices. Like all official New Relic open source projects, there's a related Community topic in the New Relic Explorers Hub. You can find this project's topic/threads here:
-
-[https://discuss.newrelic.com/t/new-relic-nrql-lessons-nerdpack/109646](https://discuss.newrelic.com/t/new-relic-nrql-lessons-nerdpack/109646)
-
-## Issues / enhancement requests
-
-Issues and enhancement requests can be submitted in the [Issues tab of this repository](https://github.com/newrelic/nr1-learn-nrql/issues). Please search for and review the existing open issues before submitting a new issue.
+New Relic has open-sourced this project, which is provided AS-IS WITHOUT WARRANTY OR DEDICATED SUPPORT.
 
 ## Security
-This project adheres to the New Relic [security policy](https://github.com/newrelic/nr1-learn-nrql/security/policy).
 
-# Contributing
+As noted in our [security policy](https://github.com/newrelic/nr-labs-pages/security/policy), New Relic is committed to the privacy and security of our customers and their data. We believe that providing coordinated disclosure by security researchers and engaging with the security community are important means to achieve our security goals.
 
-Contributions are encouraged! If you submit an enhancement request, we'll invite you to contribute the change yourself. Please review our [Contributors Guide](CONTRIBUTING.md).
+If you believe you have found a security vulnerability in this project or any of New Relic's products or websites, we welcome and greatly appreciate you reporting it to New Relic through [HackerOne](https://hackerone.com/newrelic).
 
-Keep in mind that when you submit your pull request, you'll need to sign the CLA via the click-through using CLA-Assistant. If you'd like to execute our corporate CLA, or if you have any questions, please drop us an email at opensource+learn_nrql@newrelic.com.
+## Contributing
+
+Contributions are welcome (and if you submit a Enhancement Request, expect to be invited to contribute it yourself :grin:). Please review our [Contributors Guide](CONTRIBUTING.md).
+
+Keep in mind that when you submit your pull request, you'll need to sign the CLA via the click-through using CLA-Assistant. If you'd like to execute our corporate CLA, or if you have any questions, please drop us an email at opensource@newrelic.com.
+
+## Open Source License
+
+This project is distributed under the [Apache 2 license](LICENSE).

@@ -1,3 +1,12 @@
+## [1.8.1](https://github.com/newrelic/nr1-learn-nrql/compare/v1.8.0...v1.8.1) (2026-07-16)
+
+
+### Bug Fixes
+
+* add bot token to release ([4093394](https://github.com/newrelic/nr1-learn-nrql/commit/409339494badbcfce3a21e1c8b5d3e9ae29cbcb9))
+* codeql fixes ([26feb3c](https://github.com/newrelic/nr1-learn-nrql/commit/26feb3cc5a23c5216adb0b177e438d69daa5a216))
+* double escape codeql error ([4b5f652](https://github.com/newrelic/nr1-learn-nrql/commit/4b5f65211b6d411f6300d308d032f4791a52c49d))
+
 ## [1.7.1](https://github.com/newrelic/nr1-learn-nrql/compare/v1.7.0...v1.7.1) (2022-11-03)
 
 

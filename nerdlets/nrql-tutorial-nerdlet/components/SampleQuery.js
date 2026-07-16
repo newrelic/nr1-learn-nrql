@@ -23,6 +23,12 @@ import {
 
 const ReactMarkdown = require('react-markdown');
 
+function unescapeMarkdown(str) {
+  return str.replace(/\*\*|\\([*_\\[])/g, (match, escaped) =>
+    escaped !== undefined ? escaped : ''
+  );
+}
+
 export default class SampleQuery extends React.Component {
   static propTypes = {
     chartType: PropTypes.string,
@@ -67,20 +73,9 @@ export default class SampleQuery extends React.Component {
 
   render() {
     let { nrql, span, markdown, fallbacknrql } = this.props;
-    let nrqlPlain = nrql
-      .replace(/\*\*/g, '')
-      .replace(/\\\*/g, '*')
-      .replace(/\\_/g, '_')
-      .replace(/\\\\/g, '\\')
-      .replace(/\\\[/g, '[');
+    let nrqlPlain = unescapeMarkdown(nrql);
 
-    const fallbacknrqlPlain = fallbacknrql
-      ? fallbacknrql
-          .replace(/\*\*/g, '')
-          .replace(/\\\*/g, '*')
-          .replace(/\\_/g, '_')
-          .replace(/\\\[/g, '[')
-      : '';
+    const fallbacknrqlPlain = fallbacknrql ? unescapeMarkdown(fallbacknrql) : '';
 
     if (markdown === 'no') {
       nrqlPlain = nrql;

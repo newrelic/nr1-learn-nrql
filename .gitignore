@@ -6,3 +6,5 @@ coverage
 tmp
 *.tar.gz
 .DS_Store
+
+.codegraph/
